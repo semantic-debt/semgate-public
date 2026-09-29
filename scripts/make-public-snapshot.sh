@@ -14,6 +14,9 @@
 #   4. Runs scripts/publish_scan.py on the snapshot and prints a PASS/FAIL
 #      table. Exit code 1 when a check fails. The JSON report is written next
 #      to the snapshot folder (DIR/NAME-YYYYMMDD.scan.json), not inside it.
+#      With "wheel_test" in .publish/scan.json the scan also builds the wheel
+#      from a clone of the snapshot and runs the wheel install test on it; it
+#      needs pip, pytest and the network (the pinned build backend).
 #
 # Options:
 #   --ref REF          commit to export (default HEAD)
@@ -31,12 +34,15 @@
 #   --replace          delete and rebuild DIR/NAME-DATE if this script made it
 #   --no-scan          only build the snapshot
 #
+# Python: $PYTHON, else the .venv of this script's main checkout (it has
+# pytest), else python3 / python / py.
+#
 # The name is a parameter so the product name can change without editing
 # this script. The script never reads .env itself; publish_scan.py reads the
 # key values inside its own process and prints only "found" / "not found".
 set -euo pipefail
 
-usage() { sed -n '2,32p' "$0"; exit 2; }
+usage() { sed -n '2,38p' "$0"; exit 2; }
 
 REPO="" NAME="" OUT="" REF="HEAD" AUTHOR="Manuel Parra <th3nolo@gmail.com>"
 MESSAGE="Initial public release" DATE="$(date +%Y%m%d)" REPLACE=0 SCAN=1
@@ -70,7 +76,7 @@ TOOL_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 TOOL_MAIN="$(cd "$(git -C "$TOOL_ROOT" rev-parse --path-format=absolute --git-common-dir)/.." && pwd)"
 PY="${PYTHON:-}"
 if [ -z "$PY" ]; then
-  for c in python3 python py; do
+  for c in "$TOOL_MAIN/.venv/Scripts/python.exe" "$TOOL_MAIN/.venv/bin/python" python3 python py; do
     if command -v "$c" >/dev/null 2>&1 && "$c" -c "import sys; sys.exit(sys.version_info < (3, 10))" 2>/dev/null; then PY="$c"; break; fi
   done
 fi

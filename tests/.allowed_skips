@@ -10,7 +10,8 @@
 # The tree marker test runs only under scripts/test-local.sh; plain pytest
 # and CI have no marker.
 any: ^no tree marker: not started by scripts/test-local\.sh$
-# tests/test_wheel_install.py needs a built wheel (CI builds one).
+# tests/test_wheel_install.py needs a built wheel (CI builds one; so does the
+# publish scan, "wheel_test" in .publish/scan.json).
 any: ^set SEMGATE_WHEEL_DIR to the folder with the built wheel$
 # The WSL copy is the tracked files without .git; the Windows run scans the
 # same tree (tree marker) for push-protection token formats.

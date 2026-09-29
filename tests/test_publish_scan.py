@@ -148,6 +148,79 @@ def test_tracked_files_hold_no_push_protection_match():
     assert hits == []
 
 
+WHEEL_CFG = {"wheel_test": {"test": "tests/test_wheel_install.py", "wheel_dir_env": "SEMGATE_WHEEL_DIR"}}
+
+
+def _wheel_row(tmp_path, monkeypatch, cfg=WHEEL_CFG, build_rc=0, test_rc=0, counts=(2, 0, 0, 0)):
+    """Run only the wheel check, with the clone / build / test commands faked."""
+    scan = _scan(tmp_path, {"pyproject.toml": "[project]\n", "tests/test_wheel_install.py": "def test(): pass\n"}, cfg)
+    calls = []
+
+    def fake_run(cmd, cwd, env, timeout):
+        calls.append({"cmd": cmd, "cwd": Path(cwd), "env": env})
+        if cmd[0] == "git":
+            Path(cmd[-1]).mkdir()
+            return 0, ""
+        if "pip" in cmd:
+            if build_rc:
+                return build_rc, "ERROR: backend failed\n"
+            wheels = Path(cmd[cmd.index("-w") + 1])
+            wheels.mkdir()
+            (wheels / "semgate-9.9.9-py3-none-any.whl").write_bytes(b"")
+            return 0, ""
+        junit = next(a.split("=", 1)[1] for a in cmd if a.startswith("--junitxml="))
+        t, f, e, s = counts
+        Path(junit).write_text(f'<testsuites><testsuite name="pytest" tests="{t}" failures="{f}" errors="{e}" '
+                               f'skipped="{s}"/></testsuites>', encoding="utf-8")
+        return test_rc, "E   AssertionError: assert 'deny' == 'ask'\n1 failed, 1 passed\n"
+    monkeypatch.setattr(ps, "run_step", fake_run)
+    scan.check_wheel_install()
+    return scan.rows[-1], calls
+
+
+def test_wheel_check_builds_from_a_clone_and_runs_the_test_with_the_wheel_dir(tmp_path, monkeypatch):
+    row, calls = _wheel_row(tmp_path, monkeypatch)
+    assert row["status"] == "PASS", row
+    assert row["summary"] == "semgate-9.9.9-py3-none-any.whl: 2 passed, 0 failed, 0 errors, 0 skipped (exit 0)"
+    clone, build, test = calls
+    assert clone["cmd"][:2] == ["git", "clone"] and clone["cmd"][-2] == str(tmp_path / "snap")
+    src = Path(clone["cmd"][-1])
+    assert build["cwd"] == src and test["cwd"] == src          # never builds inside the snapshot folder
+    assert build["cmd"][:6] == [sys.executable, "-m", "pip", "wheel", ".", "--no-deps"]
+    assert test["cmd"][:7] == [sys.executable, "-m", "pytest", "-q", "tests/test_wheel_install.py", "-p", "no:cacheprovider"]
+    assert test["env"]["SEMGATE_WHEEL_DIR"] == build["cmd"][build["cmd"].index("-w") + 1]
+    assert "PYTHONPATH" not in test["env"]                   # conftest sets it; the test must import the clone
+    assert sorted(p.name for p in (tmp_path / "snap").iterdir()) == ["pyproject.toml", "tests"]
+
+
+def test_wheel_check_fails_on_a_failed_test(tmp_path, monkeypatch):
+    row, _ = _wheel_row(tmp_path, monkeypatch, test_rc=1, counts=(2, 1, 0, 0))
+    assert row["status"] == "FAIL"
+    assert "1 passed, 1 failed" in row["summary"]
+    assert "E   AssertionError: assert 'deny' == 'ask'" in row["details"]
+
+
+def test_wheel_check_fails_when_the_test_only_skips(tmp_path, monkeypatch):
+    """A wrong wheel_dir_env makes the test skip with exit 0; that must not pass."""
+    row, _ = _wheel_row(tmp_path, monkeypatch, counts=(2, 0, 0, 2))
+    assert row["status"] == "FAIL" and "2 skipped" in row["summary"]
+
+
+def test_wheel_check_fails_on_a_failed_build_and_does_not_run_the_test(tmp_path, monkeypatch):
+    row, calls = _wheel_row(tmp_path, monkeypatch, build_rc=1)
+    assert row["status"] == "FAIL" and row["summary"] == "build failed (exit 1)"
+    assert "ERROR: backend failed" in row["details"]
+    assert len(calls) == 2
+
+
+def test_wheel_check_skips_without_config_and_fails_on_a_missing_test_file(tmp_path, monkeypatch):
+    row, calls = _wheel_row(tmp_path / "a", monkeypatch, cfg={})
+    assert row["status"] == "SKIP" and calls == []
+    missing = {"wheel_test": {"test": "tests/test_gone.py", "wheel_dir_env": "SEMGATE_WHEEL_DIR"}}
+    row, calls = _wheel_row(tmp_path / "b", monkeypatch, cfg=missing)
+    assert row["status"] == "FAIL" and calls == []
+
+
 def _bash():
     if os.name != "nt":
         return shutil.which("bash")

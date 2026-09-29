@@ -18,7 +18,8 @@ with `git show`, so the file itself does not need to be in the snapshot):
                           "note": "...", "paths": ["glob", ...]}],
       "agpl_reviewed": [{"sha16": "...", "why": "..."}],
       "large_files": {"max_bytes": 10000000, "allow_files": [{"glob": "...", "why": "..."}]},
-      "forbidden_allow": [{"glob": "...", "why": "..."}]
+      "forbidden_allow": [{"glob": "...", "why": "..."}],
+      "wheel_test": {"test": "tests/test_wheel_install.py", "wheel_dir_env": "SEMGATE_WHEEL_DIR"}
     }
 
 A vendor marker fails the scan while its status is not "reported" or
@@ -29,6 +30,10 @@ Provider token formats that GitHub push protection rejects (PUSH_PROTECTION)
 fail the scan even when the value is a reviewed fake: there is no allow list.
 Split the literal after the prefix ("xoxb-" + "..."); the runtime value stays
 the same.
+
+"wheel_test": the scan clones the snapshot to a temp folder, builds the wheel
+there (`python -m pip wheel . --no-deps`) and runs the test with the wheel
+folder in `wheel_dir_env`. Any failed, errored or skipped test fails the row.
 """
 from __future__ import annotations
 
@@ -43,6 +48,8 @@ import random
 import re
 import subprocess
 import sys
+import tempfile
+import xml.etree.ElementTree as ET
 from collections import defaultdict
 from pathlib import Path
 
@@ -148,6 +155,28 @@ def push_protection_hits(text):
     hits = [(text.count("\n", 0, m.start()) + 1, kind, len(m.group(0)))
             for kind, rx in PUSH_PROTECTION for m in rx.finditer(text)]
     return sorted(hits)
+
+
+def run_step(cmd, cwd, env, timeout):
+    """Run one command of the wheel check: (exit code, stdout + stderr)."""
+    try:
+        p = subprocess.run(cmd, cwd=str(cwd), env=env, capture_output=True, text=True, encoding="utf-8",
+                           errors="replace", timeout=timeout)
+    except subprocess.TimeoutExpired:
+        return None, f"timed out after {timeout} s"
+    except OSError as e:
+        return None, str(e)
+    return p.returncode, p.stdout + p.stderr
+
+
+def junit_counts(path):
+    """tests / failures / errors / skipped from a pytest --junitxml file, or None."""
+    try:
+        root = ET.parse(path).getroot()
+    except (OSError, ET.ParseError):
+        return None
+    suites = [root] if root.tag == "testsuite" else root.findall("testsuite")
+    return {k: sum(int(s.get(k, 0)) for s in suites) for k in ("tests", "failures", "errors", "skipped")}
 
 
 def entropy(s):
@@ -557,6 +586,53 @@ class Scan:
         self.row("no large or executable binary files", not hits,
                  f"largest {biggest} ({len(self.files.get(biggest, b''))} bytes)", hits)
 
+    def check_wheel_install(self):
+        """Build the wheel from the snapshot commit and run the repo's wheel test on it.
+        The local suite skips that test (no wheel), so it can go stale unseen: it was
+        stale from 2026-09-25 until the first public CI run failed on 2026-09-29."""
+        name = "wheel build + wheel install test"
+        cfg = self.cfg.get("wheel_test")
+        if not cfg:
+            self.row(name, True, "no wheel_test in .publish/scan.json", skip=True)
+            return
+        test, env_name = cfg.get("test"), cfg.get("wheel_dir_env")
+        if not (test and env_name and test in self.files):
+            self.row(name, False, "wheel_test needs 'test' (a file in the snapshot) and 'wheel_dir_env'",
+                     [f"test={test!r} in snapshot: {test in self.files}; wheel_dir_env={env_name!r}"])
+            return
+        print(f"building the wheel and running {test} (a few minutes) ...", file=sys.stderr, flush=True)
+        with tempfile.TemporaryDirectory(prefix="publish-wheel-", ignore_cleanup_errors=True) as tmp:
+            src, wheels, junit = Path(tmp) / "src", Path(tmp) / "wheelhouse", Path(tmp) / "junit.xml"
+            # no PYTHONPATH: the test imports the package from the clone (`python -m` puts the cwd first)
+            env = {k: v for k, v in os.environ.items() if k != "PYTHONPATH"}
+            env["PIP_DISABLE_PIP_VERSION_CHECK"] = "1"
+            # a clone, so the build folders (build/, *.egg-info) do not land in the snapshot
+            steps = [
+                ("clone", ["git", "clone", "-q", "--no-hardlinks", "-c", "core.autocrlf=false", str(self.snap), str(src)],
+                 tmp, env, 300),
+                ("build", [sys.executable, "-m", "pip", "wheel", ".", "--no-deps", "-w", str(wheels)], src, env, 900),
+                ("test", [sys.executable, "-m", "pytest", "-q", test, "-p", "no:cacheprovider", f"--junitxml={junit}"],
+                 src, dict(env, **{env_name: str(wheels)}), 1800),
+            ]
+            for step, cmd, cwd, step_env, timeout in steps:
+                rc, out = run_step(cmd, cwd, step_env, timeout)
+                if step == "build":
+                    built = sorted(p.name for p in wheels.glob("*.whl")) if wheels.is_dir() else []
+                    if rc == 0 and len(built) != 1:
+                        rc, out = 1, f"expected one wheel in the wheel folder, found {built}"
+                if step != "test" and rc != 0:
+                    tail = out.strip().splitlines()[-40:]
+                    self.row(name, False, f"{step} failed (exit {rc})", [" ".join(cmd)] + tail)
+                    return
+            c = junit_counts(junit)
+        ok = rc == 0 and c is not None and c["tests"] > 0 and not (c["failures"] or c["errors"] or c["skipped"])
+        counts = (f"{c['tests'] - c['failures'] - c['errors'] - c['skipped']} passed, {c['failures']} failed, "
+                  f"{c['errors']} errors, {c['skipped']} skipped" if c else "no junit report")
+        d = [f"wheel {built[0]}; {env_name}=<temp wheel folder> python -m pytest -q {test} -p no:cacheprovider"]
+        if not ok:
+            d += out.strip().splitlines()[-40:]
+        self.row(name, ok, f"{built[0]}: {counts} (exit {rc})", d)
+
     def run(self):
         self.check_git()
         self.check_tree()
@@ -572,6 +648,7 @@ class Scan:
         self.check_agpl()
         self.check_heldout()
         self.check_large()
+        self.check_wheel_install()
         return self.rows
 
 
