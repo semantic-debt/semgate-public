@@ -188,7 +188,7 @@ def _check_interpreter(provider: str) -> list:
         if provider != "typesafe" and mod != "semgate":
             continue
         if importlib.util.find_spec(mod) is None:
-            problems.append(f"{mod} is not importable from {sys.executable} ({why}); run: pip install 'semgate[typesafe]'")
+            problems.append(f"{mod} is not importable from {sys.executable} ({why}); the semgate install is incomplete; run: pip install --force-reinstall semgate")
     # The key: the same places, in the same order, as the provider reads it
     # (providers/keys.py: SEMGATE_<NAME>, ~/.semgate/.env, the checkout .env,
     # in a git worktree the main checkout's .env, then the environment).

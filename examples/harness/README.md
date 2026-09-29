@@ -27,7 +27,7 @@ half). It has no framework imports and is tested in
 ## Setup
 
 ```bash
-pip install "semgate[typesafe]" -c constraints/typesafe.txt
+pip install semgate                    # in a venv
 semgate harness init --purpose "Software development in ~/code/app: read, edit, build, test"
 semgate serve --http --token-file ~/.semgate/http/check.token --approve-token-file ~/.semgate/http/approve.token
 ```

@@ -13,8 +13,9 @@ backoff, and only on a transient failure (timeout, connection error, HTTP 408,
 429 or 5xx). 401/403 (auth, or the Cloudflare WAF block) and other 4xx are
 never retried. Worst case: two attempts instead of the SDK's three.
 
-The SDK is an optional dependency and imported lazily so the prototype runs
-fully offline with the fake provider. Set TYPESAFE_API_KEY to use this.
+`pip install semgate` installs the SDK (pinned in pyproject.toml). It is
+imported lazily, so the deterministic layers and the fake provider run with
+no key and no network. Set TYPESAFE_API_KEY to use this.
 """
 from __future__ import annotations
 
@@ -62,8 +63,8 @@ class TypeSafeProvider(JudgeProvider):
             import typesafe_sdk  # noqa: F401
         except ImportError as exc:
             raise ProviderError(
-                "typesafe-sdk is not installed; install the optional dependency "
-                "or run with the fake provider"
+                "typesafe-sdk cannot be imported; the semgate install is incomplete. "
+                "Run: pip install --force-reinstall semgate"
             ) from exc
         self._sdk = typesafe_sdk
         # typesafe-sdk < 0.7.1 can echo the API key inside exception text (fixed

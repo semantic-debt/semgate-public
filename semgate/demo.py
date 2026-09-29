@@ -319,7 +319,7 @@ def render(rows: Sequence[Mapping[str, Any]], width: int = 0) -> str:
     counts = {k: sum(1 for r in rows if r["decision"] == k) for k in ("allow", "ask", "deny")}
     lines += [f"{len(rows)} decisions: {counts['allow']} allowed, {counts['ask']} asked, {counts['deny']} blocked.",
               "ASK: the host shows the user a prompt. BLOCK: the action does not run; the agent gets the reason.",
-              "Try the hook in your own agent without a key: semgate init claude --demo  (see README)."]
+              "Try the hook in your own agent without a key: semgate init claude --demo  (see https://github.com/th3nolo/semgate/blob/main/docs/guide.md#try-it-in-2-minutes-no-key)."]
     return "\n".join(lines)
 
 

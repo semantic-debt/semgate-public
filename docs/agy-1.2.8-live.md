@@ -81,9 +81,9 @@ intended trade: a command that a hostile document names never auto-runs.
 
 ## Reproduce
 
-1. `pip install -e ".[typesafe]" -c constraints/typesafe.txt` in a venv (python-dotenv is part of the
-   extra: the hook runs in agy's process, not your shell, and reads the key
-   from the repo `.env`).
+1. `pip install -e ".[dev]"` from a clone, in a venv. This installs
+   python-dotenv: the hook runs in agy's process, not your shell, and reads
+   the key from the repo `.env`.
 2. `~/.gemini/config/hooks.json`:
    ```json
    {"semgate": {"enabled": true, "PreToolUse": [{"matcher": "*", "hooks": [{"type": "command",

@@ -35,9 +35,10 @@ windows: ^needs bash and curl \(the script is run on Linux/macOS\)$
 # The SWE row cache (evals/data/, gitignored) exists only in the main checkout.
 any: ^SWE row cache absent \(git-ignored, MAIN repo only\)$
 
-# The WSL venv has only ".[dev]": no typesafe extra, no node, Python 3.10.
+# The WSL venv has only ".[dev]": no node, Python 3.10. A venv built before
+# typesafe-sdk became a normal dependency (after 0.4.0) has no typesafe-sdk.
 wsl,posix: ^could not import 'typesafe_sdk'
-wsl,posix: ^the typesafe extra is not installed here$
+wsl,posix: ^typesafe-sdk is not installed here$
 wsl,posix: ^node not installed$
 wsl,posix: ^tomllib needs Python 3\.11\+$
 # Windows-only behaviour tested on Windows.
