@@ -25,14 +25,19 @@ shows an ask instead.
 
 ## Try it in 2 minutes (no key)
 
-semgate is not on PyPI yet (`pip install semgate` does not work today); a
-PyPI release follows later. Install it from a clone of this repository:
+In a venv:
+
+```bash
+pip install semgate
+semgate demo
+```
+
+To run the tests too, install from a clone of this repository:
 
 ```bash
 cd semgate                  # your clone of this repository
 pip install -e ".[dev]"     # semgate + pytest; in a venv
-pytest -q tests             # optional: check the install
-semgate demo
+pytest -q tests
 ```
 
 `semgate demo` judges 14 agent actions through the real pipeline: fixed
@@ -281,15 +286,20 @@ the sandbox limits what a missed call can reach.
 
 ## Install
 
-semgate is not on PyPI yet, so `pip install semgate` does not work today. A
-PyPI release follows later. Until then, install from a clone of this
-repository (in a venv):
+From PyPI (in a venv):
+
+```bash
+pip install semgate               # the core (fully offline, no dependencies)
+pip install "semgate[typesafe]" -c https://raw.githubusercontent.com/th3nolo/semgate/v0.4.0/constraints/typesafe.txt   # + the TypeSafe SDK for Jev (key in ~/.semgate/.env or TYPESAFE_API_KEY)
+```
+
+From a clone of this repository, with the tests (in a venv):
 
 ```bash
 cd semgate                        # your clone of this repository
-pip install -e ".[dev]"           # the core (fully offline, no dependencies) + pytest
+pip install -e ".[dev]"           # the core + pytest
 pytest -q tests                   # check the install
-pip install -e ".[typesafe]" -c constraints/typesafe.txt   # + the TypeSafe SDK for Jev (key in ~/.semgate/.env or TYPESAFE_API_KEY)
+pip install -e ".[typesafe]" -c constraints/typesafe.txt
 ```
 
 The typesafe extra pulls in more packages (httpx2, pydantic, anyio ...)
