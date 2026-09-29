@@ -1,0 +1,48 @@
+...................FFF.                                                  [100%]
+=================================== FAILURES ===================================
+___ test_observation_candidate_indexes_reference_an_unexported_filtered_list ___
+
+tmp_path = PosixPath('/tmp/pytest-of-sandbox/pytest-7/test_observation_candidate_ind0')
+
+    def test_observation_candidate_indexes_reference_an_unexported_filtered_list(tmp_path):
+        r=report(tmp_path,[proposal()],[native_tool(args=False),native_tool()])
+>       assert r['candidate_associations'][0]['telemetry_candidate_indexes']==[0]
+E       IndexError: list index out of range
+
+test_round3.py:230: IndexError
+________________ test_observation_append_does_not_request_fsync ________________
+
+tmp_path = PosixPath('/tmp/pytest-of-sandbox/pytest-7/test_observation_append_does_n0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f871a219330>
+
+    def test_observation_append_does_not_request_fsync(tmp_path,monkeypatch):
+        hook=load('semgate_shadow_hook'); calls=[]
+        monkeypatch.setattr(os,'fsync',lambda fd:calls.append(fd))
+        hook.append(tmp_path/'shadow.jsonl',{'test':'capture'})
+>       assert calls==[]
+E       assert [15] == []
+E         
+E         Left contains one more item: 15
+E         Use -v to get more diff
+
+test_round3.py:238: AssertionError
+__________ test_observation_notification_command_is_not_size_limited ___________
+
+tmp_path = PosixPath('/tmp/pytest-of-sandbox/pytest-7/test_observation_notification_0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f8719f57e80>
+
+    def test_observation_notification_command_is_not_size_limited(tmp_path,monkeypatch):
+        hook=load('semgate_shadow_hook'); log=tmp_path/'shadow.jsonl'; sentinel='SYNTHETIC_PAYLOAD_'*10000
+        inp={'session_id':'A','hook_event_name':'Notification','notification_type':'ToolPermission',
+             'message':'Confirm','details':{'type':'exec','title':'Run','rootCommand':'printf','command':'printf '+sentinel}}
+        monkeypatch.setenv('SEMGATE_SHADOW_LOG',str(log));monkeypatch.setattr(sys,'stdin',io.StringIO(json.dumps(inp)))
+        with mock.patch('sys.stdout',io.StringIO()): hook.main()
+>       assert json.loads(log.read_text())['details_metadata']['command']=='printf '+sentinel
+E       AssertionError: assert {'sha256': 'd1a137bf674f25ac67a5b85651cf0692144cb06c5b79451a0642a7157e915563', 'truncated': True, 'utf8_bytes': 180007} == ('printf ' + 'SYNTHETIC_PAYLOAD_SYNTHETIC_PAYLOAD_SYNTHETIC_PAYLOAD_SYNTHETIC_PAYLOAD_SYNTHETIC_PAYLOAD_SYNTHETIC_PAYLOAD_SYNTHETIC...C_PAYLOAD_SYNTHETIC_PAYLOAD_SYNTHETIC_PAYLOAD_SYNTHETIC_PAYLOAD_SYNTHETIC_PAYLOAD_SYNTHETIC_PAYLOAD_SYNTHETIC_PAYLOAD_')
+
+test_round3.py:247: AssertionError
+=========================== short test summary info ============================
+FAILED test_round3.py::test_observation_candidate_indexes_reference_an_unexported_filtered_list
+FAILED test_round3.py::test_observation_append_does_not_request_fsync - asser...
+FAILED test_round3.py::test_observation_notification_command_is_not_size_limited
+3 failed, 20 passed in 0.49s

@@ -1,0 +1,56 @@
+{
+  "name": "karanxa",
+  "source": {
+    "url": "https://huggingface.co/datasets/karanxa/agent-action-safety-dataset",
+    "dataset": "karanxa/agent-action-safety-dataset",
+    "file": "val.jsonl",
+    "revision": "2371a8dfd029c92f7830446e5316fd1239380ebe",
+    "license": "Apache-2.0",
+    "row_count": 4049,
+    "label_origin": "LLM-generated (dataset manifest: sources gemini/template/seed)"
+  },
+  "sampling": {
+    "seed": 20260923,
+    "count": 300,
+    "rule": "random.Random(seed).sample(range(row_count), count)"
+  },
+  "input_sha256": {
+    "val.jsonl": "4aed5ac765df7faf3a347c33f71212022e5fb8d0edfba066609f3c527ccc22ff",
+    "manifest.json": "2f3e3b54796afa4476206e7cc2423e64d7aa35b1554a8d199333706206056326",
+    "README.md": "6f6e9f1b8c7db7b994aa544ef31917be0256be9786edfea90b0bc4697239fb28"
+  },
+  "case_count": 300,
+  "label_counts": {
+    "allow": 140,
+    "ask": 0,
+    "deny": 160
+  },
+  "split_rule": "private when int(sha256(source_id), 16) % 5 == 0",
+  "public": {
+    "path": "fixtures/eval/karanxa.jsonl",
+    "committed": true,
+    "sha256": "da7d7a5fbda414831a62f5e2e71eafb59338db951232d7a1ba782603a4ced030",
+    "count": 243,
+    "label_counts": {
+      "allow": 117,
+      "ask": 0,
+      "deny": 126
+    }
+  },
+  "private": {
+    "path": "evals/private/karanxa.jsonl",
+    "committed": false,
+    "sha256": "38e1a7b6d058c07e3e2800a3903280721e0048a1913d4ba51102b0fdf065573d",
+    "count": 57,
+    "label_counts": {
+      "allow": 23,
+      "ask": 0,
+      "deny": 34
+    }
+  },
+  "audit": {
+    "path": "evals/summaries/karanxa-audit.md",
+    "rows": 100,
+    "flagged": 3
+  }
+}

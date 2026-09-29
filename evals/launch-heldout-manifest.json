@@ -1,0 +1,148 @@
+{
+  "name": "launch-heldout-2026-09",
+  "schema": "semgate-launch-heldout-manifest/1",
+  "description": "Fresh held-out set for launch claims. Built once, never run during tuning, run exactly once on the final policy at launch. Case text is git-ignored (evals/private/launch-2026-09/); this manifest and the rubric are the only committed artifacts.",
+  "created": "2026-09-26",
+  "case_schema": "semgate-eval-case/1",
+  "runner": "evals/26-launch-heldout.py",
+  "rubric": {
+    "path": "evals/launch-heldout-rubric.md",
+    "sha256": "2a2c091f6866c70ba40763320ba854c2f1d1c37c880d586bf0ddb12c8ef263ef"
+  },
+  "run_rule": "Run once on the final policy. Any later run must be reported as a rerun (evals/26-launch-heldout.py refuses a second run without --rerun and records every rerun in the git-ignored run log). Re-running to pick a better number is forbidden; a rerun is only for a disclosed re-measurement.",
+  "case_count": 120,
+  "label_counts": {
+    "allow": 52,
+    "ask": 42,
+    "deny": 26
+  },
+  "set_type_counts": {
+    "benign": 50,
+    "risky": 30,
+    "malicious": 20,
+    "injection": 10,
+    "test_drift": 10
+  },
+  "one_variant_per_base": true,
+  "n_bases": 120,
+  "zero_failure_upper_bound_95": 0.02466,
+  "zero_failure_bound_formula": "1 - 0.05 ** (1 / n_bases); one variant per base, so n_bases = case_count and there is no cluster inflation",
+  "low_confidence_count": 0,
+  "low_confidence_note": "Cases marked label_confidence=low are arguable allow-vs-ask (or ask-vs-deny) calls. Manuel may read and relabel them before the run; the tuning sessions must not.",
+  "dedupe": {
+    "exact_key": "trimmed command string (bash) or canonical action JSON (edits)",
+    "near_key": "normalized command: lowercased, surrounding quotes stripped, whitespace collapsed, digit-runs replaced by '#'",
+    "checked_against": "every committed fixture under fixtures/eval/ and every existing private set under evals/private/ (commands hashed only, never printed)",
+    "candidates_dropped_exact": 8,
+    "candidates_dropped_near": 0,
+    "duplicates_remaining_in_set": 0,
+    "note": "The set was over-generated; the 8 candidates whose command already appears in a committed fixture were dropped, so the final 120 cases have no exact or near-duplicate command in the committed fixtures or the existing private sets."
+  },
+  "private_files": [
+    {
+      "path": "evals/private/launch-2026-09/cases.jsonl",
+      "sha256": "99812d18a38aca25f53b6dedcb8a405e847677629709b4309c6c6cc34f263e16",
+      "count": 120,
+      "mutable": false,
+      "verify": "strict",
+      "note": "The frozen launch cases. The runner refuses to run if this file's hash does not match, unless the manifest is updated in the same commit."
+    },
+    {
+      "path": "evals/private/launch-2026-09/owner-template.jsonl",
+      "sha256": "2c37ba0e636c5d7bcb5f53988765d461023fd740a7133ddbda0e1e2ca70755bf",
+      "count": 5,
+      "mutable": true,
+      "verify": "template",
+      "note": "Five empty example rows for Manuel to fill (20-30 of his own cases). The runner includes any filled owner row (non-empty command and a valid allow/ask/deny label) and reports it in a separate owner group; the empty template rows are skipped. This file is expected to change, so its hash is recorded but not enforced."
+    }
+  ],
+  "sources": [
+    {
+      "id": "ruff",
+      "url": "https://raw.githubusercontent.com/astral-sh/ruff/0.6.9/README.md",
+      "repo": "astral-sh/ruff",
+      "tag": "0.6.9",
+      "commit": "975be9c1c6cc8f8f4e52bdad8123d151192c7123",
+      "license": "MIT",
+      "fetched": "2026-09-26",
+      "sha256": "fe8b498cc15cb502c26337b73a42ff7f826ab751064c360d9746f250a3497896",
+      "used_for": "benign + injection context (real install lines)",
+      "redistribution": "allowed by license; set stays private anyway"
+    },
+    {
+      "id": "express",
+      "url": "https://raw.githubusercontent.com/expressjs/express/4.21.0/Readme.md",
+      "repo": "expressjs/express",
+      "tag": "4.21.0",
+      "commit": "7e562c6d8daddff4604f8efaaf9db2cf98c6dcff",
+      "license": "MIT",
+      "fetched": "2026-09-26",
+      "sha256": "016f344ef66b81bbe03c8516e5414982244599fec6401f0fcc1ccb112123d370",
+      "used_for": "injection context (real npm install line)",
+      "redistribution": "allowed by license; set stays private anyway"
+    },
+    {
+      "id": "black",
+      "url": "https://raw.githubusercontent.com/psf/black/24.8.0/README.md",
+      "repo": "psf/black",
+      "tag": "24.8.0",
+      "commit": "b965c2a5026f8ba399283ba3e01898b012853c79",
+      "license": "MIT",
+      "fetched": "2026-09-26",
+      "sha256": "2354e5c2048ec186b690d6ec83c8bb22c582c9d4051f52559a40d613324a76f1",
+      "used_for": "injection context (real install lines)",
+      "redistribution": "allowed by license; set stays private anyway"
+    },
+    {
+      "id": "typer",
+      "url": "https://raw.githubusercontent.com/fastapi/typer/0.12.5/README.md",
+      "repo": "fastapi/typer",
+      "tag": "0.12.5",
+      "commit": "88aefd4492696bd1afa7bdb49477dec2c29d7e77",
+      "license": "MIT",
+      "fetched": "2026-09-26",
+      "sha256": "f154360e4785f8532473e8b9e78b1c179176122012e1e532c3147d4a8220d80c",
+      "used_for": "injection context (real install lines)",
+      "redistribution": "allowed by license; set stays private anyway"
+    },
+    {
+      "id": "tox",
+      "url": "https://raw.githubusercontent.com/tox-dev/tox/4.20.0/README.md",
+      "repo": "tox-dev/tox",
+      "tag": "4.20.0",
+      "commit": "a04cc3afa08e4641ba8419eb320e738d4ef8180c",
+      "license": "MIT",
+      "fetched": "2026-09-26",
+      "sha256": "7d02812b2e495dfb38506ab3ebf14d36c4404f26f64e473273e611c72602f993",
+      "used_for": "injection context (real command line)",
+      "redistribution": "allowed by license; set stays private anyway"
+    }
+  ],
+  "sources_note": "Real README/install text from well-known permissively-licensed repos, pinned by tag and commit, not previously used by any semgate eval set. Malicious, risky and test-drift commands are authored (no clean-licensed, unused corpus of real malicious agent trajectories exists); they use real tool syntax. Case text stays private regardless of source license.",
+  "excluded_sources_already_used": [
+    "RedCode (MIT)",
+    "NL2SH-ALFA (MIT)",
+    "Atomic Red Team (MIT)",
+    "tldr-pages (CC-BY-4.0)",
+    "AgentTrust (AGPL-3.0)",
+    "SWE-rebench / nebius (CC-BY-4.0)",
+    "InjecAgent (MIT)",
+    "karanxa/agent-action-safety (Apache-2.0)",
+    "R-Judge",
+    "AgentHarm",
+    "ToolSandbox",
+    "AbstentionBench",
+    "ToolEmu",
+    "L1B3RT4S (AGPL)",
+    "psf/requests README"
+  ],
+  "excluded_sources_note": "These are already used by existing sets (EVALS.md) or are AGPL (AgentTrust, L1B3RT4S); both are excluded so this set is independent proof.",
+  "policy": "The final shipped policy at launch (router_policy_dev.json or its renamed final). The runner records the policy_version and provider of the one run in the run log.",
+  "provider": "A live provider (openrouter or typesafe). The build made no judge, router or --dump call on these cases; the set is unseen until the launch run.",
+  "owner_review": {
+    "date": "2026-09-27",
+    "reviewed": 9,
+    "changed": 3,
+    "note": "Manuel reviewed the low-confidence labels before any run; label_confidence set to owner-reviewed."
+  }
+}

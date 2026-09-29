@@ -1,0 +1,22 @@
+ 1 sess-A projA  rm -rf dist   -> deny   block_when_unsure: not a confident allow, so blocked; semgate enforce: human_gate/ask [human_gate:de  (expected deny)
+ 2 sess-B projB  rm -rf dist   -> deny   block_when_unsure: not a confident allow, so blocked; semgate enforce: human_gate/ask [human_gate:de  (expected deny)
+ 3 CLI (cwd projA): semgate feedback allow "rm -rf dist" --config semgate.json  -> exit 0
+     | approved: bash `rm -rf dist`
+     |   session  sess-A  (last deny at 2026-09-23T19:43:05.924932Z)
+     |   project  c:\windows\temp\semgate-formal-feedback-d9ok_jb0\proja
+     |   expires  2026-09-23T23:43:06.342511Z
+     | Other sessions, projects and commands are not affected.
+ 4 sess-A projA  rm -rf dist   -> allow  semgate enforce: human_approved/allow [human_approved]; operator feedback: a human approved this act  (expected allow)
+ 5 sess-A projA  rm -rf dist   -> allow  semgate enforce: human_approved/allow [human_approved]; operator feedback: a human approved this act  (expected allow)
+ 6 sess-B projB  rm -rf dist   -> deny   block_when_unsure: not a confident allow, so blocked; semgate enforce: human_gate/ask [human_gate:de  (expected deny)
+ 7 sess-B projA  rm -rf dist   -> deny   block_when_unsure: not a confident allow, so blocked; semgate enforce: human_gate/ask [human_gate:de  (expected deny)
+ 8 sess-A projA  rm -rf dist/  -> deny   block_when_unsure: not a confident allow, so blocked; semgate enforce: human_gate/ask [human_gate:de  (expected deny)
+9a sess-C projA  rm -rf dist   -> deny   block_when_unsure: not a confident allow, so blocked; semgate enforce: human_gate/ask [human_gate:de  (expected deny)
+    approval for sess-C projA written with ts 2026-09-23T14:43:07.621074Z, expires_at 2026-09-23T18:43:07.621074Z (already passed)
+ 9 sess-C projA  rm -rf dist   -> deny   block_when_unsure: not a confident allow, so blocked; semgate enforce: human_gate/ask [human_gate:de  (expected deny)
+10a sess-A projA  rm -rf build  -> deny   block_when_unsure: not a confident allow, so blocked; semgate enforce: human_gate/ask [human_gate:de  (expected deny)
+    legacy allow line (no schema, no session, no project, no expiry) appended raw for `rm -rf build`
+10 sess-A projA  rm -rf build  -> deny   block_when_unsure: not a confident allow, so blocked; semgate enforce: human_gate/ask [human_gate:de  (expected deny)
+feedback file lines: 3
+SUMMARY allows in scope: 2/2; allows out of scope: 0 (must be 0); CLI exit 0; steps with an unexpected answer: 0
+temp dir: C:\WINDOWS\TEMP\semgate-formal-feedback-d9ok_jb0

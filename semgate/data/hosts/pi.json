@@ -1,0 +1,42 @@
+{
+  "schema": "semgate-host-manifest/1",
+  "host": "pi",
+  "display": "Pi",
+  "measured": {
+    "version": "0.86.0",
+    "by": "hookconf 0.1.0 @ ef229df, results/pi-0.86.0.json (Windows 11, 2026-09-23)"
+  },
+  "conformance": {
+    "core": "none",
+    "levels": {
+      "L0": "not met: O2 fail (1 event lacks fields); O4 n/a",
+      "L1": "met",
+      "L2": "met* (A1 untested)",
+      "L3": "not met: P1 unsupported (no permission prompts)",
+      "L4": "met* (M3 n/a: no built-in subagents)"
+    },
+    "hardening_gaps": ["A5 hook config editable by the agent", "M4 no schema version"]
+  },
+  "capabilities": {
+    "C1": {"status": "yes", "verified": true, "source": "hookconf pi-0.86.0.json: B1, B2, B3, B4 pass (tool_call block / throw)"},
+    "C2": {"status": "partial", "verified": true, "source": "hookconf pi-0.86.0.json: A2 pass (headless ask = deny + reason); survey [PI]: ask via ctx.ui.confirm, no UI in print or JSON mode", "note": "partial counts as not supported: ask maps to deny"},
+    "C2b": {"status": "yes", "verified": true, "source": "hookconf pi-0.86.0.json: A2b pass (ba26c03, 2026-09-23)", "note": "C2 is partial (no ask UI in print or JSON mode), so Pi still counts as a host that cannot show an ask"},
+    "C3": {"status": "no", "verified": true, "source": "hookconf pi-0.86.0.json: P1 unsupported"},
+    "C6": {"status": "yes", "verified": true, "source": "hookconf pi-0.86.0.json: A2, B2 pass"},
+    "C8": {"status": "yes", "verified": true, "source": "hookconf pi-0.86.0.json: A3 pass"},
+    "C10": {"status": "partial", "verified": true, "source": "hookconf pi-0.86.0.json: O2 fail (1 of 13 events)"},
+    "C11": {"status": "yes", "verified": true, "source": "hookconf pi-0.86.0.json: A4, O3 pass (sessionManager)"},
+    "C12": {"status": "unknown", "verified": false, "source": "not measured"},
+    "C14": {"status": "yes", "verified": true, "source": "hookconf pi-0.86.0.json: M1 pass (tool_result content)"},
+    "C17": {"status": "no", "verified": true, "source": "hookconf pi-0.86.0.json: O4, M3 n/a (no built-in subagents, docs/usage.md)"},
+    "C19": {"status": "yes", "verified": true, "source": "hookconf pi-0.86.0.json: B5 pass (tool_call errors block the tool)", "note": "a hanging handler stalls the call (no host timeout)"},
+    "C21": {"status": "no", "verified": true, "source": "hookconf pi-0.86.0.json: A5 fail"},
+    "C26": {"status": "no", "verified": true, "source": "hookconf pi-0.86.0.json: M4 fail"},
+    "C33": {"status": "unknown", "verified": false, "source": "not measured with semgate's Pi extension"},
+    "C34": {"status": "unknown", "verified": false, "source": "not measured"},
+    "C35": {"status": "yes", "verified": true, "source": "hookconf Pi 0.86.0 mock integration, evals/reports/pi-hookconf-20260924.json: block_recorded then approved on resumed session; tests/test_chat_approval.py"}
+  },
+  "notes": [
+    "semgate init pi installs a tool_call extension. Pi has no permission prompts: semgate's extension is the gate."
+  ]
+}

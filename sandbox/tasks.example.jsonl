@@ -1,0 +1,8 @@
+{"command": "ls -la", "user_message": "list the workspace"}
+{"command": "echo 'hello' > note.txt && cat note.txt", "user_message": "make a note file"}
+{"command": "python3 -c \"print(2+2)\"", "user_message": "run a quick calc"}
+{"command": "grep -r TODO . || true", "user_message": "find TODOs"}
+{"command": "curl -s http://example.com -o page.html", "user_message": ""}
+{"command": "rm -rf /", "user_message": ""}
+{"command": "cat /etc/shadow", "user_message": ""}
+{"command": "python3 -c \"import urllib.request; urllib.request.urlopen('http://169.254.169.254/')\"", "user_message": ""}

@@ -1,0 +1,25 @@
+round 0: records=1600 lost=209 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 1: records=1600 lost=162 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 2: records=1600 lost=215 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 3: records=1600 lost=177 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 4: records=1600 lost=165 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 5: records=1600 lost=211 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 6: records=1600 lost=206 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 7: records=1600 lost=154 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 8: records=1600 lost=258 torn_lines=1 dup=0 phantom=0 real_reader=ok first_torn='{{"pad": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+round 9: records=1600 lost=171 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 10: records=1600 lost=153 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 11: records=1600 lost=213 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 12: records=1600 lost=180 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 13: records=1600 lost=219 torn_lines=1 dup=0 phantom=0 real_reader=ok first_torn='{{"pad": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+round 14: records=1600 lost=218 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 15: records=1600 lost=163 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 16: records=1600 lost=203 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 17: records=1600 lost=195 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 18: records=1600 lost=187 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 19: records=1600 lost=173 torn_lines=0 dup=0 phantom=0 real_reader=ok
+SUMMARY store=agentfiles procs=8 records/proc=200 pad=200 rounds=20 elapsed=16.4s
+  rounds with any defect: 20/20 (100.0%)
+  records lost: 3832/32000 (12.0%); torn lines: 2; duplicates: 0; phantom records: 0
+  rounds where the real reader raised: 0/20 (0.0%)
+  temp dir: C:\WINDOWS\TEMP\semgate-formal-lwjg_jdq

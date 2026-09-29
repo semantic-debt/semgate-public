@@ -1,0 +1,42 @@
+{
+  "schema": "semgate-host-manifest/1",
+  "host": "opencode-v1",
+  "display": "OpenCode V1",
+  "measured": {
+    "version": "1.18.31",
+    "by": "hookconf 0.1.0 @ ef229df, results/opencode-v1-1.18.31.json (Windows 11, 2026-09-23)"
+  },
+  "conformance": {
+    "core": "none",
+    "levels": {
+      "L0": "not met: O2 fail (12 of 13 events lack fields)",
+      "L1": "met",
+      "L2": "not met: A2 unsupported (tool.execute.before has no ask)",
+      "L3": "not met: P1 fail (permission.ask never fired headless)",
+      "L4": "not met: M3 fail (no agent id in subagent events)"
+    },
+    "hardening_gaps": ["A5 hook config editable by the agent", "M4 no schema version"]
+  },
+  "capabilities": {
+    "C1": {"status": "yes", "verified": true, "source": "hookconf opencode-v1-1.18.31.json: B1, B2, B3, B4 pass (tool.execute.before throws)"},
+    "C2": {"status": "no", "verified": true, "source": "hookconf opencode-v1-1.18.31.json: A2 unsupported; survey [OC] #7006"},
+    "C2b": {"status": "no", "verified": true, "source": "hookconf opencode-v1-1.18.31.json: A2b unsupported (ba26c03): tool.execute.before has no ask value"},
+    "C3": {"status": "no", "verified": true, "source": "hookconf opencode-v1-1.18.31.json: P1 fail"},
+    "C6": {"status": "partial", "verified": true, "source": "hookconf opencode-v1-1.18.31.json: B2 pass (deny under --auto); no ask, no allow"},
+    "C8": {"status": "yes", "verified": true, "source": "hookconf opencode-v1-1.18.31.json: A3 pass"},
+    "C10": {"status": "partial", "verified": true, "source": "hookconf opencode-v1-1.18.31.json: O2 fail (turn id missing); sessionID and callID present"},
+    "C11": {"status": "yes", "verified": true, "source": "hookconf opencode-v1-1.18.31.json: A4, O3 pass (client.session.messages)"},
+    "C12": {"status": "unknown", "verified": false, "source": "not measured", "note": "semgate reads info.modelID from the messages the plugin sends, when present"},
+    "C14": {"status": "yes", "verified": true, "source": "hookconf opencode-v1-1.18.31.json: M1 pass (tool.execute.after output.output)"},
+    "C17": {"status": "partial", "verified": true, "source": "hookconf opencode-v1-1.18.31.json: O4 pass, M3 fail (no agent_id / parent id)"},
+    "C19": {"status": "yes", "verified": true, "source": "hookconf opencode-v1-1.18.31.json: B5 pass (a throwing plugin blocks)", "note": "a plugin that hangs stalls the call (no host timeout); semgate's plugin has its own 20 s timeout that refuses"},
+    "C21": {"status": "no", "verified": true, "source": "hookconf opencode-v1-1.18.31.json: A5 fail; A6 pass"},
+    "C26": {"status": "no", "verified": true, "source": "hookconf opencode-v1-1.18.31.json: M4 fail"},
+    "C33": {"status": "yes", "verified": true, "source": "hookconf opencode-v1-1.18.31.json: M1 pass (tool.execute.after output.output is the text the model sees)", "note": "semgate's plugin appends the notice to output.output; it waits up to 2 s for serve's answer (the append itself not measured live)"},
+    "C34": {"status": "unknown", "verified": false, "source": "not implemented: semgate's plugin has no end-of-turn hook"},
+    "C35": {"status": "yes", "verified": false, "source": "client.session.messages() (hookconf opencode-v1-1.18.31.json A4, O3 pass): info.id, info.role, info.time.created (epoch ms), tool parts with callID; semgate orders by the id of the latest user message at the block, the blocked callID and info.time.created", "note": "the plugin sends the last 30 messages; when neither id is in them, no approval (fail closed); the time and id fields are not measured separately"}
+  },
+  "notes": [
+    "semgate's plugin (~/.config/opencode/plugins/semgate.js) refuses every semgate ask with the reason: OpenCode has no plugin ask."
+  ]
+}

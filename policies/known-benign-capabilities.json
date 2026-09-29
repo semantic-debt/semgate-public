@@ -1,0 +1,5 @@
+{
+  "schema": "semgate-known-benign-capabilities/1",
+  "capabilities": [],
+  "reason": "The frozen benchmark contains no owner-issued, exact action+target+scope capabilities. Safe labels are evaluation truth, not authority and cannot be converted into allow rules."
+}

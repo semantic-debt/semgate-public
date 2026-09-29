@@ -1,0 +1,127 @@
+﻿MC_Semgate__code__LedgerOneLine                                holds                trace=None back=None states=587797 depth=45 11.9s
+MC_Semgate__code_timeout_crash_2p__LedgerOneLine               holds                trace=None back=None states=203698 depth=31 3.4s
+MC_Semgate__code_timeout_crash_2p__FailClosed                  holds                trace=None back=None states=203698 depth=31 3.5s
+MC_Semgate__code_2p__ApprovalExact                             holds                trace=None back=None states=175666 depth=32 3.9s
+MC_Semgate__code_2p__ApprovalSessionScoped                     holds                trace=None back=None states=175666 depth=32 3.6s
+MC_Semgate__code_2p__ApprovalUnexpired                         holds                trace=None back=None states=175666 depth=32 3.9s
+MC_Semgate__M_key_tool_2p__ApprovalScoped                      violated             trace=10 back=None states=414 depth=12 1.2s
+MC_Semgate__M_key_tool_2p__ApprovalExact                       violated             trace=8 back=None states=485 depth=12 1.2s
+MC_Semgate__M_key_tool_2p__ApprovalSessionScoped               violated             trace=9 back=None states=483 depth=12 1.1s
+MC_Semgate__M_key_tool_2p__ApprovalUnexpired                   violated             trace=9 back=None states=1356 depth=12 1.3s
+MC_Semgate__M_key_nosession_2p__ApprovalScoped                 violated             trace=9 back=None states=759 depth=13 1.4s
+MC_Semgate__M_key_nosession_2p__ApprovalExact                  holds                trace=None back=None states=192866 depth=32 4.2s
+MC_Semgate__M_key_nosession_2p__ApprovalSessionScoped          violated             trace=8 back=None states=693 depth=13 1.1s
+MC_Semgate__M_key_nosession_2p__ApprovalUnexpired              holds                trace=None back=None states=192866 depth=32 3.9s
+MC_Semgate__M_key_noproject_2p__ApprovalScoped                 violated             trace=8 back=None states=599 depth=13 1.1s
+MC_Semgate__M_key_noproject_2p__ApprovalExact                  holds                trace=None back=None states=192866 depth=32 4.0s
+MC_Semgate__M_key_noproject_2p__ApprovalSessionScoped          violated             trace=8 back=None states=642 depth=13 1.2s
+MC_Semgate__M_key_noproject_2p__ApprovalUnexpired              holds                trace=None back=None states=192866 depth=32 3.5s
+MC_Semgate__M_legacy_ok_2p__ApprovalScoped                     violated             trace=8 back=None states=821 depth=13 1.1s
+MC_Semgate__M_legacy_ok_2p__ApprovalExact                      violated             trace=8 back=None states=641 depth=14 1.2s
+MC_Semgate__M_legacy_ok_2p__ApprovalSessionScoped              violated             trace=9 back=None states=834 depth=13 1.4s
+MC_Semgate__M_legacy_ok_2p__ApprovalUnexpired                  holds                trace=None back=None states=215522 depth=32 4.1s
+MC_Semgate__M_noexpiry_2p__ApprovalScoped                      violated             trace=9 back=None states=1111 depth=13 1.4s
+MC_Semgate__M_noexpiry_2p__ApprovalExact                       holds                trace=None back=None states=169862 depth=32 13.5s
+MC_Semgate__M_noexpiry_2p__ApprovalSessionScoped               holds                trace=None back=None states=169862 depth=32 7.7s
+MC_Semgate__M_noexpiry_2p__ApprovalUnexpired                   violated             trace=9 back=None states=1707 depth=11 1.3s
+MC_Semgate__old_2p__ApprovalScoped                             violated             trace=4 back=None states=486 depth=8 1.4s
+MC_Semgate__old_2p__ApprovalSessionScoped                      violated             trace=4 back=None states=782 depth=9 1.4s
+MC_Semgate__old_2p__ApprovalUnexpired                          violated             trace=5 back=None states=2494 depth=11 1.8s
+MC_Semgate__old_2p__ApprovalExact                              violated             trace=4 back=None states=861 depth=9 1.5s
+MC_Semgate__code_2p__K1_NoApprovalUsed                         violated             trace=8 back=None states=631 depth=13 1.1s
+MC_Semgate__code__K2_NoLearnedAllow                            violated             trace=30 back=None states=74654 depth=30 2.8s
+MC_Semgate__code__K3_NoReturn                                  violated             trace=10 back=None states=491 depth=12 1.1s
+MC_Semgate__code_2p__ApprovalOnce                              violated             trace=4 back=None states=2208 depth=12 1.4s
+MC_Semgate__old__K4_NoTornLine                                 violated             trace=12 back=None states=3451 depth=12 1.7s
+MC_Semgate__old__K5_NoLostRecord                               violated             trace=14 back=None states=17000 depth=14 2.6s
+MC_Semgate__code_timeout__K10_NoLockTimeout                    violated             trace=4 back=None states=68 depth=7 1.3s
+MC_Semgate__code_timeout__K11_NoFailClosed                     violated             trace=23 back=None states=1064848 depth=23 62.7s
+MC_Semgate__code__HistoryRecoversFinal                         holds                trace=None back=None states=587797 depth=45 39.7s
+MC_Semgate__old__HistoryRecoversFinal                          violated             trace=21 back=None states=596919 depth=21 35.0s
+MC_Semgate__M_raise_nolock__HistoryRecoversFinal               violated             trace=21 back=None states=424736 depth=21 6.5s
+MC_Semgate__code_2p__Termination                               holds                trace=None back=None states=6725 depth=31 6.2s
+MC_Semgate__code_crash_2p__Termination                         holds                trace=None back=None states=37039 depth=31 14.1s
+MC_Semgate__code_timeout_2p__Termination                       holds                trace=None back=None states=44019 depth=31 22.1s
+MC_Semgate__code_timeout_crash_2p__Termination                 holds                trace=None back=None states=191059 depth=31 246.4s
+MC_Semgate__M_lockfile_crash_2p__Termination                   violated (deadlock)  trace=6 back=None states=134 depth=10 1.6s
+MC_Semgate__old_2p__Termination                                holds                trace=None back=None states=13751 depth=19 10.5s
+MC_Semgate__code_2p__HistoryRecovers                           holds                trace=None back=None states=6725 depth=31 6.6s
+MC_Semgate__old_2p__HistoryRecovers                            violated (liveness)  trace=17 back=None states=5011 depth=None 4.2s
+MC_Semgate__M_raise_nolock_2p__HistoryRecovers                 violated (liveness)  trace=17 back=None states=4710 depth=None 4.2s
+MC_Semgate__code_2p_nofair__Termination                        violated (liveness)  trace=31 back=None states=6725 depth=None 1.6s
+MC_SemgateF6__old__EligibleSound                               holds                trace=None back=None states=6759 depth=19 1.1s
+MC_SemgateF6__old__RmRestorable                                violated             trace=11 back=None states=3756 depth=14 1.1s
+MC_SemgateF6__old__AgentContentOnly                            violated             trace=10 back=None states=4853 depth=15 1.1s
+MC_SemgateF6__old__SnapshotRaceNoLoss                          violated             trace=16 back=None states=6322 depth=17 1.1s
+MC_SemgateF6__old_posix__EligibleSound                         holds                trace=None back=None states=7002 depth=19 1.4s
+MC_SemgateF6__old_posix__RmRestorable                          violated             trace=12 back=None states=4163 depth=15 1.1s
+MC_SemgateF6__old_posix__AgentContentOnly                      violated             trace=10 back=None states=5052 depth=15 1.1s
+MC_SemgateF6__old_posix__SnapshotRaceNoLoss                    violated             trace=16 back=None states=6151 depth=17 1.2s
+MC_SemgateF6__M_trust__EligibleSound                           violated             trace=8 back=None states=3109 depth=15 1.4s
+MC_SemgateF6__M_trust__RmRestorable                            violated             trace=11 back=None states=2066 depth=12 1.1s
+MC_SemgateF6__M_trust__AgentContentOnly                        violated             trace=8 back=None states=1667 depth=12 1.3s
+MC_SemgateF6__M_trust__SnapshotRaceNoLoss                      holds                trace=None back=None states=3140 depth=15 1.3s
+MC_SemgateF6__M_nosnap__EligibleSound                          violated             trace=8 back=None states=2925 depth=13 1.4s
+MC_SemgateF6__M_nosnap__RmRestorable                           violated             trace=9 back=None states=2289 depth=12 1.3s
+MC_SemgateF6__M_nosnap__AgentContentOnly                       holds                trace=None back=None states=3160 depth=15 1.4s
+MC_SemgateF6__M_nosnap__SnapshotRaceNoLoss                     holds                trace=None back=None states=3160 depth=15 1.3s
+MC_SemgateF6__M_shared__EligibleSound                          violated             trace=7 back=None states=1834 depth=12 1.3s
+MC_SemgateF6__M_shared__RmRestorable                           violated             trace=9 back=None states=1884 depth=12 1.2s
+MC_SemgateF6__M_shared__AgentContentOnly                       holds                trace=None back=None states=3232 depth=15 1.2s
+MC_SemgateF6__M_shared__SnapshotRaceNoLoss                     holds                trace=None back=None states=3232 depth=15 1.2s
+MC_SemgateF6__M_tmp_collide__EligibleSound                     holds                trace=None back=None states=5538 depth=19 1.2s
+MC_SemgateF6__M_tmp_collide__RmRestorable                      violated             trace=11 back=None states=3432 depth=14 1.0s
+MC_SemgateF6__M_tmp_collide__AgentContentOnly                  holds                trace=None back=None states=5538 depth=19 1.3s
+MC_SemgateF6__M_tmp_collide__SnapshotRaceNoLoss                violated             trace=16 back=None states=5455 depth=18 1.3s
+MC_SemgateF6__M_postcode__EligibleSound                        holds                trace=None back=None states=3779 depth=15 1.2s
+MC_SemgateF6__M_postcode__RmRestorable                         violated             trace=9 back=None states=2257 depth=13 1.0s
+MC_SemgateF6__M_postcode__AgentContentOnly                     violated             trace=9 back=None states=3578 depth=15 1.1s
+MC_SemgateF6__M_postcode__SnapshotRaceNoLoss                   holds                trace=None back=None states=3779 depth=15 1.1s
+MC_SemgateF6__old__EditedStaysIneligible                       violated (liveness)  trace=20 back=None states=6759 depth=None 1.9s
+MC_SemgateF6__old_posix__EditedStaysIneligible                 violated (liveness)  trace=20 back=None states=7002 depth=None 2.1s
+MC_SemgateF6__M_trust__EditedStaysIneligible                   violated (liveness)  trace=16 back=None states=3140 depth=None 1.5s
+MC_SemgateF6__M_nosnap__EditedStaysIneligible                  holds                trace=None back=None states=3160 depth=15 1.6s
+MC_SemgateF6__M_shared__EditedStaysIneligible                  holds                trace=None back=None states=3232 depth=15 1.6s
+MC_SemgateF6__M_tmp_collide__EditedStaysIneligible             holds                trace=None back=None states=5538 depth=19 1.8s
+MC_SemgateF6__M_postcode__EditedStaysIneligible                violated (liveness)  trace=16 back=None states=3779 depth=None 1.7s
+SemgateServe__old__AnswerForRightId                            holds                trace=None back=None states=1399 depth=104 1.2s
+SemgateServe__old__NoLateAllow                                 holds                trace=None back=None states=1399 depth=105 1.1s
+SemgateServe__old__NoTimeoutWithinBudget                       violated             trace=12 back=None states=120 depth=39 1.0s
+SemgateServe__old_hang__AnswerForRightId                       holds                trace=None back=None states=2036 depth=118 1.1s
+SemgateServe__old_hang__NoLateAllow                            holds                trace=None back=None states=2036 depth=104 1.0s
+SemgateServe__old_hang__NoTimeoutWithinBudget                  violated             trace=10 back=None states=149 depth=23 1.0s
+SemgateServe__M_fifo__AnswerForRightId                         violated             trace=10 back=None states=1097 depth=31 1.1s
+SemgateServe__M_fifo__NoLateAllow                              holds                trace=None back=None states=3481 depth=50 1.3s
+SemgateServe__M_fifo__NoTimeoutWithinBudget                    violated             trace=9 back=None states=285 depth=20 1.1s
+SemgateServe__M_keepwaiter__AnswerForRightId                   holds                trace=None back=None states=3283 depth=55 1.2s
+SemgateServe__M_keepwaiter__NoLateAllow                        violated             trace=26 back=None states=2596 depth=40 1.2s
+SemgateServe__M_keepwaiter__NoTimeoutWithinBudget              violated             trace=11 back=None states=214 depth=21 1.0s
+SemgateServe__M_notimeout_hang__AnswerForRightId               holds                trace=None back=None states=126 depth=30 1.0s
+SemgateServe__M_notimeout_hang__NoLateAllow                    holds                trace=None back=None states=126 depth=33 1.1s
+SemgateServe__M_notimeout_hang__NoTimeoutWithinBudget          holds                trace=None back=None states=126 depth=30 1.1s
+SemgateServe__M_one_worker__AnswerForRightId                   holds                trace=None back=None states=1309 depth=70 1.0s
+SemgateServe__M_one_worker__NoLateAllow                        holds                trace=None back=None states=1309 depth=70 1.0s
+SemgateServe__M_one_worker__NoTimeoutWithinBudget              violated             trace=12 back=None states=120 depth=39 1.1s
+SemgateServe__M_nocancel_hang__AnswerForRightId                holds                trace=None back=None states=755 depth=36 1.0s
+SemgateServe__M_nocancel_hang__NoLateAllow                     holds                trace=None back=None states=755 depth=36 1.0s
+SemgateServe__M_nocancel_hang__NoTimeoutWithinBudget           violated             trace=11 back=None states=214 depth=21 1.0s
+SemgateServe__M_norestart_hang__AnswerForRightId               holds                trace=None back=None states=755 depth=37 1.1s
+SemgateServe__M_norestart_hang__NoLateAllow                    holds                trace=None back=None states=755 depth=36 1.0s
+SemgateServe__M_norestart_hang__NoTimeoutWithinBudget          violated             trace=11 back=None states=207 depth=21 1.1s
+SemgateServe__old__EveryRequestResolved                        holds                trace=None back=None states=1399 depth=103 1.6s
+SemgateServe__old__ServeReturnsIdle                            violated (liveness)  trace=41 back=14 states=1399 depth=None 1.2s
+SemgateServe__old_hang__EveryRequestResolved                   holds                trace=None back=None states=2036 depth=103 1.6s
+SemgateServe__old_hang__ServeReturnsIdle                       violated (liveness)  trace=22 back=None states=2036 depth=None 1.5s
+SemgateServe__M_fifo__EveryRequestResolved                     holds                trace=None back=None states=3481 depth=50 2.0s
+SemgateServe__M_fifo__ServeReturnsIdle                         violated (liveness)  trace=25 back=None states=3481 depth=None 1.5s
+SemgateServe__M_keepwaiter__EveryRequestResolved               holds                trace=None back=None states=3283 depth=55 2.0s
+SemgateServe__M_keepwaiter__ServeReturnsIdle                   holds                trace=None back=None states=3283 depth=55 1.5s
+SemgateServe__M_notimeout_hang__EveryRequestResolved           violated (liveness)  trace=6 back=None states=126 depth=None 1.1s
+SemgateServe__M_notimeout_hang__ServeReturnsIdle               violated (liveness)  trace=10 back=None states=126 depth=None 1.0s
+SemgateServe__M_one_worker__EveryRequestResolved               holds                trace=None back=None states=1309 depth=71 1.7s
+SemgateServe__M_one_worker__ServeReturnsIdle                   violated (liveness)  trace=41 back=14 states=1309 depth=None 1.4s
+SemgateServe__M_nocancel_hang__EveryRequestResolved            holds                trace=None back=None states=755 depth=36 1.5s
+SemgateServe__M_nocancel_hang__ServeReturnsIdle                violated (liveness)  trace=25 back=None states=755 depth=None 1.1s
+SemgateServe__M_norestart_hang__EveryRequestResolved           holds                trace=None back=None states=755 depth=36 1.6s
+SemgateServe__M_norestart_hang__ServeReturnsIdle               violated (liveness)  trace=23 back=None states=755 depth=None 1.1s
+SemgateServe__code_hang_nofair__EveryRequestResolved           violated (liveness)  trace=11 back=None states=3013 depth=None 1.4s

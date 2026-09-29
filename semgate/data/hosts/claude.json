@@ -1,0 +1,43 @@
+{
+  "schema": "semgate-host-manifest/1",
+  "host": "claude",
+  "display": "Claude Code",
+  "measured": {
+    "version": "2.1.280",
+    "by": "hookconf 0.1.0 @ 3517a57, results/claude-code-2.1.280.json (Windows 11, 2026-09-23)"
+  },
+  "conformance": {
+    "core": "L4*",
+    "levels": {
+      "L0": "met",
+      "L1": "met",
+      "L2": "met* (A1 untested)",
+      "L3": "met* (P2, P3 untested)",
+      "L4": "met"
+    },
+    "hardening_gaps": ["B5 no fail-closed", "B6 silent hook failure", "A6 hooks reload mid-session", "M4 no schema version"]
+  },
+  "capabilities": {
+    "C1": {"status": "yes", "verified": true, "source": "hookconf claude-code-2.1.280.json: B1, B2, B3, B4 pass"},
+    "C2": {"status": "yes", "verified": true, "source": "hookconf claude-code-2.1.280.json: A2 pass (headless ask = deny + reason); A1 (interactive prompt) not tested; https://code.claude.com/docs/en/hooks"},
+    "C2b": {"status": "yes", "verified": true, "source": "hookconf claude-code-2.1.280.json: A2b pass (hookconf ba26c03, 2026-09-23): under --dangerously-skip-permissions and under permissions.defaultMode bypassPermissions a headless ask was a deny with the reason, the canary did not run"},
+    "C3": {"status": "yes", "verified": true, "source": "hookconf claude-code-2.1.280.json: P1 pass (PermissionRequest allow honored headless)"},
+    "C6": {"status": "yes", "verified": true, "source": "hookconf claude-code-2.1.280.json: A2, B2, P1 pass"},
+    "C8": {"status": "yes", "verified": true, "source": "hookconf claude-code-2.1.280.json: A3 pass", "note": "MCP argument values not tested"},
+    "C10": {"status": "yes", "verified": true, "source": "hookconf claude-code-2.1.280.json: O1, O2 pass (session_id, prompt_id, tool_use_id)"},
+    "C11": {"status": "yes", "verified": true, "source": "hookconf claude-code-2.1.280.json: A4, O3 pass (transcript_path readable)"},
+    "C12": {"status": "partial", "verified": true, "source": "hookconf claude-code-2.1.280.json probe keys: no model field in PreToolUse", "note": "semgate reads the model id from the transcript (assistant message.model)"},
+    "C14": {"status": "yes", "verified": true, "source": "hookconf claude-code-2.1.280.json: M1 pass (updatedToolOutput)"},
+    "C17": {"status": "yes", "verified": true, "source": "hookconf claude-code-2.1.280.json: O4, M3 pass (agent_id, parent session id, deny honored)"},
+    "C19": {"status": "no", "verified": true, "source": "hookconf claude-code-2.1.280.json: B5 unsupported, B6 fail (crash/hang/garbage ran silently)", "note": "semgate's hook turns its own errors into ask; a hook process that cannot start (missing interpreter) fails open"},
+    "C21": {"status": "partial", "verified": true, "source": "hookconf claude-code-2.1.280.json: A5 pass in default mode (edit and shell blocked), changed in bypass mode; A6 fail (hooks reload mid-session)"},
+    "C26": {"status": "no", "verified": true, "source": "hookconf claude-code-2.1.280.json: M4 fail"},
+    "C33": {"status": "yes", "verified": false, "source": "https://code.claude.com/docs/en/hooks: PostToolUse hookSpecificOutput.additionalContext (docs read 2026-09-23; not measured with hookconf)", "note": "semgate's PostToolUse hook returns the secret exposure notice there"},
+    "C34": {"status": "yes", "verified": false, "source": "https://code.claude.com/docs/en/hooks: top-level systemMessage is shown to the user; a Stop hook blocks only with decision block, which semgate never sends (docs read 2026-09-23)", "note": "semgate init claude installs a Stop hook (--event stop) for the secret exposure summary"},
+    "C35": {"status": "yes", "verified": false, "source": "Claude Code transcript JSONL: user entries carry timestamp and uuid; tool_use ids equal the PreToolUse tool_use_id (semgate read_transcript_context, verified on local transcripts 2026-09-23); semgate orders by the user-turn count at the block, the blocked call's id and the timestamp", "note": "used only when block_when_unsure turns an ask into a deny (Claude Code shows asks itself; in -p mode without block_when_unsure the host turns the ask into a deny and semgate cannot see it); not measured live end to end"}
+  },
+  "notes": [
+    "User-level file: ~/.claude/settings.json (hooks.PreToolUse / PostToolUse). VS Code agent mode and Devin CLI read the same file.",
+    "hookconf CI on Linux (Claude Code 2.1.278): A4 failed 2 of 2 runs, the transcript lacks the previous tool output at PreToolUse. semgate records outputs in its own PostToolUse hook (semgate.tooloutputs) and merges them at PreToolUse."
+  ]
+}

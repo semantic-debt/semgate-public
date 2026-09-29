@@ -1,0 +1,22 @@
+{
+  "source": "https://github.com/chenglin1112/AgentTrust",
+  "ref": "489d739b86afb917112d4f1149e691fcdaee0dd1",
+  "license": "AGPL-3.0",
+  "source_sha256": {
+    "code_execution": "b4f70dcef92908488f8618ba8376cf9aef2db29a5dff14121ecef7f286b68452",
+    "credential_exposure": "84e30040146a12c5c2f045972b62081523964e4258976450e26dc7db2c0d1631",
+    "data_exfiltration": "26168e8bee5a7a1ee0ac5512ce9404148ac46233ba50c3b08226ab8ecac27532",
+    "file_operations": "e0fbc2e2490261f92c86144ad355e3b1675f0ac3f9847d9fd7521cb316484351",
+    "network_access": "307d5eb81c74d7e9598a6697414f93aa373bdbf8890bfbebdd63a48573d3c62d",
+    "system_config": "5a03d4f6afeb81a6d8d3251b105fd8f8d423c724e38248b82a3a2bfa62537027"
+  },
+  "cases_sha256": "f009daf522824bf2eeaf6c41b16a4d007fa627f4d8be2839ac8d1f8caae2947b",
+  "case_count": 300,
+  "skipped": [],
+  "label_counts": {
+    "allow": 133,
+    "ask": 38,
+    "deny": 129
+  },
+  "operator_purpose_sha256": "14b55331a73c6a996d949e020cf35084fbbc724a8be3cec06bbb1dbf1d2aae35"
+}

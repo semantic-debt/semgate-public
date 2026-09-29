@@ -1,0 +1,36 @@
+{
+  "schema": "semgate-host-manifest/1",
+  "host": "antigravity",
+  "display": "Antigravity CLI (agy)",
+  "measured": {
+    "version": "1.2.8",
+    "by": "live manual tests 2026-09-22 (docs/agy-1.2.8-live.md); not the hookconf kit"
+  },
+  "conformance": {
+    "core": "not measured",
+    "levels": {},
+    "hardening_gaps": []
+  },
+  "capabilities": {
+    "C1": {"status": "yes", "verified": true, "source": "docs/agy-1.2.8-live.md T1: deny honored headless, plain and --dangerously-skip-permissions"},
+    "C2": {"status": "yes", "verified": false, "source": "docs/harness-hooks-survey.md agy row [MEM live]: ask works interactive"},
+    "C2b": {"status": "no", "verified": false, "source": "live tests, agy 1.2.10 (2026-09-24) and 1.2.11 (2026-09-29): a hook force_ask under --dangerously-skip-permissions ran the command with no prompt. agy --help documents the flag as \"Auto-approve all tool permission requests without prompting\". semgate/antigravity_hook.py YOLO guard", "note": "not measured with the hookconf kit"},
+    "C3": {"status": "partial", "verified": true, "source": "docs/agy-1.2.8-live.md: allow ignored headless without an exact grant (#1053)"},
+    "C6": {"status": "partial", "verified": true, "source": "docs/agy-1.2.8-live.md: deny honored headless, allow not (#1053)"},
+    "C8": {"status": "yes", "verified": true, "source": "docs/agy-1.2.8-live.md: toolCall.args present"},
+    "C10": {"status": "yes", "verified": true, "source": "docs/agy-1.2.8-live.md: conversationId, stepIdx"},
+    "C11": {"status": "yes", "verified": true, "source": "docs/agy-1.2.8-live.md: transcriptPath (transcript_full.jsonl)"},
+    "C12": {"status": "yes", "verified": true, "source": "docs/agy-1.2.8-live.md: modelName in PreToolUse"},
+    "C14": {"status": "unknown", "verified": false, "source": "not measured"},
+    "C17": {"status": "unknown", "verified": false, "source": "not measured"},
+    "C19": {"status": "unknown", "verified": false, "source": "not measured"},
+    "C21": {"status": "unknown", "verified": false, "source": "not measured"},
+    "C26": {"status": "no", "verified": true, "source": "docs/agy-1.2.8-live.md: event fields have no schema version"},
+    "C33": {"status": "no", "verified": true, "source": "docs/agy-1.2.8-live.md and semgate/antigravity_post_hook.py: the PostToolUse payload has only conversationId, stepIdx, error (no tool output), and its output must be {}"},
+    "C34": {"status": "unknown", "verified": false, "source": "not measured"},
+    "C35": {"status": "yes", "verified": false, "source": "local agy 1.2.x transcripts (seen 2026-09-15/22): USER_INPUT steps carry source USER_EXPLICIT, created_at (ISO, 1 s) and step_index; semgate orders by the user-turn count at the block plus created_at", "note": "used only when block_when_unsure turns an ask into a deny (agy shows asks itself); agy headless ignores a hook allow (#1053), so an approved retry runs only where agy honors allow; not measured live end to end"}
+  },
+  "notes": [
+    "Hooks must be user level (~/.gemini/config/hooks.json); agy 1.2.8 does not load project .agents/hooks.json."
+  ]
+}

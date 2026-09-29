@@ -1,0 +1,46 @@
+name: release
+
+# Publishes to PyPI when a version tag (v0.4.0, v0.5.1, ...) is pushed.
+# Uses PyPI Trusted Publishing (OIDC): no API token is stored anywhere.
+# One-time setup on pypi.org: add a "pending publisher" for project
+# 'semgate' -> owner th3nolo, repo semgate, workflow release.yml,
+# environment pypi.
+
+on:
+  push:
+    tags: ["v*"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1 (released 2026-07-20)
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0 (released 2026-07-20)
+        with:
+          python-version: "3.12"
+      - run: python -m pip install "build==1.6.1" "twine==7.0.0"
+      # the tag must match the version: pyproject.toml has dynamic = ["version"]
+      # (no [project] version key), read from semgate.__version__
+      - run: |
+          v=$(python -c "import re;print(re.search(r'^__version__ = \"([^\"]+)\"', open('semgate/__init__.py', encoding='utf-8').read(), re.M).group(1))")
+          test "v$v" = "${{ github.ref_name }}" || { echo "tag ${{ github.ref_name }} != version v$v"; exit 1; }
+      - run: python -m pip install -e ".[dev]" && python -m pytest -q tests
+      - run: python -m build
+      - run: python -m twine check dist/*
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1 (released 2026-04-10)
+        with:
+          name: dist
+          path: dist/
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1 (released 2026-03-11)
+        with:
+          name: dist
+          path: dist/
+      - uses: pypa/gh-action-pypi-publish@dc37677b2e1c63e2034f94d8a5b11f265b73ba33 # v1.14.2 (released 2026-07-29)

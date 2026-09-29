@@ -1,0 +1,23 @@
+Round-4 review suite (tests/test_round4.py) run unchanged against v4.1.
+
+Result: 30 passed, 1 failed. All nine round-4 acceptance checks (R4-01 log-path
+alignment x2, R4-02 invalid-identity reconciliation x6, R4-03 whitespace
+credential) now pass. The single failure is
+test_characterize_evaluation_statuses_do_not_reach_report: a characterization
+of the O4-01 limitation that v4.1 intentionally fixes by adding
+shadow_evaluation_status_counts, so the three reports now differ by design.
+The three preflight readiness characterizations still pass because exit 0
+remains a readability gate; readiness detail moved to additive report fields.
+
+>       assert reports[0] == reports[1] == reports[2]
+E       AssertionError: assert {'summary': {...ciations': []} == {'summary': {...ciations': []}
+E         
+E         Omitting 2 identical items, use -vv to show
+E         Differing items:
+E         {'summary': {'shadow_schema_counts': {'semgate.gemini-shadow.v4': 2}, 'legacy_records_excluded': 0, 'shadow_proposals': 1, 'shadow_evaluations': 1, ...}} != {'summary': {'shadow_schema_counts': {'semgate.gemini-shadow.v4': 2}, 'legacy_records_excluded': 0, 'shadow_proposals': 1, 'shadow_evaluations': 1, ...}}
+E         Use -v to get more diff
+
+tests/test_round4.py:243: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_round4.py::test_characterize_evaluation_statuses_do_not_reach_report
+1 failed, 30 passed in 0.41s

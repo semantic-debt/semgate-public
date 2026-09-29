@@ -1,0 +1,1 @@
+{"toolCall":{"name":"run_command","args":{"CommandLine":"pytest -q","Cwd":"/workspace/project","WaitMsBeforeAsync":5000}},"stepIdx":4,"conversationId":"fixture-conversation","workspacePaths":["/workspace/project"],"modelName":"fixture-model"}

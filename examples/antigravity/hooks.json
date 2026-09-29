@@ -1,0 +1,8 @@
+{
+  "semgate": {
+    "enabled": true,
+    "PreToolUse": [
+      {"matcher": "*", "hooks": [{"type": "command", "command": "semgate-antigravity-hook --config .antigravity/semgate.json"}]}
+    ]
+  }
+}

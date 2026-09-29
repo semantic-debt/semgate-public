@@ -1,0 +1,29 @@
+TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)
+Running breadth-first search Model-Checking with fp 12 and seed 9047356237621764339 with 16 workers on 16 cores with 5461MB heap and 64MB offheap memory [pid: 28988] (Windows 11 10.0 amd64, Eclipse Adoptium 21.0.12.1 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file <repo>\formal\SemgateServe.tla
+Parsing file C:\WINDOWS\TEMP\Integers.tla
+Parsing file C:\WINDOWS\TEMP\Sequences.tla
+Parsing file C:\WINDOWS\TEMP\FiniteSets.tla
+Parsing file C:\WINDOWS\TEMP\TLC.tla
+Parsing file C:\WINDOWS\TEMP\Naturals.tla
+Semantic processing of module Naturals
+Semantic processing of module Integers
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module SemgateServe
+Starting... (2026-09-23 13:55:07)
+Implied-temporal checking--satisfiability problem has 1 branches.
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2026-09-23 13:55:07.
+Progress(32) at 2026-09-23 13:55:07: 181 states generated, 87 distinct states found, 0 states left on queue.
+Checking temporal properties for the complete state space with 87 total distinct states at (2026-09-23 13:55:07)
+Finished checking temporal properties in 00s at 2026-09-23 13:55:07
+Model checking completed. No error has been found.
+  Estimates of the probability that TLC did not check all reachable states
+  because two distinct states had the same fingerprint:
+  calculated (optimistic):  val = 4.4E-16
+181 states generated, 87 distinct states found, 0 states left on queue.
+The depth of the complete state graph search is 32.
+The average outdegree of the complete state graph is 1 (minimum is 0, the maximum 2 and the 95th percentile is 2).
+Finished in 00s at (2026-09-23 13:55:07)

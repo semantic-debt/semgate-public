@@ -1,0 +1,25 @@
+round 0: records=1600 lost=242 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 1: records=1600 lost=253 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 2: records=1600 lost=281 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 3: records=1600 lost=373 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 4: records=1600 lost=239 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 5: records=1600 lost=278 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 6: records=1600 lost=357 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 7: records=1600 lost=324 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 8: records=1600 lost=247 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 9: records=1600 lost=280 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 10: records=1600 lost=281 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 11: records=1600 lost=243 torn_lines=1 dup=0 phantom=0 real_reader=JSONDecodeError first_torn='{{"action_key": "3476b7bfffad4dbfcaf863408e47389033d7ab7132dbf7ee05c2dd92ffe4df6'
+round 12: records=1600 lost=259 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 13: records=1600 lost=325 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 14: records=1600 lost=312 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 15: records=1600 lost=362 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 16: records=1600 lost=320 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 17: records=1600 lost=276 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 18: records=1600 lost=278 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 19: records=1600 lost=304 torn_lines=0 dup=0 phantom=0 real_reader=ok
+SUMMARY store=history procs=8 records/proc=200 pad=200 rounds=20 elapsed=12.0s
+  rounds with any defect: 20/20 (100.0%)
+  records lost: 5834/32000 (18.2%); torn lines: 1; duplicates: 0; phantom records: 0
+  rounds where the real reader raised: 1/20 (5.0%)
+  temp dir: C:\WINDOWS\TEMP\semgate-formal-s78uttid

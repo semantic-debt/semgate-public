@@ -1,0 +1,69 @@
+{
+  "_comment": "Work kinds. Operator-authored; never let the agent write to this file. A session can cover SEVERAL kinds: each user message is checked with one yes/no per kind (cached per message), and the session covers every kind the user has asked for so far. The purpose Jev judges against = the 'authorized' text of every active kind + base_restrictions (+ a kind's own 'restricted' text only when it is the ONLY active kind, so 'review: no edits' never contradicts 'dev: edits'). When Jev would allow a command whose kind was not requested, the user is asked and told which kind of work it is. sensitive: true = a stricter bar for counting as requested. allowed_domains are ADDED to the grant for the session; a declared host with no secret involved is allowed at the rule layer, so keep them to hosts you own or trust.",
+  "base_restrictions": "reading or sending credentials or secrets, sending data off this machine except to hosts in allowed_domains, installing system-wide software, deleting or changing files outside the working folders, changing system configuration, or disabling this security hook",
+  "profiles": {
+    "software-development": {
+      "label": "Software development: reading, editing, building and testing code in a project; git; running the project's own tools.",
+      "authorized": "reading and searching files, running the project's tests, builds and development tools (pytest, npm, cargo, pip inside the project environment, the project's own CLI), git status/log/diff/add/commit, and creating or editing files inside the project folder",
+      "restricted": "",
+      "sensitive": false,
+      "allowed_domains": []
+    },
+    "automation": {
+      "label": "Automation: scripting or chaining local tools to process, move, rename or convert files and run repeatable steps on this machine.",
+      "authorized": "running local scripts and command-line tools on files in the working folders, chaining or scheduling steps, moving, renaming and converting files inside the working folders",
+      "restricted": "",
+      "sensitive": false,
+      "allowed_domains": []
+    },
+    "ml-experiments": {
+      "label": "Machine learning: training, fine-tuning, evaluating or running models (recognition, classification, embeddings); notebooks; datasets; GPU tools.",
+      "authorized": "running notebooks and training or evaluation scripts, using GPU and ML tooling, downloading public model weights and datasets from hosts in allowed_domains, writing checkpoints, logs and results inside the working folders",
+      "restricted": "uploading data or models off this machine",
+      "sensitive": false,
+      "allowed_domains": []
+    },
+    "document-processing": {
+      "label": "Documents: OCR, translation, text extraction, classification, sorting or renaming of documents, images of documents, spreadsheets.",
+      "authorized": "OCR, translation, extraction, classification, sorting and renaming of documents, scanned images and spreadsheets in the working folders, with local tools or model APIs at hosts in allowed_domains, producing derived files inside the working folders",
+      "restricted": "deleting or overwriting the original documents",
+      "sensitive": false,
+      "allowed_domains": []
+    },
+    "media-understanding": {
+      "label": "Media: understanding or transcribing video, audio and images (captions, detection, summaries) with local tools or model APIs.",
+      "authorized": "analyzing, transcribing, captioning or summarizing video, audio and images in the working folders with local tools (ffmpeg, whisper, opencv and similar) or model APIs at hosts in allowed_domains, creating derived files inside the working folders",
+      "restricted": "deleting or overwriting the original media",
+      "sensitive": false,
+      "allowed_domains": []
+    },
+    "code-review": {
+      "label": "Code review or audit: reading and explaining code, finding bugs or security issues, writing a review. No changes to the code.",
+      "authorized": "reading and searching code, git log/diff/show/blame, running the existing tests and linters without changing files, writing review notes to a new file if the user asked for one",
+      "restricted": "editing, creating or deleting project files, committing or pushing",
+      "sensitive": false,
+      "allowed_domains": []
+    },
+    "data-analysis": {
+      "label": "Data analysis: querying databases, CSV or spreadsheet files, computing statistics, making plots, notebooks, and reports.",
+      "authorized": "reading data files, querying databases read-only (SELECT), running analysis scripts and notebooks, computing statistics, writing results, plots and reports inside the working folders",
+      "restricted": "writing to, altering or deleting from databases (INSERT, UPDATE, DELETE, DROP, ALTER), deleting or overwriting source data files",
+      "sensitive": false,
+      "allowed_domains": []
+    },
+    "web-research": {
+      "label": "Web research: searching the web, reading pages and documentation, comparing sources, summarizing findings.",
+      "authorized": "searching the web, fetching and reading web pages and documentation (read-only HTTP GET), writing notes and summaries inside the working folders",
+      "restricted": "downloading and running executables or scripts, posting, uploading or submitting forms, logging in to accounts",
+      "sensitive": false,
+      "allowed_domains": []
+    },
+    "devops": {
+      "label": "DevOps and deployment: ssh to servers, docker, kubernetes, terraform, cloud CLIs, CI configuration, deploying to staging or production.",
+      "authorized": "ssh and scp to the hosts in allowed_domains, docker and container commands, kubectl, terraform plan, cloud CLI read commands, editing CI and infrastructure files, deploying to the hosts in allowed_domains",
+      "restricted": "talking to hosts not in allowed_domains, destroying infrastructure (terraform destroy, kubectl delete of namespaces, dropping databases) without the user asking",
+      "sensitive": true,
+      "allowed_domains": []
+    }
+  }
+}

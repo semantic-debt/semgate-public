@@ -1,0 +1,12 @@
+{
+  "mode": "enforce",
+  "grant_file": ".antigravity/semgate/grant.json",
+  "policy_file": "policies/default_policy.json",
+  "provider": "typesafe",
+  "ledger_file": ".antigravity/semgate/ledger.jsonl",
+  "enforcement": {
+    "enabled": true,
+    "auto_allow_tools": ["read"],
+    "semantic_deny_response": "deny"
+  }
+}

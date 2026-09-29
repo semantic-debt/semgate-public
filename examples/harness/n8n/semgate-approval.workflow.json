@@ -1,0 +1,189 @@
+{
+  "name": "semgate: check a tool call, ask a human, approve, run",
+  "nodes": [
+    {
+      "id": "b1d0c001-0000-4000-8000-000000000001",
+      "name": "Start",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [0, 300],
+      "parameters": {}
+    },
+    {
+      "id": "b1d0c001-0000-4000-8000-000000000002",
+      "name": "Tool call",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [220, 300],
+      "notes": "The tool call your agent proposed, as a semgate-check/1 request. In a real workflow this comes from your AI Agent / tool step. user_messages must be what the person typed, never model output.",
+      "parameters": {
+        "jsCode": "return [{ json: {\n  tool: 'bash',\n  arguments: { command: 'git push origin main' },\n  session_id: 'n8n-' + $execution.id,\n  cwd: '/home/me/proj',\n  user_messages: ['commit my changes and push them'],\n  recent: [],\n  harness: 'n8n'\n} }];"
+      }
+    },
+    {
+      "id": "b1d0c001-0000-4000-8000-000000000003",
+      "name": "semgate check",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [440, 300],
+      "notes": "POST /v1/check with the CHECK token (Header Auth credential: name Authorization, value Bearer <check.token>). A failed request stops the workflow, so the tool never runs (fail closed).",
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8787/v1/check",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json) }}",
+        "options": {}
+      },
+      "credentials": {
+        "httpHeaderAuth": {"id": "REPLACE_WITH_YOUR_CREDENTIAL_ID", "name": "semgate check token"}
+      }
+    },
+    {
+      "id": "b1d0c001-0000-4000-8000-000000000004",
+      "name": "Allowed?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [660, 300],
+      "parameters": {
+        "conditions": {"string": [{"value1": "={{ $json.decision }}", "operation": "equal", "value2": "allow"}]}
+      }
+    },
+    {
+      "id": "b1d0c001-0000-4000-8000-000000000005",
+      "name": "Run tool",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [900, 120],
+      "notes": "Replace with the step that really runs the tool. Reached only on decision allow.",
+      "parameters": {}
+    },
+    {
+      "id": "b1d0c001-0000-4000-8000-000000000006",
+      "name": "Ask?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [900, 420],
+      "parameters": {
+        "conditions": {"string": [{"value1": "={{ $json.decision }}", "operation": "equal", "value2": "ask"}]}
+      }
+    },
+    {
+      "id": "b1d0c001-0000-4000-8000-000000000007",
+      "name": "Blocked: tell the model",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1140, 620],
+      "notes": "deny (or a no, or a re-check that is not allow): the tool does not run; give this text to the model as the tool result.",
+      "parameters": {
+        "jsCode": "return [{ json: { tool_result: 'semgate blocked this tool call (' + ($json.reason_code || $json.decision) + '): ' + ($json.reason || '') } }];"
+      }
+    },
+    {
+      "id": "b1d0c001-0000-4000-8000-000000000008",
+      "name": "Send approval request",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [1140, 320],
+      "notes": "Replace with Slack / email / Teams. Send the person semgate's reason ($json.reason) and the resume link ($execution.resumeUrl). The person POSTs {\"approved\": true or false, \"by\": \"<name>\"} to it (for example from a form or a button).",
+      "parameters": {}
+    },
+    {
+      "id": "b1d0c001-0000-4000-8000-000000000009",
+      "name": "Wait for approval",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [1360, 320],
+      "webhookId": "b1d0c001-0000-4000-8000-0000000000aa",
+      "notes": "Resumes when the person POSTs to $execution.resumeUrl. Turn on the node's Authentication so only the approver can resume. Set a time limit shorter than semgate's approval TTL (4 h).",
+      "parameters": {"resume": "webhook", "httpMethod": "POST", "options": {}}
+    },
+    {
+      "id": "b1d0c001-0000-4000-8000-00000000000a",
+      "name": "semgate approve",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1580, 320],
+      "notes": "HUMAN SIDE: POST /v1/approve with the APPROVE token (a second Header Auth credential, Bearer <approve.token>). The agent never gets this credential.",
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8787/v1/approve",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ approval_id: $('semgate check').item.json.approval_id, approved: $json.body.approved === true, by: String($json.body.by || 'n8n approver') }) }}",
+        "options": {}
+      },
+      "credentials": {
+        "httpHeaderAuth": {"id": "REPLACE_WITH_YOUR_CREDENTIAL_ID", "name": "semgate approve token"}
+      }
+    },
+    {
+      "id": "b1d0c001-0000-4000-8000-00000000000b",
+      "name": "semgate re-check",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1800, 320],
+      "notes": "The same request again: an approval applies once, to this exact action, in this session and project.",
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8787/v1/check",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($('Tool call').item.json) }}",
+        "options": {}
+      },
+      "credentials": {
+        "httpHeaderAuth": {"id": "REPLACE_WITH_YOUR_CREDENTIAL_ID", "name": "semgate check token"}
+      }
+    },
+    {
+      "id": "b1d0c001-0000-4000-8000-00000000000c",
+      "name": "Allowed now?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [2020, 320],
+      "parameters": {
+        "conditions": {"string": [{"value1": "={{ $json.decision }}", "operation": "equal", "value2": "allow"}]}
+      }
+    },
+    {
+      "id": "b1d0c001-0000-4000-8000-00000000000d",
+      "name": "Run tool (approved)",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [2240, 220],
+      "notes": "Replace with the step that really runs the tool.",
+      "parameters": {}
+    }
+  ],
+  "connections": {
+    "Start": {"main": [[{"node": "Tool call", "type": "main", "index": 0}]]},
+    "Tool call": {"main": [[{"node": "semgate check", "type": "main", "index": 0}]]},
+    "semgate check": {"main": [[{"node": "Allowed?", "type": "main", "index": 0}]]},
+    "Allowed?": {"main": [
+      [{"node": "Run tool", "type": "main", "index": 0}],
+      [{"node": "Ask?", "type": "main", "index": 0}]
+    ]},
+    "Ask?": {"main": [
+      [{"node": "Send approval request", "type": "main", "index": 0}],
+      [{"node": "Blocked: tell the model", "type": "main", "index": 0}]
+    ]},
+    "Send approval request": {"main": [[{"node": "Wait for approval", "type": "main", "index": 0}]]},
+    "Wait for approval": {"main": [[{"node": "semgate approve", "type": "main", "index": 0}]]},
+    "semgate approve": {"main": [[{"node": "semgate re-check", "type": "main", "index": 0}]]},
+    "semgate re-check": {"main": [[{"node": "Allowed now?", "type": "main", "index": 0}]]},
+    "Allowed now?": {"main": [
+      [{"node": "Run tool (approved)", "type": "main", "index": 0}],
+      [{"node": "Blocked: tell the model", "type": "main", "index": 0}]
+    ]}
+  },
+  "settings": {"executionOrder": "v1"},
+  "pinData": {},
+  "meta": {"templateCredsSetupCompleted": false}
+}

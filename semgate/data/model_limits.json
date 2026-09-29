@@ -1,0 +1,29 @@
+{
+  "schema": "semgate-model-limits/1",
+  "retrieved": "2026-09-23",
+  "bytes_per_token": 4,
+  "safety_factor": 4,
+  "note": "Max output tokens per response (synchronous API limit). expected_max_bytes = max_output_tokens x bytes_per_token x safety_factor. bytes_per_token 4 is the usual English/code average; the safety factor 4 covers dense text (runs of spaces or repeated characters can be 10+ bytes per token) and JSON escaping of the tool input (a newline becomes 2 bytes, a non-ASCII character up to 4). A model id matches an entry when it is equal to the id, or the id plus a date snapshot suffix (-20251101, -2026-04-23, @20251101), after removing a provider prefix (openai/, anthropic., us.), a -v1:0 suffix and a [1m] suffix. Any other model id has no expectation.",
+  "models": [
+    {"id": "claude-fable-5-1", "max_output_tokens": 128000, "source": "https://platform.claude.com/docs/en/about-claude/models/overview.md"},
+    {"id": "claude-mythos-5-1", "max_output_tokens": 128000, "source": "claude-api skill shared/models.md (cached 2026-06-24): Claude Mythos 5.1 128K"},
+    {"id": "claude-fable-5", "max_output_tokens": 128000, "source": "claude-api skill shared/models.md (cached 2026-06-24): Claude Fable 5 128K"},
+    {"id": "claude-mythos-5", "max_output_tokens": 128000, "source": "claude-api skill shared/models.md (cached 2026-06-24): Claude Mythos 5 128K"},
+    {"id": "claude-opus-5-5", "max_output_tokens": 128000, "source": "https://platform.claude.com/docs/en/about-claude/models/overview.md"},
+    {"id": "claude-opus-5", "max_output_tokens": 128000, "source": "claude-api skill shared/models.md (cached 2026-06-24): Claude Opus 5 128K"},
+    {"id": "claude-opus-4-8", "max_output_tokens": 128000, "source": "claude-api skill shared/models.md (cached 2026-06-24): Claude Opus 4.8 128K"},
+    {"id": "claude-opus-4-7", "max_output_tokens": 128000, "source": "claude-api skill shared/models.md (cached 2026-06-24): Claude Opus 4.7 128K"},
+    {"id": "claude-opus-4-6", "max_output_tokens": 128000, "source": "claude-api skill shared/models.md (cached 2026-06-24): Claude Opus 4.6 128K"},
+    {"id": "claude-opus-4-5", "max_output_tokens": 64000, "source": "https://platform.claude.com/docs/en/models/opus-4-5/overview"},
+    {"id": "claude-sonnet-5", "max_output_tokens": 128000, "source": "https://platform.claude.com/docs/en/about-claude/models/overview.md"},
+    {"id": "claude-sonnet-4-6", "max_output_tokens": 128000, "source": "claude-api skill shared/models.md (cached 2026-06-24): Claude Sonnet 4.6 128K"},
+    {"id": "claude-sonnet-4-5", "max_output_tokens": 64000, "source": "https://platform.claude.com/docs/en/models/sonnet-4-5/overview"},
+    {"id": "claude-haiku-4-5", "max_output_tokens": 64000, "source": "https://platform.claude.com/docs/en/about-claude/models/overview.md"},
+    {"id": "gpt-6-astra", "max_output_tokens": 128000, "source": "https://developers.openai.com/api/docs/models"},
+    {"id": "gpt-6-sol", "max_output_tokens": 128000, "source": "https://developers.openai.com/api/docs/models"},
+    {"id": "gpt-6-luna", "max_output_tokens": 128000, "source": "https://developers.openai.com/api/docs/models"},
+    {"id": "gpt-5.5", "max_output_tokens": 128000, "source": "https://developers.openai.com/api/docs/models/gpt-5.5"},
+    {"id": "gpt-5", "max_output_tokens": 128000, "source": "https://developers.openai.com/api/docs/models/gpt-5"},
+    {"id": "gemini-3.8-flash", "max_output_tokens": 65536, "source": "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash"}
+  ]
+}

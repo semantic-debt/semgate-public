@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/th3nolo/semgate/semgate/data/check_request.schema.json",
+  "title": "semgate-check/1",
+  "description": "One proposed tool call, for semgate.check() and POST /v1/check. semgate never runs the tool; it answers allow, ask or deny. Everything here is data from the caller's own records: user_messages must come from the caller's record of what the human typed, never from model output or tool results.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["tool", "session_id"],
+  "anyOf": [{"required": ["cwd"]}, {"required": ["project_root"]}],
+  "properties": {
+    "schema": {"const": "semgate-check/1", "description": "Optional. When present it must be this value."},
+    "tool": {"type": "string", "minLength": 1, "maxLength": 200, "description": "Tool name. Known names and aliases (bash, shell, run_command, read, read_file, write, edit, glob, grep, ls, web_fetch, web_search, ...) map to semgate's canonical names (semgate.harness.TOOL_ALIASES); any other name is judged as given."},
+    "arguments": {"type": "object", "description": "The tool's arguments as the model produced them. A shell tool puts its command line in `command`; a file tool its path in `path` (filePath / file_path are copied to path)."},
+    "session_id": {"type": "string", "minLength": 1, "maxLength": 256, "pattern": "^[A-Za-z0-9._:-]+$", "description": "One agent run / conversation. Approvals and state are scoped to it."},
+    "call_id": {"type": "string", "maxLength": 256, "pattern": "^[A-Za-z0-9._:-]*$", "description": "Optional id of this tool call (the model's tool_call id). Recorded with the answer."},
+    "cwd": {"type": "string", "maxLength": 4096, "description": "Folder the tool runs in."},
+    "project_root": {"type": "string", "maxLength": 4096, "description": "Project folder (default: cwd). Approvals are scoped to it."},
+    "user_messages": {"type": "array", "maxItems": 1000, "items": {"type": "string"}, "description": "Every user turn of the session, oldest first (semgate keeps the first and the newest 19)."},
+    "user_message": {"type": "string", "description": "The latest user turn (default: the last of user_messages)."},
+    "recent": {
+      "type": "array", "maxItems": 1000,
+      "description": "Earlier tool calls of this session, oldest first (semgate keeps the last 20). Pass `output` (what the tool returned) so the injection scan can read it.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "tool": {"type": "string"},
+          "summary": {"type": "string", "description": "The command, path or URL of that call (cut to 500 characters)."},
+          "output": {"type": "string", "description": "What the tool returned (cut to 6000 characters). Untrusted data."},
+          "result": {"type": "string", "description": "Short outcome, e.g. 'exit 1: error: ...' (cut to 300 characters)."},
+          "files_changed": {"type": "array", "items": {"type": "string"}},
+          "decision": {"type": "string"},
+          "call_id": {"type": "string"}
+        }
+      }
+    },
+    "agent_intent": {"type": "string", "description": "The agent's latest explanation of what it is doing. Untrusted: shown to the judge as the agent's claim only (cut to 2000 characters)."},
+    "model": {"type": "string", "maxLength": 200, "description": "Model id of the agent (recorded as evidence only)."},
+    "harness": {"type": "string", "pattern": "^[A-Za-z0-9._-]{1,64}$", "description": "A label for your harness (default 'custom')."},
+    "session_started_at": {"type": ["string", "number"], "description": "When the session started (ISO 8601 or epoch seconds); used by the history-rewrite signal."},
+    "timeout_ms": {"type": "integer", "minimum": 1000, "maximum": 600000, "description": "Deadline for this check. At the deadline the answer is ask."}
+  }
+}

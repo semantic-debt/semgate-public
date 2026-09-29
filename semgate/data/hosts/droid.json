@@ -1,0 +1,36 @@
+{
+  "schema": "semgate-host-manifest/1",
+  "host": "droid",
+  "display": "Factory Droid",
+  "measured": {
+    "version": "",
+    "by": "docs only: https://docs.factory.ai/reference/hooks-reference (docs/harness-hooks-survey.md, 2026-09-23)"
+  },
+  "conformance": {
+    "core": "not measured",
+    "levels": {},
+    "hardening_gaps": []
+  },
+  "capabilities": {
+    "C1": {"status": "yes", "verified": false, "source": "https://docs.factory.ai/reference/hooks-reference (survey [FD])"},
+    "C2": {"status": "yes", "verified": false, "source": "https://docs.factory.ai/reference/hooks-reference (survey [FD])"},
+    "C2b": {"status": "unknown", "verified": false, "source": "https://docs.factory.ai/reference/hooks-reference (survey [FD]) does not say what a hook ask does when Droid runs tools without its own prompts (auto-run or headless exec); not measured", "note": "unknown counts as not supported: init turns asks into blocks on Droid"},
+    "C3": {"status": "yes", "verified": false, "source": "survey [FD]: PreToolUse allow"},
+    "C6": {"status": "unknown", "verified": false, "source": "survey [FD]: ?"},
+    "C8": {"status": "yes", "verified": false, "source": "survey [FD]"},
+    "C10": {"status": "unknown", "verified": false, "source": "not in the survey"},
+    "C11": {"status": "yes", "verified": false, "source": "survey [FD]: transcript_path"},
+    "C12": {"status": "unknown", "verified": false, "source": "not measured"},
+    "C14": {"status": "no", "verified": false, "source": "survey [FD]: block adds feedback only"},
+    "C17": {"status": "partial", "verified": false, "source": "survey [FD]: SubagentStop, no id"},
+    "C19": {"status": "no", "verified": false, "source": "survey [FD]; memory: non-0/2 exit fails open"},
+    "C21": {"status": "unknown", "verified": false, "source": "not measured"},
+    "C26": {"status": "unknown", "verified": false, "source": "not measured"},
+    "C33": {"status": "yes", "verified": false, "source": "https://docs.factory.ai/reference/hooks-reference: PostToolUse hookSpecificOutput.additionalContext (docs read 2026-09-23)"},
+    "C34": {"status": "unknown", "verified": false, "source": "https://docs.factory.ai/reference/hooks-reference: Stop lists decision/reason only, no systemMessage", "note": "semgate init droid installs no Stop hook"},
+    "C35": {"status": "unknown", "verified": false, "source": "docs only; transcript format not measured"}
+  },
+  "notes": [
+    "Every cell is from docs, none measured. Hooks file: ~/.factory/hooks.json (events at the top level)."
+  ]
+}

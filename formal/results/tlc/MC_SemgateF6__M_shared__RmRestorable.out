@@ -1,0 +1,320 @@
+TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)
+Running breadth-first search Model-Checking with fp 126 and seed -3239065980227184629 with 16 workers on 16 cores with 5461MB heap and 64MB offheap memory [pid: 24352] (Windows 11 10.0 amd64, Eclipse Adoptium 21.0.12.1 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file <repo>\formal\MC_SemgateF6.tla
+Parsing file <repo>\formal\SemgateF6.tla
+Parsing file C:\WINDOWS\TEMP\Naturals.tla
+Parsing file C:\WINDOWS\TEMP\Sequences.tla
+Parsing file C:\WINDOWS\TEMP\FiniteSets.tla
+Parsing file C:\WINDOWS\TEMP\TLC.tla
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module SemgateF6
+Semantic processing of module MC_SemgateF6
+Starting... (2026-09-23 15:01:49)
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2026-09-23 15:01:49.
+Error: Invariant RmRestorable is violated.
+Error: The behavior up to this point is:
+State 1: <Initial predicate>
+/\ agentOk = FALSE
+/\ agentWrote = {}
+/\ delig = FALSE
+/\ eOk = FALSE
+/\ content = [x |-> "none", y |-> "none"]
+/\ tmp = ( <<"s1", "h1">> :> "absent" @@
+  <<"s1", "h2">> :> "absent" @@
+  <<"s2", "h1">> :> "absent" @@
+  <<"s2", "h2">> :> "absent" )
+/\ snap = ( <<"s1", "h1">> :> "absent" @@
+  <<"s1", "h2">> :> "absent" @@
+  <<"s2", "h1">> :> "absent" @@
+  <<"s2", "h2">> :> "absent" )
+/\ dpc = "idle"
+/\ userEdited = FALSE
+/\ snapW = ( <<"s1", "h1">> :> {} @@
+  <<"s1", "h2">> :> {} @@
+  <<"s2", "h1">> :> {} @@
+  <<"s2", "h2">> :> {} )
+/\ dsess = "none"
+/\ cleaned = FALSE
+/\ rmRan = FALSE
+/\ rmOk = TRUE
+/\ tmpOpen = ( <<"s1", "h1">> :> {} @@
+  <<"s1", "h2">> :> {} @@
+  <<"s2", "h1">> :> {} @@
+  <<"s2", "h2">> :> {} )
+/\ hsh = [a1 |-> "h1", a2 |-> "h1"]
+/\ existed = [a1 |-> FALSE, a2 |-> FALSE]
+/\ apc = [a1 |-> "pre", a2 |-> "pre"]
+/\ created = <<>>
+
+State 2: <AgentAct line 183, col 16 to line 183, col 110 of module SemgateF6>
+/\ agentOk = FALSE
+/\ agentWrote = {}
+/\ delig = FALSE
+/\ eOk = FALSE
+/\ content = [x |-> "none", y |-> "none"]
+/\ tmp = ( <<"s1", "h1">> :> "absent" @@
+  <<"s1", "h2">> :> "absent" @@
+  <<"s2", "h1">> :> "absent" @@
+  <<"s2", "h2">> :> "absent" )
+/\ snap = ( <<"s1", "h1">> :> "absent" @@
+  <<"s1", "h2">> :> "absent" @@
+  <<"s2", "h1">> :> "absent" @@
+  <<"s2", "h2">> :> "absent" )
+/\ dpc = "idle"
+/\ userEdited = FALSE
+/\ snapW = ( <<"s1", "h1">> :> {} @@
+  <<"s1", "h2">> :> {} @@
+  <<"s2", "h1">> :> {} @@
+  <<"s2", "h2">> :> {} )
+/\ dsess = "none"
+/\ cleaned = FALSE
+/\ rmRan = FALSE
+/\ rmOk = TRUE
+/\ tmpOpen = ( <<"s1", "h1">> :> {} @@
+  <<"s1", "h2">> :> {} @@
+  <<"s2", "h1">> :> {} @@
+  <<"s2", "h2">> :> {} )
+/\ hsh = [a1 |-> "h1", a2 |-> "h1"]
+/\ existed = [a1 |-> FALSE, a2 |-> FALSE]
+/\ apc = [a1 |-> "run", a2 |-> "pre"]
+/\ created = <<>>
+
+State 3: <AgentAct line 183, col 16 to line 183, col 110 of module SemgateF6>
+/\ agentOk = FALSE
+/\ agentWrote = {}
+/\ delig = FALSE
+/\ eOk = FALSE
+/\ content = [x |-> "none", y |-> "none"]
+/\ tmp = ( <<"s1", "h1">> :> "absent" @@
+  <<"s1", "h2">> :> "absent" @@
+  <<"s2", "h1">> :> "absent" @@
+  <<"s2", "h2">> :> "absent" )
+/\ snap = ( <<"s1", "h1">> :> "absent" @@
+  <<"s1", "h2">> :> "absent" @@
+  <<"s2", "h1">> :> "absent" @@
+  <<"s2", "h2">> :> "absent" )
+/\ dpc = "idle"
+/\ userEdited = FALSE
+/\ snapW = ( <<"s1", "h1">> :> {} @@
+  <<"s1", "h2">> :> {} @@
+  <<"s2", "h1">> :> {} @@
+  <<"s2", "h2">> :> {} )
+/\ dsess = "none"
+/\ cleaned = FALSE
+/\ rmRan = FALSE
+/\ rmOk = TRUE
+/\ tmpOpen = ( <<"s1", "h1">> :> {} @@
+  <<"s1", "h2">> :> {} @@
+  <<"s2", "h1">> :> {} @@
+  <<"s2", "h2">> :> {} )
+/\ hsh = [a1 |-> "h1", a2 |-> "h1"]
+/\ existed = [a1 |-> FALSE, a2 |-> FALSE]
+/\ apc = [a1 |-> "run", a2 |-> "run"]
+/\ created = <<>>
+
+State 4: <AgentAct line 183, col 16 to line 183, col 110 of module SemgateF6>
+/\ agentOk = FALSE
+/\ agentWrote = {<<"x", "h1">>}
+/\ delig = FALSE
+/\ eOk = FALSE
+/\ content = [x |-> "h1", y |-> "none"]
+/\ tmp = ( <<"s1", "h1">> :> "absent" @@
+  <<"s1", "h2">> :> "absent" @@
+  <<"s2", "h1">> :> "absent" @@
+  <<"s2", "h2">> :> "absent" )
+/\ snap = ( <<"s1", "h1">> :> "absent" @@
+  <<"s1", "h2">> :> "absent" @@
+  <<"s2", "h1">> :> "absent" @@
+  <<"s2", "h2">> :> "absent" )
+/\ dpc = "idle"
+/\ userEdited = FALSE
+/\ snapW = ( <<"s1", "h1">> :> {} @@
+  <<"s1", "h2">> :> {} @@
+  <<"s2", "h1">> :> {} @@
+  <<"s2", "h2">> :> {} )
+/\ dsess = "none"
+/\ cleaned = FALSE
+/\ rmRan = FALSE
+/\ rmOk = TRUE
+/\ tmpOpen = ( <<"s1", "h1">> :> {} @@
+  <<"s1", "h2">> :> {} @@
+  <<"s2", "h1">> :> {} @@
+  <<"s2", "h2">> :> {} )
+/\ hsh = [a1 |-> "h1", a2 |-> "h1"]
+/\ existed = [a1 |-> FALSE, a2 |-> FALSE]
+/\ apc = [a1 |-> "post", a2 |-> "run"]
+/\ created = <<>>
+
+State 5: <AgentAct line 183, col 16 to line 183, col 110 of module SemgateF6>
+/\ agentOk = FALSE
+/\ agentWrote = {<<"x", "h1">>}
+/\ delig = FALSE
+/\ eOk = FALSE
+/\ content = [x |-> "h1", y |-> "none"]
+/\ tmp = ( <<"s1", "h1">> :> "absent" @@
+  <<"s1", "h2">> :> "absent" @@
+  <<"s2", "h1">> :> "absent" @@
+  <<"s2", "h2">> :> "absent" )
+/\ snap = ( <<"s1", "h1">> :> "absent" @@
+  <<"s1", "h2">> :> "absent" @@
+  <<"s2", "h1">> :> "absent" @@
+  <<"s2", "h2">> :> "absent" )
+/\ dpc = "idle"
+/\ userEdited = FALSE
+/\ snapW = ( <<"s1", "h1">> :> {} @@
+  <<"s1", "h2">> :> {} @@
+  <<"s2", "h1">> :> {} @@
+  <<"s2", "h2">> :> {} )
+/\ dsess = "none"
+/\ cleaned = FALSE
+/\ rmRan = FALSE
+/\ rmOk = TRUE
+/\ tmpOpen = ( <<"s1", "h1">> :> {} @@
+  <<"s1", "h2">> :> {} @@
+  <<"s2", "h1">> :> {} @@
+  <<"s2", "h2">> :> {} )
+/\ hsh = [a1 |-> "h1", a2 |-> "h1"]
+/\ existed = [a1 |-> FALSE, a2 |-> FALSE]
+/\ apc = [a1 |-> "ucopy", a2 |-> "run"]
+/\ created = <<>>
+
+State 6: <AgentAct line 183, col 16 to line 183, col 110 of module SemgateF6>
+/\ agentOk = FALSE
+/\ agentWrote = {<<"x", "h1">>}
+/\ delig = FALSE
+/\ eOk = FALSE
+/\ content = [x |-> "h1", y |-> "none"]
+/\ tmp = ( <<"s1", "h1">> :> "absent" @@
+  <<"s1", "h2">> :> "absent" @@
+  <<"s2", "h1">> :> "absent" @@
+  <<"s2", "h2">> :> "absent" )
+/\ snap = ( <<"s1", "h1">> :> "complete" @@
+  <<"s1", "h2">> :> "absent" @@
+  <<"s2", "h1">> :> "absent" @@
+  <<"s2", "h2">> :> "absent" )
+/\ dpc = "idle"
+/\ userEdited = FALSE
+/\ snapW = ( <<"s1", "h1">> :> {} @@
+  <<"s1", "h2">> :> {} @@
+  <<"s2", "h1">> :> {} @@
+  <<"s2", "h2">> :> {} )
+/\ dsess = "none"
+/\ cleaned = FALSE
+/\ rmRan = FALSE
+/\ rmOk = TRUE
+/\ tmpOpen = ( <<"s1", "h1">> :> {} @@
+  <<"s1", "h2">> :> {} @@
+  <<"s2", "h1">> :> {} @@
+  <<"s2", "h2">> :> {} )
+/\ hsh = [a1 |-> "h1", a2 |-> "h1"]
+/\ existed = [a1 |-> FALSE, a2 |-> FALSE]
+/\ apc = [a1 |-> "verify", a2 |-> "run"]
+/\ created = <<>>
+
+State 7: <AgentAct line 183, col 16 to line 183, col 110 of module SemgateF6>
+/\ agentOk = FALSE
+/\ agentWrote = {<<"x", "h1">>}
+/\ delig = FALSE
+/\ eOk = FALSE
+/\ content = [x |-> "h1", y |-> "none"]
+/\ tmp = ( <<"s1", "h1">> :> "absent" @@
+  <<"s1", "h2">> :> "absent" @@
+  <<"s2", "h1">> :> "absent" @@
+  <<"s2", "h2">> :> "absent" )
+/\ snap = ( <<"s1", "h1">> :> "complete" @@
+  <<"s1", "h2">> :> "absent" @@
+  <<"s2", "h1">> :> "absent" @@
+  <<"s2", "h2">> :> "absent" )
+/\ dpc = "idle"
+/\ userEdited = FALSE
+/\ snapW = ( <<"s1", "h1">> :> {} @@
+  <<"s1", "h2">> :> {} @@
+  <<"s2", "h1">> :> {} @@
+  <<"s2", "h2">> :> {} )
+/\ dsess = "none"
+/\ cleaned = FALSE
+/\ rmRan = FALSE
+/\ rmOk = TRUE
+/\ tmpOpen = ( <<"s1", "h1">> :> {} @@
+  <<"s1", "h2">> :> {} @@
+  <<"s2", "h1">> :> {} @@
+  <<"s2", "h2">> :> {} )
+/\ hsh = [a1 |-> "h1", a2 |-> "h1"]
+/\ existed = [a1 |-> FALSE, a2 |-> FALSE]
+/\ apc = [a1 |-> "done", a2 |-> "run"]
+/\ created = <<[path |-> "x", sess |-> "s1", sha |-> "h1"]>>
+
+State 8: <Decide line 151, col 5 to line 158, col 129 of module SemgateF6>
+/\ agentOk = TRUE
+/\ agentWrote = {<<"x", "h1">>}
+/\ delig = TRUE
+/\ eOk = FALSE
+/\ content = [x |-> "h1", y |-> "none"]
+/\ tmp = ( <<"s1", "h1">> :> "absent" @@
+  <<"s1", "h2">> :> "absent" @@
+  <<"s2", "h1">> :> "absent" @@
+  <<"s2", "h2">> :> "absent" )
+/\ snap = ( <<"s1", "h1">> :> "complete" @@
+  <<"s1", "h2">> :> "absent" @@
+  <<"s2", "h1">> :> "absent" @@
+  <<"s2", "h2">> :> "absent" )
+/\ dpc = "decided"
+/\ userEdited = FALSE
+/\ snapW = ( <<"s1", "h1">> :> {} @@
+  <<"s1", "h2">> :> {} @@
+  <<"s2", "h1">> :> {} @@
+  <<"s2", "h2">> :> {} )
+/\ dsess = "s2"
+/\ cleaned = FALSE
+/\ rmRan = FALSE
+/\ rmOk = TRUE
+/\ tmpOpen = ( <<"s1", "h1">> :> {} @@
+  <<"s1", "h2">> :> {} @@
+  <<"s2", "h1">> :> {} @@
+  <<"s2", "h2">> :> {} )
+/\ hsh = [a1 |-> "h1", a2 |-> "h1"]
+/\ existed = [a1 |-> FALSE, a2 |-> FALSE]
+/\ apc = [a1 |-> "done", a2 |-> "run"]
+/\ created = <<[path |-> "x", sess |-> "s1", sha |-> "h1"]>>
+
+State 9: <RunRm line 161, col 5 to line 168, col 135 of module SemgateF6>
+/\ agentOk = TRUE
+/\ agentWrote = {<<"x", "h1">>}
+/\ delig = TRUE
+/\ eOk = FALSE
+/\ content = [x |-> "none", y |-> "none"]
+/\ tmp = ( <<"s1", "h1">> :> "absent" @@
+  <<"s1", "h2">> :> "absent" @@
+  <<"s2", "h1">> :> "absent" @@
+  <<"s2", "h2">> :> "absent" )
+/\ snap = ( <<"s1", "h1">> :> "complete" @@
+  <<"s1", "h2">> :> "absent" @@
+  <<"s2", "h1">> :> "absent" @@
+  <<"s2", "h2">> :> "absent" )
+/\ dpc = "done"
+/\ userEdited = FALSE
+/\ snapW = ( <<"s1", "h1">> :> {} @@
+  <<"s1", "h2">> :> {} @@
+  <<"s2", "h1">> :> {} @@
+  <<"s2", "h2">> :> {} )
+/\ dsess = "s2"
+/\ cleaned = FALSE
+/\ rmRan = TRUE
+/\ rmOk = FALSE
+/\ tmpOpen = ( <<"s1", "h1">> :> {} @@
+  <<"s1", "h2">> :> {} @@
+  <<"s2", "h1">> :> {} @@
+  <<"s2", "h2">> :> {} )
+/\ hsh = [a1 |-> "h1", a2 |-> "h1"]
+/\ existed = [a1 |-> FALSE, a2 |-> FALSE]
+/\ apc = [a1 |-> "done", a2 |-> "run"]
+/\ created = <<[path |-> "x", sess |-> "s1", sha |-> "h1"]>>
+
+4514 states generated, 1884 distinct states found, 624 states left on queue.
+The depth of the complete state graph search is 12.
+The average outdegree of the complete state graph is 2 (minimum is 0, the maximum 6 and the 95th percentile is 4).
+Finished in 00s at (2026-09-23 15:01:49)

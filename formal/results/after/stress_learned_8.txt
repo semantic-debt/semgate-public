@@ -1,0 +1,16 @@
+round 0: approved asks=384 counted=384 deny_counted=0 post raised=0 executed_unmatched=0 torn=0 final reader=ok
+round 1: approved asks=384 counted=384 deny_counted=0 post raised=0 executed_unmatched=0 torn=0 final reader=ok
+round 2: approved asks=384 counted=384 deny_counted=0 post raised=0 executed_unmatched=0 torn=0 final reader=ok
+round 3: approved asks=384 counted=384 deny_counted=0 post raised=0 executed_unmatched=0 torn=0 final reader=ok
+round 4: approved asks=384 counted=384 deny_counted=0 post raised=0 executed_unmatched=0 torn=0 final reader=ok
+round 5: approved asks=384 counted=384 deny_counted=0 post raised=0 executed_unmatched=0 torn=0 final reader=ok
+round 6: approved asks=384 counted=384 deny_counted=0 post raised=0 executed_unmatched=0 torn=0 final reader=ok
+round 7: approved asks=384 counted=384 deny_counted=0 post raised=0 executed_unmatched=0 torn=0 final reader=ok
+round 8: approved asks=384 counted=384 deny_counted=0 post raised=0 executed_unmatched=0 torn=0 final reader=ok
+round 9: approved asks=384 counted=384 deny_counted=0 post raised=0 executed_unmatched=0 torn=0 final reader=ok
+SUMMARY procs=8 steps/proc=60 rounds=10 elapsed=25.7s
+  approvals not counted (undercount, safe): 0/3840 (0.0%); overcount (unsafe): 0; denied command counted (unsafe): 0
+  post-hook joins that raised (executed record silently not written): 0/4800 (0.0%)
+  executed_unmatched records (pending record lost): 0; torn lines: 0
+  rounds where the final file makes every reader raise (learning off until the file is repaired): 0/10 (0.0%)
+  temp dir: C:\WINDOWS\TEMP\semgate-formal-learned-3uaf0c0y

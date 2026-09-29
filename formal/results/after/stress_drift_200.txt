@@ -1,0 +1,11 @@
+round 0: on_task values read=[0.3, 0.3, 0.3, 0.9] lost=0 mean=0.48 -> ask
+round 1: on_task values read=[0.3, 0.3, 0.3, 0.9] lost=0 mean=0.48 -> ask
+round 2: on_task values read=[0.3, 0.3, 0.3, 0.9] lost=0 mean=0.48 -> ask
+round 3: on_task values read=[0.3, 0.3, 0.3, 0.9] lost=0 mean=0.48 -> ask
+round 4: on_task values read=[0.3, 0.3, 0.3, 0.9] lost=0 mean=0.48 -> ask
+SUMMARY rounds=200 elapsed=72.7s
+  judgment lines lost (rounds where session_on_task returned: 200): 0/800 (0.0%)
+  rounds where session_on_task raised IncompleteWindow: 0/200 (0.0%)
+  ask: 200/200 (100.0%)
+  correct result every round: ask
+  temp dir: C:\WINDOWS\TEMP\semgate-formal-drift-5_gsj6kq

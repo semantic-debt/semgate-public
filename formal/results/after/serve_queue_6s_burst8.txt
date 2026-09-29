@@ -1,0 +1,12 @@
+request 1: serve answered 'allow' after   6.0 s -> the plugin uses: allow
+request 2: serve answered 'allow' after   6.0 s -> the plugin uses: allow
+request 3: serve answered 'allow' after   6.0 s -> the plugin uses: allow
+request 4: serve answered 'allow' after   6.0 s -> the plugin uses: allow
+request 5: serve answered 'allow' after  12.0 s -> the plugin uses: allow
+request 6: serve answered 'allow' after  12.0 s -> the plugin uses: allow
+request 7: serve answered 'allow' after  12.0 s -> the plugin uses: allow
+request 8: serve answered 'allow' after  12.0 s -> the plugin uses: allow
+serve exit code: 0
+ledger host_response lines for the burst: 8/8; ledger malformed lines: 0
+SUMMARY delay/model call=6.0s burst=8 hang=0: 0/8 requests past the 20 s plugin timeout; answers "ask" with timeout: 0; allows: 8
+temp dir: C:\WINDOWS\TEMP\semgate-formal-serve-li97_9gn

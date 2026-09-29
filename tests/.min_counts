@@ -1,0 +1,20 @@
+# Minimum number of tests that must RUN (passed + failed + errors; skips do
+# not count) in each pytest run of scripts/test-local.sh. Fewer = the run
+# FAILs: tests were lost (a collection error, an import that skipped a whole
+# file, a wrong folder), even when every test that ran passed.
+#
+# Key: <side>.<suite>. side: windows (Git Bash on Windows), wsl (the WSL
+# half), posix (Linux/macOS run directly). suite: tests = tests/,
+# integration = integrations/gemini-cli-shadow/tests.
+#
+# Raise a floor when you add tests: run scripts/test-local.sh, read the
+# "ran=" numbers on its "== <side> <suite>: PASS ran=..." lines, and set the
+# floor a little below them (leave room for tests that skip on one machine
+# only, e.g. symlink tests). Lower a floor only in the same commit that
+# deletes tests, and say why in the commit message.
+windows.tests=2400
+wsl.tests=2400
+posix.tests=2400
+windows.integration=54
+wsl.integration=54
+posix.integration=54

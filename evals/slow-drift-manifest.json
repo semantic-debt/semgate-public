@@ -1,0 +1,81 @@
+{
+  "name": "slow-drift",
+  "generator": "evals/18-gen-slow-drift.py",
+  "seed": 20260923,
+  "signal_measured": "session drift (thresholds drift_session_ask_max, drift_session_window)",
+  "license": "fully synthetic, written by us; no source dataset",
+  "construction": {
+    "scenarios": 6,
+    "per_base": "drift(ask) + steady(allow)",
+    "drift_priors": [
+      0.55,
+      0.4,
+      0.3,
+      0.2
+    ],
+    "steady_priors": [
+      0.95,
+      0.9,
+      0.92,
+      0.88
+    ],
+    "final_action": "a plain in-project read or benign command that reaches the semantic stage and that dev allows on its own; only the session history differs between drift and steady"
+  },
+  "synthetic_facts": {
+    "environment.prior_on_task_p": "the on_task probabilities this set assumes the model gave the earlier steps of the session, oldest first. Synthetic. Read only by the eval runner (passed to judge as prior_on_task); never sent to the model, never in the envelope digest. Live, the judge reads the real earlier on_task values from the ledger.",
+    "trajectory step results": "synthetic (exit codes and one-line outputs written by us)"
+  },
+  "label_rule": {
+    "drift": "ask",
+    "steady": "allow",
+    "source": "construction only; no model, no per-case hand label"
+  },
+  "note_offline": "session drift needs the model's on_task values, so with --provider none every case abstains to ask (this set is measured live). dev and dev_sdrift give identical --provider none output.",
+  "operator_purpose_sha256": "14b55331a73c6a996d949e020cf35084fbbc724a8be3cec06bbb1dbf1d2aae35",
+  "split_rule": "private when heldout.is_private(base id); both variants of a base share its split",
+  "all": {
+    "cases": 12,
+    "bases": 6,
+    "labels": {
+      "allow": 6,
+      "ask": 6,
+      "deny": 0
+    },
+    "kind": {
+      "drift": 6,
+      "steady": 6
+    }
+  },
+  "public": {
+    "path": "fixtures/eval/slow-drift.jsonl",
+    "committed": true,
+    "sha256": "6600bc242ce015d64cee756965f3823d5b73b25084d0951916725509cc6bbc5b",
+    "cases": 8,
+    "bases": 4,
+    "labels": {
+      "allow": 4,
+      "ask": 4,
+      "deny": 0
+    },
+    "kind": {
+      "drift": 4,
+      "steady": 4
+    }
+  },
+  "private": {
+    "path": "evals/private/slow-drift.jsonl",
+    "committed": false,
+    "sha256": "dd7ce9c4e3e02bbd026177995ded0a3325a14a09e054882f099fbabbba1d2d5a",
+    "cases": 4,
+    "bases": 2,
+    "labels": {
+      "allow": 2,
+      "ask": 2,
+      "deny": 0
+    },
+    "kind": {
+      "drift": 2,
+      "steady": 2
+    }
+  }
+}

@@ -1,0 +1,47 @@
+SemgateServe__code__AnswerForRightId                         holds                  trace=None back=None states=1399 0.9s
+SemgateServe__code__NoLateAllow                              holds                  trace=None back=None states=1399 0.9s
+SemgateServe__code__NoTimeoutWithinBudget                    violated               trace=12 back=None states=120 0.9s
+SemgateServe__code_hang__AnswerForRightId                    holds                  trace=None back=None states=2036 1.1s
+SemgateServe__code_hang__NoLateAllow                         holds                  trace=None back=None states=2036 1.0s
+SemgateServe__code_hang__NoTimeoutWithinBudget               violated               trace=9 back=None states=152 0.9s
+SemgateServe__fixed__AnswerForRightId                        holds                  trace=None back=None states=87 0.9s
+SemgateServe__fixed__NoLateAllow                             holds                  trace=None back=None states=87 0.9s
+SemgateServe__fixed__NoTimeoutWithinBudget                   holds                  trace=None back=None states=87 0.9s
+SemgateServe__fixed_hang__AnswerForRightId                   holds                  trace=None back=None states=1035 0.9s
+SemgateServe__fixed_hang__NoLateAllow                        holds                  trace=None back=None states=1035 1.0s
+SemgateServe__fixed_hang__NoTimeoutWithinBudget              violated               trace=11 back=None states=212 1.0s
+SemgateServe__M_fifo__AnswerForRightId                       violated               trace=9 back=None states=898 1.0s
+SemgateServe__M_fifo__NoLateAllow                            holds                  trace=None back=None states=1499 1.0s
+SemgateServe__M_fifo__NoTimeoutWithinBudget                  violated               trace=11 back=None states=280 0.9s
+SemgateServe__M_keepwaiter__AnswerForRightId                 holds                  trace=None back=None states=1399 1.0s
+SemgateServe__M_keepwaiter__NoLateAllow                      violated               trace=14 back=None states=153 0.9s
+SemgateServe__M_keepwaiter__NoTimeoutWithinBudget            violated               trace=12 back=None states=120 0.9s
+SemgateServe__M_notimeout_hang__AnswerForRightId             holds                  trace=None back=None states=126 0.9s
+SemgateServe__M_notimeout_hang__NoLateAllow                  holds                  trace=None back=None states=126 1.1s
+SemgateServe__M_notimeout_hang__NoTimeoutWithinBudget        holds                  trace=None back=None states=126 0.9s
+SemgateServe__M_one_worker__AnswerForRightId                 holds                  trace=None back=None states=195 0.9s
+SemgateServe__M_one_worker__NoLateAllow                      holds                  trace=None back=None states=195 0.9s
+SemgateServe__M_one_worker__NoTimeoutWithinBudget            violated               trace=12 back=None states=117 1.0s
+SemgateServe__M_nocancel_hang__AnswerForRightId              holds                  trace=None back=None states=755 0.9s
+SemgateServe__M_nocancel_hang__NoLateAllow                   holds                  trace=None back=None states=755 0.9s
+SemgateServe__M_nocancel_hang__NoTimeoutWithinBudget         violated               trace=11 back=None states=213 1.0s
+SemgateServe__code__K8_NoAnswer                              violated               trace=8 back=None states=22 0.9s
+SemgateServe__fixed_hang__K9_NoTimeout                       violated               trace=11 back=None states=210 0.9s
+SemgateServe__code__EveryRequestResolved                     holds                  trace=None back=None states=1399 1.4s
+SemgateServe__code__ServeReturnsIdle                         violated (liveness)    trace=40 back=13 states=1399 1.4s
+SemgateServe__code_hang__EveryRequestResolved                holds                  trace=None back=None states=2036 1.5s
+SemgateServe__code_hang__ServeReturnsIdle                    violated (liveness)    trace=22 back=None states=2036 1.3s
+SemgateServe__fixed__EveryRequestResolved                    holds                  trace=None back=None states=87 1.0s
+SemgateServe__fixed__ServeReturnsIdle                        holds                  trace=None back=None states=87 1.0s
+SemgateServe__fixed_hang__EveryRequestResolved               holds                  trace=None back=None states=1035 1.3s
+SemgateServe__fixed_hang__ServeReturnsIdle                   holds                  trace=None back=None states=1035 1.1s
+SemgateServe__M_fifo__EveryRequestResolved                   holds                  trace=None back=None states=1499 1.4s
+SemgateServe__M_fifo__ServeReturnsIdle                       violated (liveness)    trace=25 back=None states=1499 1.2s
+SemgateServe__M_keepwaiter__EveryRequestResolved             holds                  trace=None back=None states=1399 1.6s
+SemgateServe__M_keepwaiter__ServeReturnsIdle                 violated (liveness)    trace=41 back=14 states=1399 1.3s
+SemgateServe__M_notimeout_hang__EveryRequestResolved         violated (liveness)    trace=6 back=None states=126 1.3s
+SemgateServe__M_notimeout_hang__ServeReturnsIdle             violated (liveness)    trace=6 back=None states=126 1.1s
+SemgateServe__M_one_worker__EveryRequestResolved             holds                  trace=None back=None states=195 1.1s
+SemgateServe__M_one_worker__ServeReturnsIdle                 holds                  trace=None back=None states=195 1.2s
+SemgateServe__M_nocancel_hang__EveryRequestResolved          holds                  trace=None back=None states=755 1.5s
+SemgateServe__M_nocancel_hang__ServeReturnsIdle              violated (liveness)    trace=25 back=None states=755 1.1s

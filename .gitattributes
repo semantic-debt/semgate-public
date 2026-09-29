@@ -1,0 +1,4 @@
+# Shell scripts run in WSL/Linux bash: always LF line endings (a CR at the
+# end of a line breaks bash). Found 2026-09-26 when a CRLF localci-wsl.sh
+# failed in WSL.
+*.sh text eol=lf

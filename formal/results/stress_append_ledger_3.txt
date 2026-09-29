@@ -1,0 +1,25 @@
+round 0: records=600 lost=72 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 1: records=600 lost=76 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 2: records=600 lost=78 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 3: records=600 lost=79 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 4: records=600 lost=83 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 5: records=600 lost=70 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 6: records=600 lost=75 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 7: records=600 lost=74 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 8: records=600 lost=74 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 9: records=600 lost=75 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 10: records=600 lost=71 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 11: records=600 lost=65 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 12: records=600 lost=74 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 13: records=600 lost=78 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 14: records=600 lost=79 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 15: records=600 lost=85 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 16: records=600 lost=59 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 17: records=600 lost=80 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 18: records=600 lost=79 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 19: records=600 lost=70 torn_lines=0 dup=0 phantom=0 real_reader=ok
+SUMMARY store=ledger procs=3 records/proc=200 pad=200 rounds=20 elapsed=6.2s
+  rounds with any defect: 20/20 (100.0%)
+  records lost: 1496/12000 (12.5%); torn lines: 0; duplicates: 0; phantom records: 0
+  rounds where the real reader raised: 0/20 (0.0%)
+  temp dir: C:\WINDOWS\TEMP\semgate-formal-xsodzphh

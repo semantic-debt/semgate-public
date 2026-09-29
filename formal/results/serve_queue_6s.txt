@@ -1,0 +1,7 @@
+request 1: serve answered 'allow' after   6.0 s -> the plugin uses: allow
+request 2: serve answered 'allow' after  12.0 s -> the plugin uses: allow
+request 3: serve answered 'allow' after  18.0 s -> the plugin uses: allow
+request 4: serve answered 'allow' after  24.0 s -> the plugin uses: ask (plugin timeout; late answer dropped)
+request 5: serve answered 'allow' after  30.0 s -> the plugin uses: ask (plugin timeout; late answer dropped)
+SUMMARY delay/model call=6.0s burst=5: 2/5 requests past the 20 s plugin timeout
+temp dir: C:\WINDOWS\TEMP\semgate-formal-serve-dpu4nbve

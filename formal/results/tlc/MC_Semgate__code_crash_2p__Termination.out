@@ -1,0 +1,32 @@
+TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)
+Running breadth-first search Model-Checking with fp 111 and seed 8072288598425194608 with 16 workers on 16 cores with 5461MB heap and 64MB offheap memory [pid: 20476] (Windows 11 10.0 amd64, Eclipse Adoptium 21.0.12.1 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file <repo>\formal\MC_Semgate.tla
+Parsing file <repo>\formal\Semgate.tla
+Parsing file C:\WINDOWS\TEMP\Naturals.tla
+Parsing file C:\WINDOWS\TEMP\Sequences.tla
+Parsing file C:\WINDOWS\TEMP\FiniteSets.tla
+Parsing file C:\WINDOWS\TEMP\TLC.tla
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module Semgate
+Semantic processing of module MC_Semgate
+Starting... (2026-09-23 14:56:16)
+Implied-temporal checking--satisfiability problem has 1 branches.
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2026-09-23 14:56:16.
+Checking temporal properties for the current state space with 11616 total distinct states at (2026-09-23 14:56:19)
+Finished checking temporal properties in 00s at 2026-09-23 14:56:20
+Progress(26) at 2026-09-23 14:56:20: 28,239 states generated (28,239 s/min), 13,644 distinct states found (13,644 ds/min), 2,024 states left on queue.
+Progress(31) at 2026-09-23 14:56:29: 79,681 states generated, 37,039 distinct states found, 0 states left on queue.
+Checking temporal properties for the complete state space with 37039 total distinct states at (2026-09-23 14:56:29)
+Finished checking temporal properties in 00s at 2026-09-23 14:56:29
+Model checking completed. No error has been found.
+  Estimates of the probability that TLC did not check all reachable states
+  because two distinct states had the same fingerprint:
+  calculated (optimistic):  val = 8.6E-11
+79681 states generated, 37039 distinct states found, 0 states left on queue.
+The depth of the complete state graph search is 31.
+The average outdegree of the complete state graph is 1 (minimum is 0, the maximum 7 and the 95th percentile is 3).
+Finished in 13s at (2026-09-23 14:56:29)

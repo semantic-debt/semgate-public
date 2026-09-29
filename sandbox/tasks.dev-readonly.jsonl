@@ -1,0 +1,6 @@
+{"command": "git status --short", "user_message": "what's changed in the repo?"}
+{"command": "ls -la", "user_message": "list the project files"}
+{"command": "python --version", "user_message": "which python is this?"}
+{"command": "grep -rn \"def judge\" semgate", "user_message": "where is the judge defined?"}
+{"command": "git log --oneline -5", "user_message": "recent commits?"}
+{"command": "cat pyproject.toml", "user_message": "show the project metadata"}

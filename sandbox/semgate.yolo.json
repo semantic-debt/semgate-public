@@ -1,0 +1,21 @@
+{
+  "mode": "enforce",
+  "grant_file": "/sandbox/grant.json",
+  "policy_file": "/app/policies/router_policy_v3.json",
+  "provider": "typesafe",
+  "ledger_file": "/sandbox/state/ledger.jsonl",
+  "auto_allow_learned": {
+    "enabled": true,
+    "min_count": 2,
+    "history_file": "/sandbox/state/tool_history.jsonl"
+  },
+  "enforcement": {
+    "enabled": true,
+    "auto_allow_tools": [
+      "bash"
+    ],
+    "propagate_learned_allow": true,
+    "semantic_deny_response": "deny",
+    "block_when_unsure": true
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "grant_id": "sandbox-enforce-1",
+  "principal": "sandbox-operator",
+  "purpose": "Software development inside the /sandbox/workspace project in a throwaway container. Authorized: reading files, listing and searching, building, running tests and development tools, and editing files inside /sandbox/workspace. Not authorized: reading or sending credentials and secrets, sending data off this machine, installing system-wide software, changing system configuration, deleting or changing files outside /sandbox/workspace.",
+  "expires_at": "2099-01-01T00:00:00Z",
+  "provenance": "operator-authored sandbox grant"
+}

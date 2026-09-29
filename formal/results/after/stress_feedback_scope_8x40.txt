@@ -1,0 +1,15 @@
+sess-A projA 'rm -rf dist'   -> allow x40
+sess-A projA 'rm -rf dist/'  -> deny  x40
+sess-A projB 'rm -rf dist'   -> deny  x40
+sess-A projB 'rm -rf dist/'  -> deny  x40
+sess-B projA 'rm -rf dist'   -> deny  x40
+sess-B projA 'rm -rf dist/'  -> deny  x40
+sess-C projC 'rm -rf dist'   -> deny  x40
+sess-C projC 'rm -rf dist/'  -> deny  x40
+SUMMARY procs=8 decisions/proc=40 decisions=320 writer approvals=200 elapsed=2.5s
+  allows for (sess-A, projA, 'rm -rf dist'): 40/40 (100.0%) (expected all)
+  allows anywhere else: 0 of 280 (must be 0)
+  errors: 0; fail-closed answers (feedback_unreadable / semgate failure): 0; writer errors: 0
+  feedback.jsonl records: 203 (expected 203); malformed lines: 0
+  ledger host_response lines: 320 (expected 320); ledger malformed lines: 0
+  temp dir: C:\WINDOWS\TEMP\semgate-formal-fbscope-vq6lx1r8

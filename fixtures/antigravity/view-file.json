@@ -1,0 +1,1 @@
+{"toolCall":{"name":"view_file","args":{"FilePath":"/workspace/project/README.md"}},"stepIdx":3,"conversationId":"fixture-conversation","workspacePaths":["/workspace/project"],"transcriptPath":"/tmp/untrusted-transcript.jsonl","artifactDirectoryPath":"/tmp/artifacts","modelName":"fixture-model"}

@@ -1,0 +1,8 @@
+semgate
+Copyright 2026 Manuel Parra (https://th3nolo.com)
+
+This product includes software developed by Manuel Parra (https://github.com/th3nolo/semgate).
+
+semgate calls the TypeSafe Jev model only through the user's own TypeSafe API
+key, under the user's own agreement with TypeSafe. No TypeSafe software or
+model is included in this distribution.

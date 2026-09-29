@@ -1,0 +1,25 @@
+round 0: expected total=60 stored=0 lost=60 zero_answers=56 state=corrupt(JSONDecodeError): '{"sess-long-name-x": {"consecutive": 1, "total": 1}, "s": {"consecutive": 2, "total": 2}, '
+round 1: expected total=60 stored=0 lost=60 zero_answers=57 state=corrupt(JSONDecodeError): '{"sess-long-name-x": {"consecutive": 1, "total": 1}, "s": {"consecutive": 1, "total": 1}, '
+round 2: expected total=60 stored=0 lost=60 zero_answers=60 state=corrupt(JSONDecodeError): '{"sess-long-name-": {"consecutive": 1, "total": 1}}}'
+round 3: expected total=60 stored=0 lost=60 zero_answers=60 state=corrupt(JSONDecodeError): '{"sess-long-name-": {"consecutive": 1, "total": 1}}}}'
+round 4: expected total=60 stored=0 lost=60 zero_answers=60 state=corrupt(JSONDecodeError): '{"sess-long-name-": {"consecutive": 1, "total": 1}}}'
+round 5: expected total=60 stored=0 lost=60 zero_answers=54 state=corrupt(JSONDecodeError): '{"sess-long-name-xx": {"consecutive": 2, "total": 2}, "s": {"consecutive": 2, "total": 2},'
+round 6: expected total=60 stored=0 lost=60 zero_answers=57 state=corrupt(JSONDecodeError): '{"sess-long-name-xx": {"consecutive": 2, "total": 2}, "s": {"consecutive": 1, "total": 1}}'
+round 7: expected total=60 stored=0 lost=60 zero_answers=60 state=corrupt(JSONDecodeError): '{"sess-long-name-x": {"consecutive": 1, "total": 1}}}'
+round 8: expected total=60 stored=0 lost=60 zero_answers=60 state=corrupt(JSONDecodeError): '{"sess-long-name-": {"consecutive": 1, "total": 1}}}'
+round 9: expected total=60 stored=0 lost=60 zero_answers=60 state=corrupt(JSONDecodeError): '{"sess-long-name-": {"consecutive": 1, "total": 1}}}'
+round 10: expected total=60 stored=0 lost=60 zero_answers=60 state=corrupt(JSONDecodeError): '{"sess-long-name-": {"consecutive": 1, "total": 1}}}'
+round 11: expected total=60 stored=0 lost=60 zero_answers=60 state=corrupt(JSONDecodeError): '{"sess-long-name-": {"consecutive": 1, "total": 1}}}'
+round 12: expected total=60 stored=0 lost=60 zero_answers=60 state=corrupt(JSONDecodeError): '{"sess-long-name-x": {"consecutive": 1, "total": 1}}}'
+round 13: expected total=60 stored=0 lost=60 zero_answers=59 state=corrupt(JSONDecodeError): '{"sess-long-name-x": {"consecutive": 1, "total": 1}, "s": {"consecutive": 1, "total": 1}, '
+round 14: expected total=60 stored=0 lost=60 zero_answers=60 state=corrupt(JSONDecodeError): '{"sess-long-name-": {"consecutive": 1, "total": 1}}}'
+round 15: expected total=60 stored=0 lost=60 zero_answers=60 state=corrupt(JSONDecodeError): '{"sess-long-name-": {"consecutive": 1, "total": 1}}}'
+round 16: expected total=60 stored=0 lost=60 zero_answers=39 state=corrupt(JSONDecodeError): '{"sess-long-name-xx": {"consecutive": 4, "total": 4}, "s": {"consecutive": 9, "total": 9},'
+round 17: expected total=60 stored=0 lost=60 zero_answers=60 state=corrupt(JSONDecodeError): '{"sess-long-name-": {"consecutive": 1, "total": 1}}}}'
+round 18: expected total=60 stored=0 lost=60 zero_answers=51 state=corrupt(JSONDecodeError): '{"sess-long-name-": {"consecutive": 3, "total": 3}, "s": {"consecutive": 3, "total": 3}, "'
+round 19: expected total=60 stored=0 lost=60 zero_answers=57 state=corrupt(JSONDecodeError): '{"sess-long-name-x": {"consecutive": 1, "total": 1}, "s": {"consecutive": 1, "total": 1}, '
+SUMMARY procs=3 updates/proc=20 rounds=20 elapsed=5.5s
+  blocks lost from the session total: 1200/1200 (100.0%)
+  calls that got zeros (read failed mid-write): 1150/1200 (95.8%)
+  rounds ending with an unparseable state file: 20/20 (100.0%); of those, never repaired by a later call: 20
+  temp dir: C:\WINDOWS\TEMP\semgate-formal-streak-ng8mtmzd

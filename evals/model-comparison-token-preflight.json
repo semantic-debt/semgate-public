@@ -1,0 +1,35 @@
+{
+  "abstention_unavailable_components": [
+    {
+      "component": "GPQA",
+      "error": "DatasetNotFoundError"
+    }
+  ],
+  "cases": 2622,
+  "dev_cases": 524,
+  "held_out_cases": 2098,
+  "models": {
+    "IFM/K2-Horizon-7B-Uno": {
+      "api_cost_usd_if_self_hosted": 0.0,
+      "exact_for_rendered_messages": true,
+      "input_tokens": 1758913,
+      "tokenizer": "IFM/K2-Horizon-7B official tokenizer + chat template"
+    },
+    "gemini-3.1-flash-lite": {
+      "exact_count_status": "blocked_without provider countTokens route",
+      "input_tokens": null,
+      "note": "Google does not publish an offline tokenizer guaranteed identical to the service. Exact input count requires the official countTokens API; no Gemini credential is connected. No estimate is mislabeled as exact.",
+      "prompt_characters": 7806459
+    },
+    "gpt-5": {
+      "exact_for_rendered_canonical_messages": true,
+      "input_tokens": 1887806,
+      "note": "Counts canonical role/content JSON. Provider framing overhead, if any, must be added by its official request tokenizer.",
+      "tokenizer": "o200k_base"
+    }
+  },
+  "paid_api_calls": 0,
+  "paid_cost_usd": 0.0,
+  "prompt_characters": 7806459,
+  "schema": "semgate-model-comparison-token-preflight/1"
+}

@@ -1,0 +1,24 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+.venv/
+.env
+.antigravity/
+.agents/
+*.jsonl
+!fixtures/eval/*.jsonl
+evals/data/
+.gemini/
+evals/data/l1b3rt4s/
+evals/private/
+dist/
+build/
+evals/reports/*.log
+
+# agent worktrees
+.claude/worktrees/
+
+# local binaries and disassembly, never committed
+artifacts/
+docs/upstream/

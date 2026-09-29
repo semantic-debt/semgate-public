@@ -1,0 +1,50 @@
+SUMMARY store=ledger procs=3 records/proc=200 pad=200 rounds=20 elapsed=6.7s
+  rounds with any defect: 20/20 (100.0%)
+  records lost: 1570/12000 (13.1%); torn lines: 3; duplicates: 0
+  rounds where the real reader raised: 0/20 (0.0%)
+  temp dir: C:\WINDOWS\TEMP\semgate-formal-eeunu3kv
+SUMMARY store=ledger procs=8 records/proc=200 pad=200 rounds=20 elapsed=14.3s
+  rounds with any defect: 20/20 (100.0%)
+  records lost: 6612/32000 (20.7%); torn lines: 4; duplicates: 0
+  rounds where the real reader raised: 0/20 (0.0%)
+  temp dir: C:\WINDOWS\TEMP\semgate-formal-7yusfbf7
+SUMMARY store=history procs=3 records/proc=200 pad=200 rounds=20 elapsed=7.6s
+  rounds with any defect: 20/20 (100.0%)
+  records lost: 1829/12000 (15.2%); torn lines: 3; duplicates: 0
+  rounds where the real reader raised: 0/20 (0.0%)
+  temp dir: C:\WINDOWS\TEMP\semgate-formal-ly9zbjn_
+SUMMARY store=history procs=8 records/proc=200 pad=200 rounds=20 elapsed=13.8s
+  rounds with any defect: 20/20 (100.0%)
+  records lost: 6765/32000 (21.1%); torn lines: 4; duplicates: 0
+  rounds where the real reader raised: 1/20 (5.0%)
+  temp dir: C:\WINDOWS\TEMP\semgate-formal-zc_8opll
+SUMMARY store=feedback procs=3 records/proc=200 pad=200 rounds=20 elapsed=7.2s
+  rounds with any defect: 20/20 (100.0%)
+  records lost: 1685/12000 (14.0%); torn lines: 3; duplicates: 0
+  rounds where the real reader raised: 0/20 (0.0%)
+  temp dir: C:\WINDOWS\TEMP\semgate-formal-by4c8roa
+SUMMARY store=feedback procs=8 records/proc=200 pad=200 rounds=20 elapsed=14.9s
+  rounds with any defect: 20/20 (100.0%)
+  records lost: 7432/32000 (23.2%); torn lines: 6; duplicates: 0
+  rounds where the real reader raised: 0/20 (0.0%)
+  temp dir: C:\WINDOWS\TEMP\semgate-formal-ssqj3jtc
+SUMMARY store=agentfiles procs=3 records/proc=200 pad=200 rounds=20 elapsed=8.4s
+  rounds with any defect: 20/20 (100.0%)
+  records lost: 725/12000 (6.0%); torn lines: 0; duplicates: 0
+  rounds where the real reader raised: 0/20 (0.0%)
+  temp dir: C:\WINDOWS\TEMP\semgate-formal-mmhqhnqz
+SUMMARY store=agentfiles procs=8 records/proc=200 pad=200 rounds=20 elapsed=17.0s
+  rounds with any defect: 20/20 (100.0%)
+  records lost: 4214/32000 (13.2%); torn lines: 3; duplicates: 0
+  rounds where the real reader raised: 0/20 (0.0%)
+  temp dir: C:\WINDOWS\TEMP\semgate-formal-acwtwf1g
+SUMMARY store=ledger procs=2 records/proc=50 pad=3000 rounds=40 elapsed=11.3s
+  rounds with any defect: 40/40 (100.0%)
+  records lost: 577/4000 (14.4%); torn lines: 0; duplicates: 0
+  rounds where the real reader raised: 0/40 (0.0%)
+  temp dir: C:\WINDOWS\TEMP\semgate-formal-ome1qpgq
+SUMMARY store=ledger procs=3 records/proc=50 pad=3000 rounds=40 elapsed=13.6s
+  rounds with any defect: 40/40 (100.0%)
+  records lost: 1316/6000 (21.9%); torn lines: 0; duplicates: 0
+  rounds where the real reader raised: 0/40 (0.0%)
+  temp dir: C:\WINDOWS\TEMP\semgate-formal-d25be9pv

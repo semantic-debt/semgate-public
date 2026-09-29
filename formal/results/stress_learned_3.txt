@@ -1,0 +1,16 @@
+round 0: approved asks=144 counted=0 deny_counted=0 post raised=177 executed_unmatched=1 torn=3 final reader=JSONDecodeError
+round 1: approved asks=144 counted=0 deny_counted=0 post raised=177 executed_unmatched=2 torn=1 final reader=JSONDecodeError
+round 2: approved asks=144 counted=13 deny_counted=0 post raised=150 executed_unmatched=1 torn=9 final reader=JSONDecodeError
+round 3: approved asks=144 counted=5 deny_counted=0 post raised=168 executed_unmatched=3 torn=1 final reader=JSONDecodeError
+round 4: approved asks=144 counted=8 deny_counted=0 post raised=162 executed_unmatched=0 torn=1 final reader=JSONDecodeError
+round 5: approved asks=144 counted=0 deny_counted=0 post raised=177 executed_unmatched=1 torn=1 final reader=JSONDecodeError
+round 6: approved asks=144 counted=0 deny_counted=0 post raised=177 executed_unmatched=1 torn=1 final reader=JSONDecodeError
+round 7: approved asks=144 counted=0 deny_counted=0 post raised=177 executed_unmatched=1 torn=1 final reader=JSONDecodeError
+round 8: approved asks=144 counted=4 deny_counted=0 post raised=168 executed_unmatched=0 torn=13 final reader=JSONDecodeError
+round 9: approved asks=144 counted=0 deny_counted=0 post raised=177 executed_unmatched=1 torn=9 final reader=JSONDecodeError
+SUMMARY procs=3 steps/proc=60 rounds=10 elapsed=8.6s
+  approvals not counted (undercount, safe): 1410/1440 (97.9%); overcount (unsafe): 0; denied command counted (unsafe): 0
+  post-hook joins that raised (executed record silently not written): 1710/1800 (95.0%)
+  executed_unmatched records (pending record lost): 11; torn lines: 40
+  rounds where the final file makes every reader raise (learning off until the file is repaired): 10/10 (100.0%)
+  temp dir: C:\WINDOWS\TEMP\semgate-formal-learned-9e3mim4l

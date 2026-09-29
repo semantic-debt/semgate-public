@@ -1,0 +1,41 @@
+# Skip reasons scripts/test-local.sh accepts. Any other skip FAILs the run:
+# a skip hides a test as well as a failure does.
+#
+# One rule per line: <sides>: <regex>
+#   sides any, or a comma list of windows, wsl, posix (where the reason is expected)
+#   regex Python re.search against the reason pytest prints with -rs
+# Add a reason only when the skip is expected on that machine, with a
+# comment that says why.
+
+# The tree marker test runs only under scripts/test-local.sh; plain pytest
+# and CI have no marker.
+any: ^no tree marker: not started by scripts/test-local\.sh$
+# tests/test_wheel_install.py needs a built wheel (CI builds one).
+any: ^set SEMGATE_WHEEL_DIR to the folder with the built wheel$
+# evals/data/ is not tracked (gitignored): a worktree and the WSL copy do not have it.
+any: ^evals/data/swe-trajectories/rows not present$
+# The public release leaves out evals/reports/ (per-case Jev outputs, TypeSafe
+# terms question; .publish/exclude.txt). The private repository has them.
+any: ^per-case Jev reports are not in the public release$
+# langgraph is an optional example dependency, not in ".[dev]".
+any: ^could not import 'langgraph'
+# Windows without Developer Mode: creating a symlink needs a privilege.
+windows: ^symlinks not permitted here$
+windows: ^symlink creation not permitted on this platform$
+windows: ^this machine does not allow creating a symlink$
+windows: ^symlinks not available$
+windows: ^cannot create a link here: \[WinError 1314\] A required privilege is not held by the client
+# POSIX-only behaviour tested on Linux/macOS.
+windows: ^POSIX file mode$
+windows: ^needs bash and curl \(the script is run on Linux/macOS\)$
+# The SWE row cache (evals/data/, gitignored) exists only in the main checkout.
+any: ^SWE row cache absent \(git-ignored, MAIN repo only\)$
+
+# The WSL venv has only ".[dev]": no typesafe extra, no node, Python 3.10.
+wsl,posix: ^could not import 'typesafe_sdk'
+wsl,posix: ^the typesafe extra is not installed here$
+wsl,posix: ^node not installed$
+wsl,posix: ^tomllib needs Python 3\.11\+$
+# Windows-only behaviour tested on Windows.
+wsl,posix: ^Windows file names ignore case$
+wsl,posix: ^backslashes are escapes in bash; the skill writes forward slashes$

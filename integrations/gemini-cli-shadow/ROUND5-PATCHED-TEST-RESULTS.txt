@@ -1,0 +1,12 @@
+Round-5 documentation-only patch (v4.1.1). No code behavior, record schema, hook behavior, or test semantics changed.
+
+Maintained suite (tests/test_shadow.py):
+54 passed in 0.81s
+
+Round-5 independent correction checks (tests/test_correction.py, unchanged):
+16 passed in 0.26s
+
+Historical suites, unchanged expectations:
+- round-4 suite: 30 passed, 1 failed (the O4-01 characterization of the fixed limitation, by design)
+- round-3 suite: 20 passed, 3 failed (v3-fixture candidate-index exclusion, obsolete no-fsync and unbounded-string expectations)
+- round-2 suite: 37 passed, 1 failed (retracted final-write test, stays retired)

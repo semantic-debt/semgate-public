@@ -1,0 +1,10 @@
+request 1 (hung model call): serve answered 'ask' timeout=true after  18.5 s -> the plugin uses: ask
+request 2 (hung model call): serve answered 'ask' timeout=true after  18.5 s -> the plugin uses: ask
+request 3: serve answered 'allow' after   1.0 s -> the plugin uses: allow
+request 4: serve answered 'allow' after   1.0 s -> the plugin uses: allow
+request 5: serve answered 'allow' after   2.0 s -> the plugin uses: allow
+request 6: serve answered 'allow' after   2.0 s -> the plugin uses: allow
+serve exit code: 75; serve stderr: semgate serve: restarting (idle with an abandoned judgment still running)
+ledger host_response lines for the burst: 6/6; ledger malformed lines: 0
+SUMMARY delay/model call=1.0s burst=6 hang=2: 0/6 requests past the 20 s plugin timeout; answers "ask" with timeout: 2; allows: 4
+temp dir: C:\WINDOWS\TEMP\semgate-formal-serve-8h4q6t9a

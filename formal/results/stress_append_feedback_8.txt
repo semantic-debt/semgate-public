@@ -1,0 +1,25 @@
+round 0: records=1600 lost=255 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 1: records=1600 lost=224 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 2: records=1600 lost=253 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 3: records=1600 lost=268 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 4: records=1600 lost=370 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 5: records=1600 lost=365 torn_lines=1 dup=0 phantom=0 real_reader=ok first_torn='{"action_key": "2f33716d191e2ccd42771799d5c688dbb8cd6c57e53a2e672e58546e87064d54'
+round 6: records=1600 lost=333 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 7: records=1600 lost=264 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 8: records=1600 lost=281 torn_lines=1 dup=0 phantom=0 real_reader=ok first_torn='{"action_key": "5e0175c905b7c4b4f11a68f02c92c3ec449b52ecd7cafd6cb54a076e30604b6d'
+round 9: records=1600 lost=284 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 10: records=1600 lost=330 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 11: records=1600 lost=240 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 12: records=1600 lost=258 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 13: records=1600 lost=295 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 14: records=1600 lost=301 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 15: records=1600 lost=245 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 16: records=1600 lost=323 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 17: records=1600 lost=277 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 18: records=1600 lost=253 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 19: records=1600 lost=244 torn_lines=1 dup=0 phantom=0 real_reader=ok first_torn='{"action_key": "ca112db6833373baa06f72e286fb5b1f6cddd3eb5e21c0d4aa42e8911c19b389'
+SUMMARY store=feedback procs=8 records/proc=200 pad=200 rounds=20 elapsed=12.8s
+  rounds with any defect: 20/20 (100.0%)
+  records lost: 5663/32000 (17.7%); torn lines: 3; duplicates: 0; phantom records: 0
+  rounds where the real reader raised: 0/20 (0.0%)
+  temp dir: C:\WINDOWS\TEMP\semgate-formal-qnxgt4is

@@ -1,0 +1,62 @@
+{
+  "name": "injecagent",
+  "source": {
+    "url": "https://github.com/uiuc-kang-lab/InjecAgent",
+    "ref": "f19c9f2c79a41046eb13c03c51a24c567a8ffa07",
+    "license": "MIT",
+    "copyright": "Copyright (c) 2023 Qiusi Zhan",
+    "files": [
+      "data/test_cases_dh_base.json",
+      "data/test_cases_ds_base.json",
+      "data/user_cases.jsonl",
+      "data/attacker_simulated_responses.json",
+      "LICENCE"
+    ],
+    "setting": "base"
+  },
+  "input_sha256": {
+    "test_cases_dh_base.json": "0a8186468d21389af432e8c7b399ae42264d1b93a07b65c7a489468508604305",
+    "test_cases_ds_base.json": "4daab35c62a3845e8b9400f4dca58b9c9f37e57cd33b2337552557fbb26282e9",
+    "user_cases.jsonl": "c840e2b00fdce68e7142d0970220522303d67b2530d6fb36ef1112448cdd8977",
+    "attacker_simulated_responses.json": "b1da2e1fb75f266c069b832fef6738c295f01d8962fae15bdac9ff6625e5594e",
+    "LICENCE": "b48589499dbb84caa796b00b4ea652b0443e49660282c44d890fd473b8c0674e"
+  },
+  "case_count": 1071,
+  "label_counts": {
+    "allow": 17,
+    "ask": 0,
+    "deny": 1054
+  },
+  "by_kind": {
+    "dh": 510,
+    "ds": 544,
+    "clean": 17
+  },
+  "tool_mapping": "tool = 'mcp__injecagent__' + InjecAgent tool name; arguments = dict",
+  "neutral_text": "Works as described. Delivery was on time.",
+  "split_rule": "private when int(sha256(source_id), 16) % 5 == 0",
+  "public": {
+    "path": "fixtures/eval/injecagent.jsonl",
+    "committed": true,
+    "sha256": "7e2e5997e07b8ad35ab59c34398fbdc8505688a172cd7acdf86dea33613cebb0",
+    "count": 840,
+    "label_counts": {
+      "allow": 13,
+      "ask": 0,
+      "deny": 827
+    }
+  },
+  "private": {
+    "path": "evals/private/injecagent.jsonl",
+    "committed": false,
+    "sha256": "27de835a9df15364cc341c04ca9b115c2884bbc7b1cc68745d724bea1a94a30e",
+    "count": 231,
+    "label_counts": {
+      "allow": 4,
+      "ask": 0,
+      "deny": 227
+    }
+  },
+  "skipped": [],
+  "operator_purpose_sha256": "abe43789f8aea3a1992bf2533483aaa4506e52b64b908d56d19488e6c846bd38"
+}

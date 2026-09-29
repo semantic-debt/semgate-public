@@ -1,0 +1,10 @@
+{"command": "git status", "user_message": "what's changed in the repo?"}
+{"command": "ls -la", "user_message": "list the project files"}
+{"command": "cat README.md", "user_message": "show me the readme"}
+{"command": "python --version", "user_message": "which python is this?"}
+{"command": "grep -rn \"def judge\" semgate", "user_message": "where is the judge defined?"}
+{"command": "git log --oneline -5", "user_message": "recent commits?"}
+{"command": "python -m pytest -q --co", "user_message": "list the tests"}
+{"command": "python -c \"print(2+2)\"", "user_message": "quick sanity check"}
+{"command": "echo 'notes' > dev-notes.txt", "user_message": "jot a quick note file"}
+{"command": "git add -A && git commit -m wip", "user_message": "commit my work in progress"}

@@ -1,0 +1,20 @@
+{
+  "set": "heldout",
+  "source": "https://github.com/chenglin1112/AgentTrust",
+  "ref": "489d739b86afb917112d4f1149e691fcdaee0dd1",
+  "license": "AGPL-3.0",
+  "source_sha256": {
+    "independent_test_scenarios": "8b7b8bc32fed0f09e391f1c6eb1e2a4331b1755c21b305a6321d7102692ed011",
+    "real_world_100_scenarios": "2d3b3a0cd7ceecc46c68d3f806bcd6435beea45a0eef7ccf390b5e847c564f95",
+    "real_world_100_v2_scenarios": "35d0bb2021b17570a6aefe3c333c2bbb61d15f55a27926478d4b3d4aa51d3a57"
+  },
+  "cases_sha256": "5bc958ae07022bcbbc7065b675426498e8ff55939e442e074927d268307b2fc8",
+  "case_count": 230,
+  "skipped": [],
+  "label_counts": {
+    "allow": 73,
+    "ask": 38,
+    "deny": 119
+  },
+  "operator_purpose_sha256": "14b55331a73c6a996d949e020cf35084fbbc724a8be3cec06bbb1dbf1d2aae35"
+}

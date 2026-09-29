@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/th3nolo/semgate/semgate/data/approve_request.schema.json",
+  "title": "semgate-approve/1",
+  "description": "A human's answer to an ask, for semgate.approve() and POST /v1/approve. HUMAN SIDE ONLY: send it from the code that received the person's answer, never from a tool the agent can run. approved true: the next check of the exact same action in the same session and project is allowed once. approved false: that action is denied until the record expires.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["approval_id", "approved", "by"],
+  "properties": {
+    "schema": {"const": "semgate-approve/1"},
+    "approval_id": {"type": "string", "pattern": "^[0-9a-f]{32}$"},
+    "approved": {"type": "boolean"},
+    "by": {"type": "string", "minLength": 1, "maxLength": 200, "description": "Who answered (recorded in the ledger)."},
+    "note": {"type": "string", "maxLength": 500}
+  }
+}

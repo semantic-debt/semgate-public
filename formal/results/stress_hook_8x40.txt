@@ -1,0 +1,47 @@
+round 0: calls=8 host_response missing=2 dup=0 mismatch=0 ledger_torn=1 judgments=8/8 pending_missing=0 history_torn=0 denies=4 streak_total=3 streak=lost_update
+round 1: calls=8 host_response missing=0 dup=0 mismatch=0 ledger_torn=1 judgments=7/8 pending_missing=1 history_torn=0 denies=4 streak_total=3 streak=lost_update
+round 2: calls=8 host_response missing=1 dup=0 mismatch=0 ledger_torn=0 judgments=7/8 pending_missing=0 history_torn=0 denies=4 streak_total=3 streak=lost_update
+round 3: calls=8 host_response missing=1 dup=0 mismatch=0 ledger_torn=2 judgments=6/8 pending_missing=1 history_torn=0 denies=4 streak_total=2 streak=lost_update
+round 4: calls=8 host_response missing=1 dup=0 mismatch=0 ledger_torn=1 judgments=8/8 pending_missing=1 history_torn=0 denies=4 streak_total=1 streak=lost_update
+round 5: calls=8 host_response missing=2 dup=0 mismatch=0 ledger_torn=0 judgments=7/8 pending_missing=3 history_torn=0 denies=4 streak_total=1 streak=lost_update
+round 6: calls=8 host_response missing=2 dup=0 mismatch=0 ledger_torn=0 judgments=8/8 pending_missing=1 history_torn=0 denies=4 streak_total=2 streak=lost_update
+round 7: calls=8 host_response missing=1 dup=0 mismatch=0 ledger_torn=0 judgments=8/8 pending_missing=0 history_torn=0 denies=4 streak_total=2 streak=lost_update
+round 8: calls=8 host_response missing=0 dup=0 mismatch=0 ledger_torn=0 judgments=8/8 pending_missing=0 history_torn=0 denies=4 streak_total=2 streak=lost_update
+round 9: calls=8 host_response missing=3 dup=0 mismatch=0 ledger_torn=1 judgments=8/8 pending_missing=0 history_torn=0 denies=4 streak_total=1 streak=lost_update
+round 10: calls=8 host_response missing=1 dup=0 mismatch=0 ledger_torn=0 judgments=7/8 pending_missing=0 history_torn=0 denies=4 streak_total=3 streak=lost_update
+round 11: calls=8 host_response missing=1 dup=0 mismatch=0 ledger_torn=0 judgments=7/8 pending_missing=0 history_torn=0 denies=4 streak_total=1 streak=lost_update
+round 12: calls=8 host_response missing=1 dup=0 mismatch=0 ledger_torn=0 judgments=7/8 pending_missing=0 history_torn=0 denies=4 streak_total=0 streak=lost_update
+round 13: calls=8 host_response missing=1 dup=0 mismatch=0 ledger_torn=0 judgments=8/8 pending_missing=0 history_torn=0 denies=4 streak_total=1 streak=lost_update
+round 14: calls=8 host_response missing=2 dup=0 mismatch=0 ledger_torn=2 judgments=7/8 pending_missing=2 history_torn=0 denies=4 streak_total=2 streak=lost_update
+round 15: calls=8 host_response missing=0 dup=0 mismatch=0 ledger_torn=0 judgments=8/8 pending_missing=0 history_torn=0 denies=4 streak_total=4 streak=ok
+round 16: calls=8 host_response missing=1 dup=0 mismatch=0 ledger_torn=0 judgments=8/8 pending_missing=0 history_torn=0 denies=4 streak_total=3 streak=lost_update
+round 17: calls=8 host_response missing=0 dup=0 mismatch=0 ledger_torn=1 judgments=6/8 pending_missing=0 history_torn=0 denies=4 streak_total=3 streak=lost_update
+round 18: calls=8 host_response missing=0 dup=0 mismatch=0 ledger_torn=0 judgments=8/8 pending_missing=1 history_torn=0 denies=4 streak_total=3 streak=lost_update
+round 19: calls=8 host_response missing=3 dup=0 mismatch=0 ledger_torn=1 judgments=7/8 pending_missing=0 history_torn=0 denies=4 streak_total=2 streak=lost_update
+round 20: calls=8 host_response missing=3 dup=0 mismatch=0 ledger_torn=0 judgments=8/8 pending_missing=0 history_torn=0 denies=4 streak_total=0 streak=lost_update
+round 21: calls=8 host_response missing=2 dup=0 mismatch=0 ledger_torn=0 judgments=8/8 pending_missing=0 history_torn=0 denies=4 streak_total=4 streak=ok
+round 22: calls=8 host_response missing=1 dup=0 mismatch=0 ledger_torn=0 judgments=8/8 pending_missing=1 history_torn=0 denies=4 streak_total=2 streak=lost_update
+round 23: calls=8 host_response missing=0 dup=0 mismatch=0 ledger_torn=0 judgments=8/8 pending_missing=0 history_torn=0 denies=4 streak_total=2 streak=lost_update
+round 24: calls=8 host_response missing=0 dup=0 mismatch=0 ledger_torn=0 judgments=8/8 pending_missing=0 history_torn=0 denies=4 streak_total=3 streak=lost_update
+round 25: calls=8 host_response missing=1 dup=0 mismatch=0 ledger_torn=0 judgments=8/8 pending_missing=0 history_torn=0 denies=4 streak_total=1 streak=lost_update
+round 26: calls=8 host_response missing=0 dup=0 mismatch=0 ledger_torn=0 judgments=7/8 pending_missing=1 history_torn=0 denies=4 streak_total=2 streak=lost_update
+round 27: calls=8 host_response missing=0 dup=0 mismatch=0 ledger_torn=0 judgments=8/8 pending_missing=0 history_torn=0 denies=4 streak_total=4 streak=ok
+round 28: calls=8 host_response missing=0 dup=0 mismatch=0 ledger_torn=0 judgments=8/8 pending_missing=0 history_torn=0 denies=4 streak_total=4 streak=ok
+round 29: calls=8 host_response missing=0 dup=0 mismatch=0 ledger_torn=0 judgments=8/8 pending_missing=0 history_torn=0 denies=4 streak_total=2 streak=lost_update
+round 30: calls=8 host_response missing=1 dup=0 mismatch=0 ledger_torn=0 judgments=8/8 pending_missing=0 history_torn=0 denies=4 streak_total=1 streak=lost_update
+round 31: calls=8 host_response missing=1 dup=0 mismatch=0 ledger_torn=1 judgments=8/8 pending_missing=1 history_torn=0 denies=4 streak_total=3 streak=lost_update
+round 32: calls=8 host_response missing=2 dup=0 mismatch=0 ledger_torn=1 judgments=8/8 pending_missing=1 history_torn=0 denies=4 streak_total=2 streak=lost_update
+round 33: calls=8 host_response missing=0 dup=0 mismatch=0 ledger_torn=0 judgments=8/8 pending_missing=0 history_torn=0 denies=4 streak_total=3 streak=lost_update
+round 34: calls=8 host_response missing=1 dup=0 mismatch=0 ledger_torn=0 judgments=7/8 pending_missing=0 history_torn=0 denies=4 streak_total=1 streak=lost_update
+round 35: calls=8 host_response missing=0 dup=0 mismatch=0 ledger_torn=0 judgments=8/8 pending_missing=1 history_torn=0 denies=4 streak_total=2 streak=lost_update
+round 36: calls=8 host_response missing=0 dup=0 mismatch=0 ledger_torn=0 judgments=8/8 pending_missing=0 history_torn=0 denies=4 streak_total=2 streak=lost_update
+round 37: calls=8 host_response missing=0 dup=0 mismatch=0 ledger_torn=0 judgments=8/8 pending_missing=0 history_torn=0 denies=4 streak_total=4 streak=ok
+round 38: calls=8 host_response missing=0 dup=0 mismatch=0 ledger_torn=0 judgments=8/8 pending_missing=1 history_torn=0 denies=4 streak_total=3 streak=lost_update
+round 39: calls=8 host_response missing=0 dup=0 mismatch=0 ledger_torn=0 judgments=8/8 pending_missing=1 history_torn=0 denies=4 streak_total=2 streak=lost_update
+SUMMARY procs=8 rounds=40 calls=320 elapsed=18.0s
+  returned decisions with no host_response line: 35/320 (10.9%)
+  host_response duplicates: 0; decision mismatches: 0; ledger torn lines: 12
+  judgment lines found: 306/320
+  pending history records missing: 17/320 (5.3%); history torn lines: 0
+  deny_streak: deny answers=160 counted=89 (lost 71/160 (44.4%)); rounds ok=5 lost_update=35 corrupt=0 missing=0
+  temp dir: C:\WINDOWS\TEMP\semgate-formal-hook-0vc5z_xp

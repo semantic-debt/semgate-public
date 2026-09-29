@@ -1,0 +1,1886 @@
+TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)
+Running breadth-first search Model-Checking with fp 31 and seed 8897295065950339954 with 16 workers on 16 cores with 5461MB heap and 64MB offheap memory [pid: 13048] (Windows 11 10.0 amd64, Eclipse Adoptium 21.0.12.1 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file <repo>\formal\MC_Semgate.tla
+Parsing file <repo>\formal\Semgate.tla
+Parsing file C:\WINDOWS\TEMP\Naturals.tla
+Parsing file C:\WINDOWS\TEMP\Sequences.tla
+Parsing file C:\WINDOWS\TEMP\FiniteSets.tla
+Parsing file C:\WINDOWS\TEMP\TLC.tla
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module Semgate
+Semantic processing of module MC_Semgate
+Starting... (2026-09-23 15:01:22)
+Implied-temporal checking--satisfiability problem has 1 branches.
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2026-09-23 15:01:22.
+Checking temporal properties for the current state space with 3334 total distinct states at (2026-09-23 15:01:25)
+Error: Temporal properties were violated.
+
+Error: The following behavior constitutes a counter-example:
+
+State 1: <Initial predicate>
+/\ recs = ( <<p1, 2>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 3>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 4>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 5>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 2>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 3>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 4>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 5>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<"op", 1>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<"op", 2>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] )
+/\ proj = (p1 :> "none" @@ p2 :> "none")
+/\ expAt = (p1 :> FALSE @@ p2 :> FALSE)
+/\ approved = [c1 |-> 0]
+/\ sess = (p1 :> "none" @@ p2 :> "none")
+/\ tout = (p1 :> 0 @@ p2 :> 0)
+/\ ran = (p1 :> "none" @@ p2 :> "none")
+/\ sub = (p1 :> "none" @@ p2 :> "none")
+/\ stage = (p1 :> "none" @@ p2 :> "none")
+/\ pc = (p1 :> "idle" @@ p2 :> "idle")
+/\ dec = (p1 :> "none" @@ p2 :> "none")
+/\ lock = "free"
+/\ files = [ledger |-> <<>>, history |-> <<>>, feedback |-> <<>>]
+/\ cmd = (p1 :> "none" @@ p2 :> "none")
+/\ wpos = (p1 :> 0 @@ p2 :> 0)
+/\ spill = <<>>
+/\ queue = (p1 :> <<>> @@ p2 :> <<>>)
+/\ expired = FALSE
+/\ learnOk = (p1 :> FALSE @@ p2 :> FALSE)
+/\ after = (p1 :> "done" @@ p2 :> "done")
+/\ granted = [c1 |-> 0]
+
+State 2: <Decide line 277, col 5 to line 305, col 78 of module Semgate>
+/\ recs = ( <<p1, 2>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 3>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 4>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 5>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 2>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "pending",
+        step |-> p2,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 3>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "hr",
+        step |-> p2,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 4>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 5>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<"op", 1>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<"op", 2>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] )
+/\ proj = (p1 :> "none" @@ p2 :> "j1")
+/\ expAt = (p1 :> FALSE @@ p2 :> FALSE)
+/\ approved = [c1 |-> 0]
+/\ sess = (p1 :> "none" @@ p2 :> "s1")
+/\ tout = (p1 :> 0 @@ p2 :> 0)
+/\ ran = (p1 :> "none" @@ p2 :> "none")
+/\ sub = (p1 :> "none" @@ p2 :> "seek")
+/\ stage = (p1 :> "none" @@ p2 :> "base")
+/\ pc = (p1 :> "idle" @@ p2 :> "app")
+/\ dec = (p1 :> "none" @@ p2 :> "ask")
+/\ lock = "free"
+/\ files = [ledger |-> <<>>, history |-> <<>>, feedback |-> <<>>]
+/\ cmd = (p1 :> "none" @@ p2 :> "c1")
+/\ wpos = (p1 :> 0 @@ p2 :> 0)
+/\ spill = <<>>
+/\ queue = (p1 :> <<>> @@ p2 :> <<<<"history", <<p2, 2>>>>, <<"ledger", <<p2, 3>>>>>>)
+/\ expired = FALSE
+/\ learnOk = (p1 :> FALSE @@ p2 :> FALSE)
+/\ after = (p1 :> "done" @@ p2 :> "returned")
+/\ granted = [c1 |-> 0]
+
+State 3: <Decide line 277, col 5 to line 305, col 78 of module Semgate>
+/\ recs = ( <<p1, 2>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "pending",
+        step |-> p1,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 3>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "hr",
+        step |-> p1,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 4>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 5>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 2>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "pending",
+        step |-> p2,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 3>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "hr",
+        step |-> p2,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 4>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 5>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<"op", 1>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<"op", 2>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] )
+/\ proj = (p1 :> "j1" @@ p2 :> "j1")
+/\ expAt = (p1 :> FALSE @@ p2 :> FALSE)
+/\ approved = [c1 |-> 0]
+/\ sess = (p1 :> "s1" @@ p2 :> "s1")
+/\ tout = (p1 :> 0 @@ p2 :> 0)
+/\ ran = (p1 :> "none" @@ p2 :> "none")
+/\ sub = (p1 :> "seek" @@ p2 :> "seek")
+/\ stage = (p1 :> "base" @@ p2 :> "base")
+/\ pc = (p1 :> "app" @@ p2 :> "app")
+/\ dec = (p1 :> "ask" @@ p2 :> "ask")
+/\ lock = "free"
+/\ files = [ledger |-> <<>>, history |-> <<>>, feedback |-> <<>>]
+/\ cmd = (p1 :> "c1" @@ p2 :> "c1")
+/\ wpos = (p1 :> 0 @@ p2 :> 0)
+/\ spill = <<>>
+/\ queue = ( p1 :> <<<<"history", <<p1, 2>>>>, <<"ledger", <<p1, 3>>>>>> @@
+  p2 :> <<<<"history", <<p2, 2>>>>, <<"ledger", <<p2, 3>>>>>> )
+/\ expired = FALSE
+/\ learnOk = (p1 :> FALSE @@ p2 :> FALSE)
+/\ after = (p1 :> "returned" @@ p2 :> "returned")
+/\ granted = [c1 |-> 0]
+
+State 4: <Seek line 240, col 5 to line 251, col 79 of module Semgate>
+/\ recs = ( <<p1, 2>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "pending",
+        step |-> p1,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 3>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "hr",
+        step |-> p1,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 4>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 5>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 2>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "pending",
+        step |-> p2,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 3>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "hr",
+        step |-> p2,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 4>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 5>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<"op", 1>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<"op", 2>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] )
+/\ proj = (p1 :> "j1" @@ p2 :> "j1")
+/\ expAt = (p1 :> FALSE @@ p2 :> FALSE)
+/\ approved = [c1 |-> 0]
+/\ sess = (p1 :> "s1" @@ p2 :> "s1")
+/\ tout = (p1 :> 0 @@ p2 :> 0)
+/\ ran = (p1 :> "none" @@ p2 :> "none")
+/\ sub = (p1 :> "write" @@ p2 :> "seek")
+/\ stage = (p1 :> "base" @@ p2 :> "base")
+/\ pc = (p1 :> "app" @@ p2 :> "app")
+/\ dec = (p1 :> "ask" @@ p2 :> "ask")
+/\ lock = "free"
+/\ files = [ledger |-> <<>>, history |-> <<>>, feedback |-> <<>>]
+/\ cmd = (p1 :> "c1" @@ p2 :> "c1")
+/\ wpos = (p1 :> 0 @@ p2 :> 0)
+/\ spill = <<>>
+/\ queue = ( p1 :> <<<<"history", <<p1, 2>>>>, <<"ledger", <<p1, 3>>>>>> @@
+  p2 :> <<<<"history", <<p2, 2>>>>, <<"ledger", <<p2, 3>>>>>> )
+/\ expired = FALSE
+/\ learnOk = (p1 :> FALSE @@ p2 :> FALSE)
+/\ after = (p1 :> "returned" @@ p2 :> "returned")
+/\ granted = [c1 |-> 0]
+
+State 5: <Write line 254, col 5 to line 261, col 79 of module Semgate>
+/\ recs = ( <<p1, 2>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "pending",
+        step |-> p1,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 3>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "hr",
+        step |-> p1,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 4>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 5>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 2>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "pending",
+        step |-> p2,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 3>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "hr",
+        step |-> p2,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 4>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 5>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<"op", 1>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<"op", 2>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] )
+/\ proj = (p1 :> "j1" @@ p2 :> "j1")
+/\ expAt = (p1 :> FALSE @@ p2 :> FALSE)
+/\ approved = [c1 |-> 0]
+/\ sess = (p1 :> "s1" @@ p2 :> "s1")
+/\ tout = (p1 :> 0 @@ p2 :> 0)
+/\ ran = (p1 :> "none" @@ p2 :> "none")
+/\ sub = (p1 :> "seek" @@ p2 :> "seek")
+/\ stage = (p1 :> "base" @@ p2 :> "base")
+/\ pc = (p1 :> "app" @@ p2 :> "app")
+/\ dec = (p1 :> "ask" @@ p2 :> "ask")
+/\ lock = "free"
+/\ files = [ ledger |-> <<>>,
+  history |-> <<[id |-> <<p1, 2>>, part |-> 0, last |-> TRUE]>>,
+  feedback |-> <<>> ]
+/\ cmd = (p1 :> "c1" @@ p2 :> "c1")
+/\ wpos = (p1 :> 0 @@ p2 :> 0)
+/\ spill = <<>>
+/\ queue = ( p1 :> <<<<"ledger", <<p1, 3>>>>>> @@
+  p2 :> <<<<"history", <<p2, 2>>>>, <<"ledger", <<p2, 3>>>>>> )
+/\ expired = FALSE
+/\ learnOk = (p1 :> FALSE @@ p2 :> FALSE)
+/\ after = (p1 :> "returned" @@ p2 :> "returned")
+/\ granted = [c1 |-> 0]
+
+State 6: <Seek line 240, col 5 to line 251, col 79 of module Semgate>
+/\ recs = ( <<p1, 2>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "pending",
+        step |-> p1,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 3>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "hr",
+        step |-> p1,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 4>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 5>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 2>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "pending",
+        step |-> p2,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 3>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "hr",
+        step |-> p2,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 4>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 5>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<"op", 1>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<"op", 2>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] )
+/\ proj = (p1 :> "j1" @@ p2 :> "j1")
+/\ expAt = (p1 :> FALSE @@ p2 :> FALSE)
+/\ approved = [c1 |-> 0]
+/\ sess = (p1 :> "s1" @@ p2 :> "s1")
+/\ tout = (p1 :> 0 @@ p2 :> 0)
+/\ ran = (p1 :> "none" @@ p2 :> "none")
+/\ sub = (p1 :> "seek" @@ p2 :> "write")
+/\ stage = (p1 :> "base" @@ p2 :> "base")
+/\ pc = (p1 :> "app" @@ p2 :> "app")
+/\ dec = (p1 :> "ask" @@ p2 :> "ask")
+/\ lock = "free"
+/\ files = [ ledger |-> <<>>,
+  history |-> <<[id |-> <<p1, 2>>, part |-> 0, last |-> TRUE]>>,
+  feedback |-> <<>> ]
+/\ cmd = (p1 :> "c1" @@ p2 :> "c1")
+/\ wpos = (p1 :> 0 @@ p2 :> 1)
+/\ spill = <<>>
+/\ queue = ( p1 :> <<<<"ledger", <<p1, 3>>>>>> @@
+  p2 :> <<<<"history", <<p2, 2>>>>, <<"ledger", <<p2, 3>>>>>> )
+/\ expired = FALSE
+/\ learnOk = (p1 :> FALSE @@ p2 :> FALSE)
+/\ after = (p1 :> "returned" @@ p2 :> "returned")
+/\ granted = [c1 |-> 0]
+
+State 7: <OpGrant line 351, col 5 to line 355, col 136 of module Semgate>
+/\ recs = ( <<p1, 2>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "pending",
+        step |-> p1,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 3>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "hr",
+        step |-> p1,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 4>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 5>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 2>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "pending",
+        step |-> p2,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 3>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "hr",
+        step |-> p2,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 4>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 5>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<"op", 1>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "allow",
+        kind |-> "fb",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<"op", 2>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] )
+/\ proj = (p1 :> "j1" @@ p2 :> "j1")
+/\ expAt = (p1 :> FALSE @@ p2 :> FALSE)
+/\ approved = [c1 |-> 0]
+/\ sess = (p1 :> "s1" @@ p2 :> "s1")
+/\ tout = (p1 :> 0 @@ p2 :> 0)
+/\ ran = (p1 :> "none" @@ p2 :> "none")
+/\ sub = (p1 :> "seek" @@ p2 :> "write")
+/\ stage = (p1 :> "base" @@ p2 :> "base")
+/\ pc = (p1 :> "app" @@ p2 :> "app")
+/\ dec = (p1 :> "ask" @@ p2 :> "ask")
+/\ lock = "free"
+/\ files = [ ledger |-> <<>>,
+  history |-> <<[id |-> <<p1, 2>>, part |-> 0, last |-> TRUE]>>,
+  feedback |-> <<[id |-> <<"op", 1>>, part |-> 0, last |-> TRUE]>> ]
+/\ cmd = (p1 :> "c1" @@ p2 :> "c1")
+/\ wpos = (p1 :> 0 @@ p2 :> 1)
+/\ spill = <<>>
+/\ queue = ( p1 :> <<<<"ledger", <<p1, 3>>>>>> @@
+  p2 :> <<<<"history", <<p2, 2>>>>, <<"ledger", <<p2, 3>>>>>> )
+/\ expired = FALSE
+/\ learnOk = (p1 :> FALSE @@ p2 :> FALSE)
+/\ after = (p1 :> "returned" @@ p2 :> "returned")
+/\ granted = [c1 |-> 1]
+
+State 8: <Seek line 240, col 5 to line 251, col 79 of module Semgate>
+/\ recs = ( <<p1, 2>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "pending",
+        step |-> p1,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 3>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "hr",
+        step |-> p1,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 4>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 5>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 2>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "pending",
+        step |-> p2,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 3>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "hr",
+        step |-> p2,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 4>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 5>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<"op", 1>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "allow",
+        kind |-> "fb",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<"op", 2>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] )
+/\ proj = (p1 :> "j1" @@ p2 :> "j1")
+/\ expAt = (p1 :> FALSE @@ p2 :> FALSE)
+/\ approved = [c1 |-> 0]
+/\ sess = (p1 :> "s1" @@ p2 :> "s1")
+/\ tout = (p1 :> 0 @@ p2 :> 0)
+/\ ran = (p1 :> "none" @@ p2 :> "none")
+/\ sub = (p1 :> "write" @@ p2 :> "write")
+/\ stage = (p1 :> "base" @@ p2 :> "base")
+/\ pc = (p1 :> "app" @@ p2 :> "app")
+/\ dec = (p1 :> "ask" @@ p2 :> "ask")
+/\ lock = "free"
+/\ files = [ ledger |-> <<>>,
+  history |-> <<[id |-> <<p1, 2>>, part |-> 0, last |-> TRUE]>>,
+  feedback |-> <<[id |-> <<"op", 1>>, part |-> 0, last |-> TRUE]>> ]
+/\ cmd = (p1 :> "c1" @@ p2 :> "c1")
+/\ wpos = (p1 :> 0 @@ p2 :> 1)
+/\ spill = <<>>
+/\ queue = ( p1 :> <<<<"ledger", <<p1, 3>>>>>> @@
+  p2 :> <<<<"history", <<p2, 2>>>>, <<"ledger", <<p2, 3>>>>>> )
+/\ expired = FALSE
+/\ learnOk = (p1 :> FALSE @@ p2 :> FALSE)
+/\ after = (p1 :> "returned" @@ p2 :> "returned")
+/\ granted = [c1 |-> 1]
+
+State 9: <Write line 254, col 5 to line 261, col 79 of module Semgate>
+/\ recs = ( <<p1, 2>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "pending",
+        step |-> p1,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 3>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "hr",
+        step |-> p1,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 4>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 5>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 2>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "pending",
+        step |-> p2,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 3>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "hr",
+        step |-> p2,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 4>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 5>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<"op", 1>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "allow",
+        kind |-> "fb",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<"op", 2>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] )
+/\ proj = (p1 :> "j1" @@ p2 :> "j1")
+/\ expAt = (p1 :> FALSE @@ p2 :> FALSE)
+/\ approved = [c1 |-> 0]
+/\ sess = (p1 :> "s1" @@ p2 :> "s1")
+/\ tout = (p1 :> 0 @@ p2 :> 0)
+/\ ran = (p1 :> "none" @@ p2 :> "none")
+/\ sub = (p1 :> "none" @@ p2 :> "write")
+/\ stage = (p1 :> "base" @@ p2 :> "base")
+/\ pc = (p1 :> "returned" @@ p2 :> "app")
+/\ dec = (p1 :> "ask" @@ p2 :> "ask")
+/\ lock = "free"
+/\ files = [ ledger |->
+      << [id |-> <<p1, 3>>, part |-> 0, last |-> FALSE],
+         [id |-> <<p1, 3>>, part |-> 1, last |-> TRUE] >>,
+  history |-> <<[id |-> <<p1, 2>>, part |-> 0, last |-> TRUE]>>,
+  feedback |-> <<[id |-> <<"op", 1>>, part |-> 0, last |-> TRUE]>> ]
+/\ cmd = (p1 :> "c1" @@ p2 :> "c1")
+/\ wpos = (p1 :> 0 @@ p2 :> 1)
+/\ spill = <<>>
+/\ queue = (p1 :> <<>> @@ p2 :> <<<<"history", <<p2, 2>>>>, <<"ledger", <<p2, 3>>>>>>)
+/\ expired = FALSE
+/\ learnOk = (p1 :> FALSE @@ p2 :> FALSE)
+/\ after = (p1 :> "returned" @@ p2 :> "returned")
+/\ granted = [c1 |-> 1]
+
+State 10: <HostAndPost line 326, col 5 to line 332, col 114 of module Semgate>
+/\ recs = ( <<p1, 2>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "pending",
+        step |-> p1,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 3>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "hr",
+        step |-> p1,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 4>> :>
+      [ sess |-> "s1",
+        proj |-> "none",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "executed",
+        step |-> p1,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 5>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 2>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "pending",
+        step |-> p2,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 3>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "hr",
+        step |-> p2,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 4>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 5>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<"op", 1>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "allow",
+        kind |-> "fb",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<"op", 2>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] )
+/\ proj = (p1 :> "j1" @@ p2 :> "j1")
+/\ expAt = (p1 :> FALSE @@ p2 :> FALSE)
+/\ approved = [c1 |-> 1]
+/\ sess = (p1 :> "s1" @@ p2 :> "s1")
+/\ tout = (p1 :> 0 @@ p2 :> 0)
+/\ ran = (p1 :> "yes" @@ p2 :> "none")
+/\ sub = (p1 :> "seek" @@ p2 :> "write")
+/\ stage = (p1 :> "base" @@ p2 :> "base")
+/\ pc = (p1 :> "app" @@ p2 :> "app")
+/\ dec = (p1 :> "ask" @@ p2 :> "ask")
+/\ lock = "free"
+/\ files = [ ledger |->
+      << [id |-> <<p1, 3>>, part |-> 0, last |-> FALSE],
+         [id |-> <<p1, 3>>, part |-> 1, last |-> TRUE] >>,
+  history |-> <<[id |-> <<p1, 2>>, part |-> 0, last |-> TRUE]>>,
+  feedback |-> <<[id |-> <<"op", 1>>, part |-> 0, last |-> TRUE]>> ]
+/\ cmd = (p1 :> "c1" @@ p2 :> "c1")
+/\ wpos = (p1 :> 0 @@ p2 :> 1)
+/\ spill = <<>>
+/\ queue = ( p1 :> <<<<"history", <<p1, 4>>>>>> @@
+  p2 :> <<<<"history", <<p2, 2>>>>, <<"ledger", <<p2, 3>>>>>> )
+/\ expired = FALSE
+/\ learnOk = (p1 :> FALSE @@ p2 :> FALSE)
+/\ after = (p1 :> "done" @@ p2 :> "returned")
+/\ granted = [c1 |-> 1]
+
+State 11: <Seek line 240, col 5 to line 251, col 79 of module Semgate>
+/\ recs = ( <<p1, 2>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "pending",
+        step |-> p1,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 3>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "hr",
+        step |-> p1,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 4>> :>
+      [ sess |-> "s1",
+        proj |-> "none",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "executed",
+        step |-> p1,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 5>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 2>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "pending",
+        step |-> p2,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 3>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "hr",
+        step |-> p2,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 4>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 5>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<"op", 1>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "allow",
+        kind |-> "fb",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<"op", 2>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] )
+/\ proj = (p1 :> "j1" @@ p2 :> "j1")
+/\ expAt = (p1 :> FALSE @@ p2 :> FALSE)
+/\ approved = [c1 |-> 1]
+/\ sess = (p1 :> "s1" @@ p2 :> "s1")
+/\ tout = (p1 :> 0 @@ p2 :> 0)
+/\ ran = (p1 :> "yes" @@ p2 :> "none")
+/\ sub = (p1 :> "write" @@ p2 :> "write")
+/\ stage = (p1 :> "base" @@ p2 :> "base")
+/\ pc = (p1 :> "app" @@ p2 :> "app")
+/\ dec = (p1 :> "ask" @@ p2 :> "ask")
+/\ lock = "free"
+/\ files = [ ledger |->
+      << [id |-> <<p1, 3>>, part |-> 0, last |-> FALSE],
+         [id |-> <<p1, 3>>, part |-> 1, last |-> TRUE] >>,
+  history |-> <<[id |-> <<p1, 2>>, part |-> 0, last |-> TRUE]>>,
+  feedback |-> <<[id |-> <<"op", 1>>, part |-> 0, last |-> TRUE]>> ]
+/\ cmd = (p1 :> "c1" @@ p2 :> "c1")
+/\ wpos = (p1 :> 1 @@ p2 :> 1)
+/\ spill = <<>>
+/\ queue = ( p1 :> <<<<"history", <<p1, 4>>>>>> @@
+  p2 :> <<<<"history", <<p2, 2>>>>, <<"ledger", <<p2, 3>>>>>> )
+/\ expired = FALSE
+/\ learnOk = (p1 :> FALSE @@ p2 :> FALSE)
+/\ after = (p1 :> "done" @@ p2 :> "returned")
+/\ granted = [c1 |-> 1]
+
+State 12: <Write line 254, col 5 to line 261, col 79 of module Semgate>
+/\ recs = ( <<p1, 2>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "pending",
+        step |-> p1,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 3>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "hr",
+        step |-> p1,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 4>> :>
+      [ sess |-> "s1",
+        proj |-> "none",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "executed",
+        step |-> p1,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 5>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 2>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "pending",
+        step |-> p2,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 3>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "hr",
+        step |-> p2,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 4>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 5>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<"op", 1>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "allow",
+        kind |-> "fb",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<"op", 2>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] )
+/\ proj = (p1 :> "j1" @@ p2 :> "j1")
+/\ expAt = (p1 :> FALSE @@ p2 :> FALSE)
+/\ approved = [c1 |-> 1]
+/\ sess = (p1 :> "s1" @@ p2 :> "s1")
+/\ tout = (p1 :> 0 @@ p2 :> 0)
+/\ ran = (p1 :> "yes" @@ p2 :> "none")
+/\ sub = (p1 :> "none" @@ p2 :> "write")
+/\ stage = (p1 :> "base" @@ p2 :> "base")
+/\ pc = (p1 :> "done" @@ p2 :> "app")
+/\ dec = (p1 :> "ask" @@ p2 :> "ask")
+/\ lock = "free"
+/\ files = [ ledger |->
+      << [id |-> <<p1, 3>>, part |-> 0, last |-> FALSE],
+         [id |-> <<p1, 3>>, part |-> 1, last |-> TRUE] >>,
+  history |->
+      << [id |-> <<p1, 2>>, part |-> 0, last |-> TRUE],
+         [id |-> <<p1, 4>>, part |-> 0, last |-> FALSE],
+         [id |-> <<p1, 4>>, part |-> 1, last |-> TRUE] >>,
+  feedback |-> <<[id |-> <<"op", 1>>, part |-> 0, last |-> TRUE]>> ]
+/\ cmd = (p1 :> "c1" @@ p2 :> "c1")
+/\ wpos = (p1 :> 0 @@ p2 :> 1)
+/\ spill = <<>>
+/\ queue = (p1 :> <<>> @@ p2 :> <<<<"history", <<p2, 2>>>>, <<"ledger", <<p2, 3>>>>>>)
+/\ expired = FALSE
+/\ learnOk = (p1 :> FALSE @@ p2 :> FALSE)
+/\ after = (p1 :> "done" @@ p2 :> "returned")
+/\ granted = [c1 |-> 1]
+
+State 13: <Write line 254, col 5 to line 261, col 79 of module Semgate>
+/\ recs = ( <<p1, 2>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "pending",
+        step |-> p1,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 3>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "hr",
+        step |-> p1,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 4>> :>
+      [ sess |-> "s1",
+        proj |-> "none",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "executed",
+        step |-> p1,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 5>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 2>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "pending",
+        step |-> p2,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 3>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "hr",
+        step |-> p2,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 4>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 5>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<"op", 1>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "allow",
+        kind |-> "fb",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<"op", 2>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] )
+/\ proj = (p1 :> "j1" @@ p2 :> "j1")
+/\ expAt = (p1 :> FALSE @@ p2 :> FALSE)
+/\ approved = [c1 |-> 1]
+/\ sess = (p1 :> "s1" @@ p2 :> "s1")
+/\ tout = (p1 :> 0 @@ p2 :> 0)
+/\ ran = (p1 :> "yes" @@ p2 :> "none")
+/\ sub = (p1 :> "none" @@ p2 :> "seek")
+/\ stage = (p1 :> "base" @@ p2 :> "base")
+/\ pc = (p1 :> "done" @@ p2 :> "app")
+/\ dec = (p1 :> "ask" @@ p2 :> "ask")
+/\ lock = "free"
+/\ files = [ ledger |->
+      << [id |-> <<p1, 3>>, part |-> 0, last |-> FALSE],
+         [id |-> <<p1, 3>>, part |-> 1, last |-> TRUE] >>,
+  history |->
+      << [id |-> <<p1, 2>>, part |-> 0, last |-> TRUE],
+         [id |-> <<p2, 2>>, part |-> 0, last |-> TRUE],
+         [id |-> <<p1, 4>>, part |-> 1, last |-> TRUE] >>,
+  feedback |-> <<[id |-> <<"op", 1>>, part |-> 0, last |-> TRUE]>> ]
+/\ cmd = (p1 :> "c1" @@ p2 :> "c1")
+/\ wpos = (p1 :> 0 @@ p2 :> 0)
+/\ spill = <<>>
+/\ queue = (p1 :> <<>> @@ p2 :> <<<<"ledger", <<p2, 3>>>>>>)
+/\ expired = FALSE
+/\ learnOk = (p1 :> FALSE @@ p2 :> FALSE)
+/\ after = (p1 :> "done" @@ p2 :> "returned")
+/\ granted = [c1 |-> 1]
+
+State 14: <Seek line 240, col 5 to line 251, col 79 of module Semgate>
+/\ recs = ( <<p1, 2>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "pending",
+        step |-> p1,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 3>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "hr",
+        step |-> p1,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 4>> :>
+      [ sess |-> "s1",
+        proj |-> "none",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "executed",
+        step |-> p1,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 5>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 2>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "pending",
+        step |-> p2,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 3>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "hr",
+        step |-> p2,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 4>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 5>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<"op", 1>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "allow",
+        kind |-> "fb",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<"op", 2>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] )
+/\ proj = (p1 :> "j1" @@ p2 :> "j1")
+/\ expAt = (p1 :> FALSE @@ p2 :> FALSE)
+/\ approved = [c1 |-> 1]
+/\ sess = (p1 :> "s1" @@ p2 :> "s1")
+/\ tout = (p1 :> 0 @@ p2 :> 0)
+/\ ran = (p1 :> "yes" @@ p2 :> "none")
+/\ sub = (p1 :> "none" @@ p2 :> "write")
+/\ stage = (p1 :> "base" @@ p2 :> "base")
+/\ pc = (p1 :> "done" @@ p2 :> "app")
+/\ dec = (p1 :> "ask" @@ p2 :> "ask")
+/\ lock = "free"
+/\ files = [ ledger |->
+      << [id |-> <<p1, 3>>, part |-> 0, last |-> FALSE],
+         [id |-> <<p1, 3>>, part |-> 1, last |-> TRUE] >>,
+  history |->
+      << [id |-> <<p1, 2>>, part |-> 0, last |-> TRUE],
+         [id |-> <<p2, 2>>, part |-> 0, last |-> TRUE],
+         [id |-> <<p1, 4>>, part |-> 1, last |-> TRUE] >>,
+  feedback |-> <<[id |-> <<"op", 1>>, part |-> 0, last |-> TRUE]>> ]
+/\ cmd = (p1 :> "c1" @@ p2 :> "c1")
+/\ wpos = (p1 :> 0 @@ p2 :> 2)
+/\ spill = <<>>
+/\ queue = (p1 :> <<>> @@ p2 :> <<<<"ledger", <<p2, 3>>>>>>)
+/\ expired = FALSE
+/\ learnOk = (p1 :> FALSE @@ p2 :> FALSE)
+/\ after = (p1 :> "done" @@ p2 :> "returned")
+/\ granted = [c1 |-> 1]
+
+State 15: <Write line 254, col 5 to line 261, col 79 of module Semgate>
+/\ recs = ( <<p1, 2>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "pending",
+        step |-> p1,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 3>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "hr",
+        step |-> p1,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 4>> :>
+      [ sess |-> "s1",
+        proj |-> "none",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "executed",
+        step |-> p1,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 5>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 2>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "pending",
+        step |-> p2,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 3>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "hr",
+        step |-> p2,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 4>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 5>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<"op", 1>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "allow",
+        kind |-> "fb",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<"op", 2>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] )
+/\ proj = (p1 :> "j1" @@ p2 :> "j1")
+/\ expAt = (p1 :> FALSE @@ p2 :> FALSE)
+/\ approved = [c1 |-> 1]
+/\ sess = (p1 :> "s1" @@ p2 :> "s1")
+/\ tout = (p1 :> 0 @@ p2 :> 0)
+/\ ran = (p1 :> "yes" @@ p2 :> "none")
+/\ sub = (p1 :> "none" @@ p2 :> "none")
+/\ stage = (p1 :> "base" @@ p2 :> "base")
+/\ pc = (p1 :> "done" @@ p2 :> "returned")
+/\ dec = (p1 :> "ask" @@ p2 :> "ask")
+/\ lock = "free"
+/\ files = [ ledger |->
+      << [id |-> <<p1, 3>>, part |-> 0, last |-> FALSE],
+         [id |-> <<p1, 3>>, part |-> 1, last |-> TRUE],
+         [id |-> <<p2, 3>>, part |-> 0, last |-> FALSE],
+         [id |-> <<p2, 3>>, part |-> 1, last |-> TRUE] >>,
+  history |->
+      << [id |-> <<p1, 2>>, part |-> 0, last |-> TRUE],
+         [id |-> <<p2, 2>>, part |-> 0, last |-> TRUE],
+         [id |-> <<p1, 4>>, part |-> 1, last |-> TRUE] >>,
+  feedback |-> <<[id |-> <<"op", 1>>, part |-> 0, last |-> TRUE]>> ]
+/\ cmd = (p1 :> "c1" @@ p2 :> "c1")
+/\ wpos = (p1 :> 0 @@ p2 :> 0)
+/\ spill = <<>>
+/\ queue = (p1 :> <<>> @@ p2 :> <<>>)
+/\ expired = FALSE
+/\ learnOk = (p1 :> FALSE @@ p2 :> FALSE)
+/\ after = (p1 :> "done" @@ p2 :> "returned")
+/\ granted = [c1 |-> 1]
+
+State 16: <HostAndPost line 326, col 5 to line 332, col 114 of module Semgate>
+/\ recs = ( <<p1, 2>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "pending",
+        step |-> p1,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 3>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "hr",
+        step |-> p1,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 4>> :>
+      [ sess |-> "s1",
+        proj |-> "none",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "executed",
+        step |-> p1,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p1, 5>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 2>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "pending",
+        step |-> p2,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 3>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "ask",
+        kind |-> "hr",
+        step |-> p2,
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 4>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<p2, 5>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<"op", 1>> :>
+      [ sess |-> "s1",
+        proj |-> "j1",
+        cmd |-> "c1",
+        dec |-> "allow",
+        kind |-> "fb",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] @@
+  <<"op", 2>> :>
+      [ sess |-> "none",
+        proj |-> "none",
+        cmd |-> "none",
+        dec |-> "none",
+        kind |-> "none",
+        step |-> "none",
+        err |-> FALSE,
+        legacy |-> FALSE ] )
+/\ proj = (p1 :> "j1" @@ p2 :> "j1")
+/\ expAt = (p1 :> FALSE @@ p2 :> FALSE)
+/\ approved = [c1 |-> 2]
+/\ sess = (p1 :> "s1" @@ p2 :> "s1")
+/\ tout = (p1 :> 0 @@ p2 :> 0)
+/\ ran = (p1 :> "yes" @@ p2 :> "yes")
+/\ sub = (p1 :> "none" @@ p2 :> "none")
+/\ stage = (p1 :> "base" @@ p2 :> "base")
+/\ pc = (p1 :> "done" @@ p2 :> "done")
+/\ dec = (p1 :> "ask" @@ p2 :> "ask")
+/\ lock = "free"
+/\ files = [ ledger |->
+      << [id |-> <<p1, 3>>, part |-> 0, last |-> FALSE],
+         [id |-> <<p1, 3>>, part |-> 1, last |-> TRUE],
+         [id |-> <<p2, 3>>, part |-> 0, last |-> FALSE],
+         [id |-> <<p2, 3>>, part |-> 1, last |-> TRUE] >>,
+  history |->
+      << [id |-> <<p1, 2>>, part |-> 0, last |-> TRUE],
+         [id |-> <<p2, 2>>, part |-> 0, last |-> TRUE],
+         [id |-> <<p1, 4>>, part |-> 1, last |-> TRUE] >>,
+  feedback |-> <<[id |-> <<"op", 1>>, part |-> 0, last |-> TRUE]>> ]
+/\ cmd = (p1 :> "c1" @@ p2 :> "c1")
+/\ wpos = (p1 :> 0 @@ p2 :> 0)
+/\ spill = <<>>
+/\ queue = (p1 :> <<>> @@ p2 :> <<>>)
+/\ expired = FALSE
+/\ learnOk = (p1 :> FALSE @@ p2 :> FALSE)
+/\ after = (p1 :> "done" @@ p2 :> "returned")
+/\ granted = [c1 |-> 1]
+
+State 17: Stuttering
+Finished checking temporal properties in 00s at 2026-09-23 15:01:25
+9020 states generated, 4710 distinct states found, 1376 states left on queue.
+Finished in 03s at (2026-09-23 15:01:25)

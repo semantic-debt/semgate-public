@@ -1,0 +1,42 @@
+{
+  "schema": "semgate-host-manifest/1",
+  "host": "opencode-v2",
+  "display": "OpenCode V2 plugin API",
+  "measured": {
+    "version": "1.18.31",
+    "by": "hookconf 0.1.0 @ 3517a57, results/opencode-v2-1.18.31.json (V2 entry point on OpenCode 1.18.31, Windows 11, 2026-09-23)"
+  },
+  "conformance": {
+    "core": "none",
+    "levels": {
+      "L0": "not met: O1-O4 unsupported (1.18.31 rejected the V2 plugin; no tool hook fired)",
+      "L1": "not met: B1-B4 unsupported",
+      "L2": "not met: A2-A4 unsupported",
+      "L3": "not met: P1 unsupported",
+      "L4": "not met: M1, M3 unsupported"
+    },
+    "hardening_gaps": ["B5 no fail-closed", "B6 silent hook failure", "A5 hook config editable by the agent", "A6 hooks reload mid-session", "M4 no schema version"]
+  },
+  "capabilities": {
+    "C1": {"status": "no", "verified": true, "source": "hookconf opencode-v2-1.18.31.json: B1 unsupported on 1.18.31", "note": "survey [OC] says the 2.x permission hook can deny; not measured on 2.x"},
+    "C2": {"status": "no", "verified": true, "source": "hookconf opencode-v2-1.18.31.json: A2 unsupported; survey [OC] #47495 (effect ask ignored)"},
+    "C2b": {"status": "no", "verified": true, "source": "hookconf opencode-v2-1.18.31.json: A2b unsupported (ba26c03)"},
+    "C3": {"status": "no", "verified": true, "source": "hookconf opencode-v2-1.18.31.json: P1 unsupported", "note": "survey [OC] says yes on 2.x; not measured"},
+    "C6": {"status": "unknown", "verified": false, "source": "not measured"},
+    "C8": {"status": "no", "verified": true, "source": "hookconf opencode-v2-1.18.31.json: A3 unsupported"},
+    "C10": {"status": "no", "verified": true, "source": "hookconf opencode-v2-1.18.31.json: O2 unsupported"},
+    "C11": {"status": "no", "verified": true, "source": "hookconf opencode-v2-1.18.31.json: A4 unsupported", "note": "branch v2 @ bee5014 (source read): ctx.session.context() returns the session messages (type user/assistant/...), ctx.session.hook('prompt') sees each prompt; not measured"},
+    "C12": {"status": "unknown", "verified": false, "source": "not measured"},
+    "C14": {"status": "no", "verified": true, "source": "hookconf opencode-v2-1.18.31.json: M1 unsupported"},
+    "C17": {"status": "no", "verified": true, "source": "hookconf opencode-v2-1.18.31.json: O4, M3 unsupported"},
+    "C19": {"status": "no", "verified": true, "source": "hookconf opencode-v2-1.18.31.json: B5 unsupported"},
+    "C21": {"status": "no", "verified": true, "source": "hookconf opencode-v2-1.18.31.json: A5 unsupported"},
+    "C26": {"status": "no", "verified": true, "source": "hookconf opencode-v2-1.18.31.json: M4 unsupported"},
+    "C33": {"status": "unknown", "verified": false, "source": "semgate's V2 plugin registers execute.before only; no tool output reaches semgate"},
+    "C34": {"status": "unknown", "verified": false, "source": "not implemented"},
+    "C35": {"status": "yes", "verified": false, "source": "source read, anomalyco/opencode branch v2 @ bee5014 (2026-09-24), not run live: ctx.session.context() returns the session messages after the latest compaction ordered by seq (core/src/session/history.ts:84-94; plugin/src/promise/adapter.ts:185-196 unwraps {data}), user messages are type 'user' apart from synthetic/system/skill/compaction (schema/src/session-message.ts:73-107), tool items carry the execute.before id (core/src/tool.ts:264-271); ctx.session.hook('prompt') runs inside Session.prompt with sessionID, messageID and the text (core/src/session/prompt.ts:40-51, session.ts:146-171), and the history user message keeps that messageID (projector.ts:612-630)", "note": "semgate counts a user message only when its prompt hook saw its id and text after the block; root sessions only (a subagent's prompt to its child session is also a 'user' message, tool/plugin/subagent.ts:205-213). Released 1.18.31 rejects the V2 entry point (see C11), so this applies to v2-branch builds."}
+  },
+  "notes": [
+    "Measured only on 1.18.31, where the V2 entry point is rejected. OpenCode 2.x is not measured; survey [OC] #47356: cd-led commands skip the hook."
+  ]
+}

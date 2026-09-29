@@ -1,0 +1,8 @@
+{
+  "mode": "shadow",
+  "grant_file": ".antigravity/semgate/grant.json",
+  "policy_file": "policies/default_policy.json",
+  "provider": "none",
+  "ledger_file": ".antigravity/semgate/ledger.jsonl",
+  "enforcement": {"enabled": false, "auto_allow_tools": []}
+}

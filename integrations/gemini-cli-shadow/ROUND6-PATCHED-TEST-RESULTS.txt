@@ -1,0 +1,12 @@
+Round-6 documentation-only patch (v4.1.2). Hook, installer, reporter, dependency pin, and maintained tests byte-identical to v4.1; preflight differs only in its warning string (unchanged since v4.1.1).
+
+Maintained suite (tests/test_shadow.py):
+54 passed in 0.94s
+
+Round-6 delta suite (delta_tests/test_documentation_patch.py, unchanged; SEMGATE_DELTA_CURRENT=this package, SEMGATE_DELTA_PREVIOUS=v4.1):
+9 passed in 0.51s
+
+Round-5 independent correction checks (unchanged):
+16 passed in 0.29s
+
+Historical round-4 suite (unchanged expectation): 30 passed, 1 failed (the O4-01 characterization of the fixed limitation, by design).

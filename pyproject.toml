@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools==84.0.0"]  # pinned: builds must not pull a just-released version (72h supply-chain rule)
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "semgate"
+dynamic = ["version"]   # from semgate.__version__ ([tool.setuptools.dynamic])
+description = "Semantic command-permission gate for coding agents: deterministic rules for the certain-bad, a typed classifier (TypeSafe Jev) for the rest, fail-closed. We judge. The host acts."
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+authors = [{ name = "Manuel Parra" }]
+requires-python = ">=3.10"
+dependencies = []
+keywords = ["coding-agents", "permissions", "prompt-injection", "antigravity", "opencode", "guardrails", "jev", "typesafe"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Topic :: Security",
+  "Topic :: Software Development :: Libraries",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/th3nolo/semgate"
+Source = "https://github.com/th3nolo/semgate"
+Issues = "https://github.com/th3nolo/semgate/issues"
+Author = "https://th3nolo.com"
+
+[project.optional-dependencies]
+typesafe = ["typesafe-sdk==0.7.1", "python-dotenv==1.2.3"]  # pinned; 0.7.1 (published 2026-09-21 15:57 UTC) adopted 2026-09-24 at 59 h old as an owner-approved exception (key-leak fix); it passed the 72 h rule on 2026-09-24 15:57 UTC, so the exception is closed; dotenv loads the key from .env for hooks that run outside your shell
+dev = ["pytest==9.1.1", "python-dotenv==1.2.3"]  # dotenv: the .env-reading tests need it
+
+[project.scripts]
+semgate = "semgate.cli:main"
+semgate-antigravity-hook = "semgate.antigravity_hook:main"
+semgate-claude-hook = "semgate.claude_hook:main"
+
+# The policy JSON files live at the repo top level (policies/) and are mapped
+# into the package as `semgate.policies`, so a wheel install carries them and
+# `semgate.gate.policy_dir()` finds them in both layouts.
+[tool.setuptools]
+packages = ["semgate", "semgate.adapters", "semgate.providers", "semgate.eval", "semgate.policies", "semgate.assets", "semgate.hosts"]
+
+[tool.setuptools.package-dir]
+"semgate.policies" = "policies"
+
+[tool.setuptools.package-data]
+"semgate.policies" = ["*.json"]
+"semgate.assets" = ["*.js", "*.ts", "*.md"]
+"semgate" = ["data/*.json", "data/hosts/*.json"]
+
+[tool.setuptools.dynamic]
+version = { attr = "semgate.__version__" }

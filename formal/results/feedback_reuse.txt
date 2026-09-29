@@ -1,0 +1,8 @@
+1 sess-A projA  rm -rf dist   -> deny   block_when_unsure: not a confident allow, so blocked; semgate enforce: human_gate/ask [human_gate:destructive_
+2 operator: semgate feedback allow "rm -rf dist"  (one record appended)
+3 sess-A projA  rm -rf dist   -> allow  semgate enforce: human_approved/allow [human_approved]; operator feedback: a human approved this action; human
+4 sess-A projA  rm -rf dist   -> allow  semgate enforce: human_approved/allow [human_approved]; operator feedback: a human approved this action; human
+5 sess-B projB  rm -rf dist   -> allow  semgate enforce: human_approved/allow [human_approved]; operator feedback: a human approved this action; human
+6 sess-A projA  rm -rf dist/  -> deny   block_when_unsure: not a confident allow, so blocked; semgate enforce: human_gate/ask [human_gate:destructive_
+feedback file lines: 1 (nothing marks the approval as used)
+temp dir: C:\WINDOWS\TEMP\semgate-formal-feedback-52eofpft

@@ -1,0 +1,1482 @@
+{
+ "MC_SemgateF6__M_nosnap__AgentContentOnly": {
+  "module": "MC_SemgateF6",
+  "property": "AgentContentOnly",
+  "result": "holds",
+  "states": "3160",
+  "trace": null,
+  "variant": "M_nosnap"
+ },
+ "MC_SemgateF6__M_nosnap__EditedStaysIneligible": {
+  "module": "MC_SemgateF6",
+  "property": "EditedStaysIneligible",
+  "result": "holds",
+  "states": "3160",
+  "trace": null,
+  "variant": "M_nosnap"
+ },
+ "MC_SemgateF6__M_nosnap__EligibleSound": {
+  "module": "MC_SemgateF6",
+  "property": "EligibleSound",
+  "result": "violated",
+  "states": "2857",
+  "trace": 8,
+  "variant": "M_nosnap"
+ },
+ "MC_SemgateF6__M_nosnap__RmRestorable": {
+  "module": "MC_SemgateF6",
+  "property": "RmRestorable",
+  "result": "violated",
+  "states": "2165",
+  "trace": 9,
+  "variant": "M_nosnap"
+ },
+ "MC_SemgateF6__M_nosnap__SnapshotRaceNoLoss": {
+  "module": "MC_SemgateF6",
+  "property": "SnapshotRaceNoLoss",
+  "result": "holds",
+  "states": "3160",
+  "trace": null,
+  "variant": "M_nosnap"
+ },
+ "MC_SemgateF6__M_postcode__AgentContentOnly": {
+  "module": "MC_SemgateF6",
+  "property": "AgentContentOnly",
+  "result": "violated",
+  "states": "3557",
+  "trace": 10,
+  "variant": "M_postcode"
+ },
+ "MC_SemgateF6__M_postcode__EditedStaysIneligible": {
+  "module": "MC_SemgateF6",
+  "property": "EditedStaysIneligible",
+  "result": "violated(liveness)",
+  "states": "3779",
+  "trace": 16,
+  "variant": "M_postcode"
+ },
+ "MC_SemgateF6__M_postcode__EligibleSound": {
+  "module": "MC_SemgateF6",
+  "property": "EligibleSound",
+  "result": "holds",
+  "states": "3779",
+  "trace": null,
+  "variant": "M_postcode"
+ },
+ "MC_SemgateF6__M_postcode__RmRestorable": {
+  "module": "MC_SemgateF6",
+  "property": "RmRestorable",
+  "result": "violated",
+  "states": "2648",
+  "trace": 9,
+  "variant": "M_postcode"
+ },
+ "MC_SemgateF6__M_postcode__SnapshotRaceNoLoss": {
+  "module": "MC_SemgateF6",
+  "property": "SnapshotRaceNoLoss",
+  "result": "holds",
+  "states": "3779",
+  "trace": null,
+  "variant": "M_postcode"
+ },
+ "MC_SemgateF6__M_shared__AgentContentOnly": {
+  "module": "MC_SemgateF6",
+  "property": "AgentContentOnly",
+  "result": "holds",
+  "states": "3232",
+  "trace": null,
+  "variant": "M_shared"
+ },
+ "MC_SemgateF6__M_shared__EditedStaysIneligible": {
+  "module": "MC_SemgateF6",
+  "property": "EditedStaysIneligible",
+  "result": "holds",
+  "states": "3232",
+  "trace": null,
+  "variant": "M_shared"
+ },
+ "MC_SemgateF6__M_shared__EligibleSound": {
+  "module": "MC_SemgateF6",
+  "property": "EligibleSound",
+  "result": "violated",
+  "states": "1913",
+  "trace": 8,
+  "variant": "M_shared"
+ },
+ "MC_SemgateF6__M_shared__RmRestorable": {
+  "module": "MC_SemgateF6",
+  "property": "RmRestorable",
+  "result": "violated",
+  "states": "1824",
+  "trace": 11,
+  "variant": "M_shared"
+ },
+ "MC_SemgateF6__M_shared__SnapshotRaceNoLoss": {
+  "module": "MC_SemgateF6",
+  "property": "SnapshotRaceNoLoss",
+  "result": "holds",
+  "states": "3232",
+  "trace": null,
+  "variant": "M_shared"
+ },
+ "MC_SemgateF6__M_tmp_collide__AgentContentOnly": {
+  "module": "MC_SemgateF6",
+  "property": "AgentContentOnly",
+  "result": "holds",
+  "states": "5538",
+  "trace": null,
+  "variant": "M_tmp_collide"
+ },
+ "MC_SemgateF6__M_tmp_collide__EditedStaysIneligible": {
+  "module": "MC_SemgateF6",
+  "property": "EditedStaysIneligible",
+  "result": "holds",
+  "states": "5538",
+  "trace": null,
+  "variant": "M_tmp_collide"
+ },
+ "MC_SemgateF6__M_tmp_collide__EligibleSound": {
+  "module": "MC_SemgateF6",
+  "property": "EligibleSound",
+  "result": "holds",
+  "states": "5538",
+  "trace": null,
+  "variant": "M_tmp_collide"
+ },
+ "MC_SemgateF6__M_tmp_collide__RmRestorable": {
+  "module": "MC_SemgateF6",
+  "property": "RmRestorable",
+  "result": "violated",
+  "states": "3866",
+  "trace": 11,
+  "variant": "M_tmp_collide"
+ },
+ "MC_SemgateF6__M_tmp_collide__SnapshotRaceNoLoss": {
+  "module": "MC_SemgateF6",
+  "property": "SnapshotRaceNoLoss",
+  "result": "violated",
+  "states": "5449",
+  "trace": 16,
+  "variant": "M_tmp_collide"
+ },
+ "MC_SemgateF6__M_trust__AgentContentOnly": {
+  "module": "MC_SemgateF6",
+  "property": "AgentContentOnly",
+  "result": "violated",
+  "states": "2445",
+  "trace": 8,
+  "variant": "M_trust"
+ },
+ "MC_SemgateF6__M_trust__EditedStaysIneligible": {
+  "module": "MC_SemgateF6",
+  "property": "EditedStaysIneligible",
+  "result": "violated(liveness)",
+  "states": "3140",
+  "trace": 15,
+  "variant": "M_trust"
+ },
+ "MC_SemgateF6__M_trust__EligibleSound": {
+  "module": "MC_SemgateF6",
+  "property": "EligibleSound",
+  "result": "violated",
+  "states": "2340",
+  "trace": 10,
+  "variant": "M_trust"
+ },
+ "MC_SemgateF6__M_trust__RmRestorable": {
+  "module": "MC_SemgateF6",
+  "property": "RmRestorable",
+  "result": "violated",
+  "states": "2090",
+  "trace": 9,
+  "variant": "M_trust"
+ },
+ "MC_SemgateF6__M_trust__SnapshotRaceNoLoss": {
+  "module": "MC_SemgateF6",
+  "property": "SnapshotRaceNoLoss",
+  "result": "holds",
+  "states": "3140",
+  "trace": null,
+  "variant": "M_trust"
+ },
+ "MC_SemgateF6__code__AgentContentOnly": {
+  "module": "MC_SemgateF6",
+  "property": "AgentContentOnly",
+  "result": "violated",
+  "states": "5469",
+  "trace": 12,
+  "variant": "code"
+ },
+ "MC_SemgateF6__code__EditedStaysIneligible": {
+  "module": "MC_SemgateF6",
+  "property": "EditedStaysIneligible",
+  "result": "violated(liveness)",
+  "states": "6759",
+  "trace": 20,
+  "variant": "code"
+ },
+ "MC_SemgateF6__code__EligibleSound": {
+  "module": "MC_SemgateF6",
+  "property": "EligibleSound",
+  "result": "holds",
+  "states": "6759",
+  "trace": null,
+  "variant": "code"
+ },
+ "MC_SemgateF6__code__K6_NoEligible": {
+  "module": "MC_SemgateF6",
+  "property": "K6_NoEligible",
+  "result": "violated",
+  "states": "2419",
+  "trace": 9,
+  "variant": "code"
+ },
+ "MC_SemgateF6__code__K7_NoRmRuns": {
+  "module": "MC_SemgateF6",
+  "property": "K7_NoRmRuns",
+  "result": "violated",
+  "states": "3859",
+  "trace": 10,
+  "variant": "code"
+ },
+ "MC_SemgateF6__code__RmRestorable": {
+  "module": "MC_SemgateF6",
+  "property": "RmRestorable",
+  "result": "violated",
+  "states": "3620",
+  "trace": 11,
+  "variant": "code"
+ },
+ "MC_SemgateF6__code__SnapshotRaceNoLoss": {
+  "module": "MC_SemgateF6",
+  "property": "SnapshotRaceNoLoss",
+  "result": "violated",
+  "states": "5685",
+  "trace": 16,
+  "variant": "code"
+ },
+ "MC_SemgateF6__code_posix__AgentContentOnly": {
+  "module": "MC_SemgateF6",
+  "property": "AgentContentOnly",
+  "result": "violated",
+  "states": "5258",
+  "trace": 10,
+  "variant": "code_posix"
+ },
+ "MC_SemgateF6__code_posix__EditedStaysIneligible": {
+  "module": "MC_SemgateF6",
+  "property": "EditedStaysIneligible",
+  "result": "violated(liveness)",
+  "states": "7002",
+  "trace": 20,
+  "variant": "code_posix"
+ },
+ "MC_SemgateF6__code_posix__EligibleSound": {
+  "module": "MC_SemgateF6",
+  "property": "EligibleSound",
+  "result": "holds",
+  "states": "7002",
+  "trace": null,
+  "variant": "code_posix"
+ },
+ "MC_SemgateF6__code_posix__RmRestorable": {
+  "module": "MC_SemgateF6",
+  "property": "RmRestorable",
+  "result": "violated",
+  "states": "3317",
+  "trace": 11,
+  "variant": "code_posix"
+ },
+ "MC_SemgateF6__code_posix__SnapshotRaceNoLoss": {
+  "module": "MC_SemgateF6",
+  "property": "SnapshotRaceNoLoss",
+  "result": "violated",
+  "states": "5608",
+  "trace": 16,
+  "variant": "code_posix"
+ },
+ "MC_SemgateF6__fixed__AgentContentOnly": {
+  "module": "MC_SemgateF6",
+  "property": "AgentContentOnly",
+  "result": "holds",
+  "states": "3094",
+  "trace": null,
+  "variant": "fixed"
+ },
+ "MC_SemgateF6__fixed__EditedStaysIneligible": {
+  "module": "MC_SemgateF6",
+  "property": "EditedStaysIneligible",
+  "result": "holds",
+  "states": "3094",
+  "trace": null,
+  "variant": "fixed"
+ },
+ "MC_SemgateF6__fixed__EligibleSound": {
+  "module": "MC_SemgateF6",
+  "property": "EligibleSound",
+  "result": "holds",
+  "states": "3094",
+  "trace": null,
+  "variant": "fixed"
+ },
+ "MC_SemgateF6__fixed__RmRestorable": {
+  "module": "MC_SemgateF6",
+  "property": "RmRestorable",
+  "result": "violated",
+  "states": "2629",
+  "trace": 10,
+  "variant": "fixed"
+ },
+ "MC_SemgateF6__fixed__SnapshotRaceNoLoss": {
+  "module": "MC_SemgateF6",
+  "property": "SnapshotRaceNoLoss",
+  "result": "holds",
+  "states": "3094",
+  "trace": null,
+  "variant": "fixed"
+ },
+ "MC_Semgate__M_consume_race__ApprovalExact": {
+  "module": "MC_Semgate",
+  "property": "ApprovalExact",
+  "result": "holds",
+  "states": "786289",
+  "trace": null,
+  "variant": "M_consume_race"
+ },
+ "MC_Semgate__M_consume_race__ApprovalOnce": {
+  "module": "MC_Semgate",
+  "property": "ApprovalOnce",
+  "result": "violated",
+  "states": "664",
+  "trace": 5,
+  "variant": "M_consume_race"
+ },
+ "MC_Semgate__M_consume_race__ApprovalSessionScoped": {
+  "module": "MC_Semgate",
+  "property": "ApprovalSessionScoped",
+  "result": "holds",
+  "states": "786289",
+  "trace": null,
+  "variant": "M_consume_race"
+ },
+ "MC_Semgate__M_consume_race__CountExactAtEnd": {
+  "module": "MC_Semgate",
+  "property": "CountExactAtEnd",
+  "result": "holds",
+  "states": "152762",
+  "trace": null,
+  "variant": "M_consume_race"
+ },
+ "MC_Semgate__M_consume_race__CountNoOver": {
+  "module": "MC_Semgate",
+  "property": "CountNoOver",
+  "result": "holds",
+  "states": "152762",
+  "trace": null,
+  "variant": "M_consume_race"
+ },
+ "MC_Semgate__M_consume_race__LearnedSound": {
+  "module": "MC_Semgate",
+  "property": "LearnedSound",
+  "result": "holds",
+  "states": "152762",
+  "trace": null,
+  "variant": "M_consume_race"
+ },
+ "MC_Semgate__M_consume_race__LedgerOneLine": {
+  "module": "MC_Semgate",
+  "property": "LedgerOneLine",
+  "result": "holds",
+  "states": "152762",
+  "trace": null,
+  "variant": "M_consume_race"
+ },
+ "MC_Semgate__M_consume_race__NoMisread": {
+  "module": "MC_Semgate",
+  "property": "NoMisread",
+  "result": "holds",
+  "states": "152762",
+  "trace": null,
+  "variant": "M_consume_race"
+ },
+ "MC_Semgate__M_count_error__CountExactAtEnd": {
+  "module": "MC_Semgate",
+  "property": "CountExactAtEnd",
+  "result": "violated",
+  "states": "90819",
+  "trace": 43,
+  "variant": "M_count_error"
+ },
+ "MC_Semgate__M_count_error__CountNoOver": {
+  "module": "MC_Semgate",
+  "property": "CountNoOver",
+  "result": "violated",
+  "states": "675",
+  "trace": 14,
+  "variant": "M_count_error"
+ },
+ "MC_Semgate__M_count_error__LearnedSound": {
+  "module": "MC_Semgate",
+  "property": "LearnedSound",
+  "result": "violated",
+  "states": "13486",
+  "trace": 29,
+  "variant": "M_count_error"
+ },
+ "MC_Semgate__M_count_error__LedgerOneLine": {
+  "module": "MC_Semgate",
+  "property": "LedgerOneLine",
+  "result": "holds",
+  "states": "109563",
+  "trace": null,
+  "variant": "M_count_error"
+ },
+ "MC_Semgate__M_count_error__NoMisread": {
+  "module": "MC_Semgate",
+  "property": "NoMisread",
+  "result": "holds",
+  "states": "109563",
+  "trace": null,
+  "variant": "M_count_error"
+ },
+ "MC_Semgate__M_key_nosession__ApprovalExact": {
+  "module": "MC_Semgate",
+  "property": "ApprovalExact",
+  "result": "holds",
+  "states": "862870",
+  "trace": null,
+  "variant": "M_key_nosession"
+ },
+ "MC_Semgate__M_key_nosession__ApprovalOnce": {
+  "module": "MC_Semgate",
+  "property": "ApprovalOnce",
+  "result": "holds",
+  "states": "862870",
+  "trace": null,
+  "variant": "M_key_nosession"
+ },
+ "MC_Semgate__M_key_nosession__ApprovalSessionScoped": {
+  "module": "MC_Semgate",
+  "property": "ApprovalSessionScoped",
+  "result": "violated",
+  "states": "355",
+  "trace": 6,
+  "variant": "M_key_nosession"
+ },
+ "MC_Semgate__M_key_nosession__CountExactAtEnd": {
+  "module": "MC_Semgate",
+  "property": "CountExactAtEnd",
+  "result": "holds",
+  "states": "109113",
+  "trace": null,
+  "variant": "M_key_nosession"
+ },
+ "MC_Semgate__M_key_nosession__CountNoOver": {
+  "module": "MC_Semgate",
+  "property": "CountNoOver",
+  "result": "holds",
+  "states": "109113",
+  "trace": null,
+  "variant": "M_key_nosession"
+ },
+ "MC_Semgate__M_key_nosession__LearnedSound": {
+  "module": "MC_Semgate",
+  "property": "LearnedSound",
+  "result": "holds",
+  "states": "109113",
+  "trace": null,
+  "variant": "M_key_nosession"
+ },
+ "MC_Semgate__M_key_nosession__LedgerOneLine": {
+  "module": "MC_Semgate",
+  "property": "LedgerOneLine",
+  "result": "holds",
+  "states": "109113",
+  "trace": null,
+  "variant": "M_key_nosession"
+ },
+ "MC_Semgate__M_key_nosession__NoMisread": {
+  "module": "MC_Semgate",
+  "property": "NoMisread",
+  "result": "holds",
+  "states": "109113",
+  "trace": null,
+  "variant": "M_key_nosession"
+ },
+ "MC_Semgate__M_key_tool__ApprovalExact": {
+  "module": "MC_Semgate",
+  "property": "ApprovalExact",
+  "result": "violated",
+  "states": "387",
+  "trace": 4,
+  "variant": "M_key_tool"
+ },
+ "MC_Semgate__M_key_tool__ApprovalOnce": {
+  "module": "MC_Semgate",
+  "property": "ApprovalOnce",
+  "result": "violated",
+  "states": "378",
+  "trace": 4,
+  "variant": "M_key_tool"
+ },
+ "MC_Semgate__M_key_tool__ApprovalSessionScoped": {
+  "module": "MC_Semgate",
+  "property": "ApprovalSessionScoped",
+  "result": "violated",
+  "states": "344",
+  "trace": 4,
+  "variant": "M_key_tool"
+ },
+ "MC_Semgate__M_key_tool__CountExactAtEnd": {
+  "module": "MC_Semgate",
+  "property": "CountExactAtEnd",
+  "result": "holds",
+  "states": "148248",
+  "trace": null,
+  "variant": "M_key_tool"
+ },
+ "MC_Semgate__M_key_tool__CountNoOver": {
+  "module": "MC_Semgate",
+  "property": "CountNoOver",
+  "result": "holds",
+  "states": "148248",
+  "trace": null,
+  "variant": "M_key_tool"
+ },
+ "MC_Semgate__M_key_tool__LearnedSound": {
+  "module": "MC_Semgate",
+  "property": "LearnedSound",
+  "result": "holds",
+  "states": "148248",
+  "trace": null,
+  "variant": "M_key_tool"
+ },
+ "MC_Semgate__M_key_tool__LedgerOneLine": {
+  "module": "MC_Semgate",
+  "property": "LedgerOneLine",
+  "result": "holds",
+  "states": "148248",
+  "trace": null,
+  "variant": "M_key_tool"
+ },
+ "MC_Semgate__M_key_tool__NoMisread": {
+  "module": "MC_Semgate",
+  "property": "NoMisread",
+  "result": "holds",
+  "states": "148248",
+  "trace": null,
+  "variant": "M_key_tool"
+ },
+ "MC_Semgate__M_lockfile_crash_2p__Termination": {
+  "module": "MC_Semgate",
+  "property": "Termination",
+  "result": "violated(liveness)",
+  "states": "4977",
+  "trace": 8,
+  "variant": "M_lockfile_crash_2p"
+ },
+ "MC_Semgate__M_lockfile_crash__LedgerOneLine": {
+  "module": "MC_Semgate",
+  "property": "LedgerOneLine",
+  "result": "holds",
+  "states": "479172",
+  "trace": null,
+  "variant": "M_lockfile_crash"
+ },
+ "MC_Semgate__M_nolock_2p__HistoryRecovers": {
+  "module": "MC_Semgate",
+  "property": "HistoryRecovers",
+  "result": "holds",
+  "states": "5326",
+  "trace": null,
+  "variant": "M_nolock_2p"
+ },
+ "MC_Semgate__M_nolock__CountExactAtEnd": {
+  "module": "MC_Semgate",
+  "property": "CountExactAtEnd",
+  "result": "violated",
+  "states": "661791",
+  "trace": 25,
+  "variant": "M_nolock"
+ },
+ "MC_Semgate__M_nolock__CountNoOver": {
+  "module": "MC_Semgate",
+  "property": "CountNoOver",
+  "result": "holds",
+  "states": "1280152",
+  "trace": null,
+  "variant": "M_nolock"
+ },
+ "MC_Semgate__M_nolock__HistoryRecoversFinal": {
+  "module": "MC_Semgate",
+  "property": "HistoryRecoversFinal",
+  "result": "holds",
+  "states": "1280152",
+  "trace": null,
+  "variant": "M_nolock"
+ },
+ "MC_Semgate__M_nolock__LearnedSound": {
+  "module": "MC_Semgate",
+  "property": "LearnedSound",
+  "result": "holds",
+  "states": "1280152",
+  "trace": null,
+  "variant": "M_nolock"
+ },
+ "MC_Semgate__M_nolock__LedgerOneLine": {
+  "module": "MC_Semgate",
+  "property": "LedgerOneLine",
+  "result": "violated",
+  "states": "1395",
+  "trace": 11,
+  "variant": "M_nolock"
+ },
+ "MC_Semgate__M_nolock__NoMisread": {
+  "module": "MC_Semgate",
+  "property": "NoMisread",
+  "result": "holds",
+  "states": "1280152",
+  "trace": null,
+  "variant": "M_nolock"
+ },
+ "MC_Semgate__M_post_twice__CountExactAtEnd": {
+  "module": "MC_Semgate",
+  "property": "CountExactAtEnd",
+  "result": "violated",
+  "states": "1703492",
+  "trace": 58,
+  "variant": "M_post_twice"
+ },
+ "MC_Semgate__M_post_twice__CountNoOver": {
+  "module": "MC_Semgate",
+  "property": "CountNoOver",
+  "result": "violated",
+  "states": "2345",
+  "trace": 19,
+  "variant": "M_post_twice"
+ },
+ "MC_Semgate__M_post_twice__LearnedSound": {
+  "module": "MC_Semgate",
+  "property": "LearnedSound",
+  "result": "violated",
+  "states": "2194",
+  "trace": 20,
+  "variant": "M_post_twice"
+ },
+ "MC_Semgate__M_post_twice__LedgerOneLine": {
+  "module": "MC_Semgate",
+  "property": "LedgerOneLine",
+  "result": "holds",
+  "states": "2054511",
+  "trace": null,
+  "variant": "M_post_twice"
+ },
+ "MC_Semgate__M_post_twice__NoMisread": {
+  "module": "MC_Semgate",
+  "property": "NoMisread",
+  "result": "holds",
+  "states": "2054511",
+  "trace": null,
+  "variant": "M_post_twice"
+ },
+ "MC_Semgate__M_raise_nolock_2p__HistoryRecovers": {
+  "module": "MC_Semgate",
+  "property": "HistoryRecovers",
+  "result": "violated(liveness)",
+  "states": "4745",
+  "trace": 17,
+  "variant": "M_raise_nolock_2p"
+ },
+ "MC_Semgate__M_raise_nolock__CountExactAtEnd": {
+  "module": "MC_Semgate",
+  "property": "CountExactAtEnd",
+  "result": "violated",
+  "states": "173689",
+  "trace": 21,
+  "variant": "M_raise_nolock"
+ },
+ "MC_Semgate__M_raise_nolock__CountNoOver": {
+  "module": "MC_Semgate",
+  "property": "CountNoOver",
+  "result": "holds",
+  "states": "1241026",
+  "trace": null,
+  "variant": "M_raise_nolock"
+ },
+ "MC_Semgate__M_raise_nolock__HistoryRecoversFinal": {
+  "module": "MC_Semgate",
+  "property": "HistoryRecoversFinal",
+  "result": "violated",
+  "states": "246116",
+  "trace": 21,
+  "variant": "M_raise_nolock"
+ },
+ "MC_Semgate__M_raise_nolock__LearnedSound": {
+  "module": "MC_Semgate",
+  "property": "LearnedSound",
+  "result": "holds",
+  "states": "1241026",
+  "trace": null,
+  "variant": "M_raise_nolock"
+ },
+ "MC_Semgate__M_raise_nolock__LedgerOneLine": {
+  "module": "MC_Semgate",
+  "property": "LedgerOneLine",
+  "result": "violated",
+  "states": "808",
+  "trace": 11,
+  "variant": "M_raise_nolock"
+ },
+ "MC_Semgate__M_raise_nolock__NoMisread": {
+  "module": "MC_Semgate",
+  "property": "NoMisread",
+  "result": "holds",
+  "states": "1241026",
+  "trace": null,
+  "variant": "M_raise_nolock"
+ },
+ "MC_Semgate__M_reuse__ApprovalExact": {
+  "module": "MC_Semgate",
+  "property": "ApprovalExact",
+  "result": "holds",
+  "states": "738718",
+  "trace": null,
+  "variant": "M_reuse"
+ },
+ "MC_Semgate__M_reuse__ApprovalOnce": {
+  "module": "MC_Semgate",
+  "property": "ApprovalOnce",
+  "result": "violated",
+  "states": "634",
+  "trace": 5,
+  "variant": "M_reuse"
+ },
+ "MC_Semgate__M_reuse__ApprovalSessionScoped": {
+  "module": "MC_Semgate",
+  "property": "ApprovalSessionScoped",
+  "result": "holds",
+  "states": "738718",
+  "trace": null,
+  "variant": "M_reuse"
+ },
+ "MC_Semgate__M_reuse__CountExactAtEnd": {
+  "module": "MC_Semgate",
+  "property": "CountExactAtEnd",
+  "result": "holds",
+  "states": "125604",
+  "trace": null,
+  "variant": "M_reuse"
+ },
+ "MC_Semgate__M_reuse__CountNoOver": {
+  "module": "MC_Semgate",
+  "property": "CountNoOver",
+  "result": "holds",
+  "states": "125604",
+  "trace": null,
+  "variant": "M_reuse"
+ },
+ "MC_Semgate__M_reuse__LearnedSound": {
+  "module": "MC_Semgate",
+  "property": "LearnedSound",
+  "result": "holds",
+  "states": "125604",
+  "trace": null,
+  "variant": "M_reuse"
+ },
+ "MC_Semgate__M_reuse__LedgerOneLine": {
+  "module": "MC_Semgate",
+  "property": "LedgerOneLine",
+  "result": "holds",
+  "states": "125604",
+  "trace": null,
+  "variant": "M_reuse"
+ },
+ "MC_Semgate__M_reuse__NoMisread": {
+  "module": "MC_Semgate",
+  "property": "NoMisread",
+  "result": "holds",
+  "states": "125604",
+  "trace": null,
+  "variant": "M_reuse"
+ },
+ "MC_Semgate__M_tolerant_2p__HistoryRecovers": {
+  "module": "MC_Semgate",
+  "property": "HistoryRecovers",
+  "result": "holds",
+  "states": "5326",
+  "trace": null,
+  "variant": "M_tolerant_2p"
+ },
+ "MC_Semgate__M_tolerant__CountExactAtEnd": {
+  "module": "MC_Semgate",
+  "property": "CountExactAtEnd",
+  "result": "violated",
+  "states": "749678",
+  "trace": 25,
+  "variant": "M_tolerant"
+ },
+ "MC_Semgate__M_tolerant__CountNoOver": {
+  "module": "MC_Semgate",
+  "property": "CountNoOver",
+  "result": "violated",
+  "states": "9224",
+  "trace": 15,
+  "variant": "M_tolerant"
+ },
+ "MC_Semgate__M_tolerant__HistoryRecoversFinal": {
+  "module": "MC_Semgate",
+  "property": "HistoryRecoversFinal",
+  "result": "holds",
+  "states": "1280184",
+  "trace": null,
+  "variant": "M_tolerant"
+ },
+ "MC_Semgate__M_tolerant__LearnedSound": {
+  "module": "MC_Semgate",
+  "property": "LearnedSound",
+  "result": "holds",
+  "states": "1280184",
+  "trace": null,
+  "variant": "M_tolerant"
+ },
+ "MC_Semgate__M_tolerant__LedgerOneLine": {
+  "module": "MC_Semgate",
+  "property": "LedgerOneLine",
+  "result": "violated",
+  "states": "1266",
+  "trace": 11,
+  "variant": "M_tolerant"
+ },
+ "MC_Semgate__M_tolerant__NoMisread": {
+  "module": "MC_Semgate",
+  "property": "NoMisread",
+  "result": "violated",
+  "states": "8338",
+  "trace": 15,
+  "variant": "M_tolerant"
+ },
+ "MC_Semgate__code_2p__HistoryRecovers": {
+  "module": "MC_Semgate",
+  "property": "HistoryRecovers",
+  "result": "violated(liveness)",
+  "states": "5218",
+  "trace": 17,
+  "variant": "code_2p"
+ },
+ "MC_Semgate__code_2p__Termination": {
+  "module": "MC_Semgate",
+  "property": "Termination",
+  "result": "holds",
+  "states": "5858",
+  "trace": null,
+  "variant": "code_2p"
+ },
+ "MC_Semgate__code__ApprovalExact": {
+  "module": "MC_Semgate",
+  "property": "ApprovalExact",
+  "result": "holds",
+  "states": "11344486",
+  "trace": null,
+  "variant": "code"
+ },
+ "MC_Semgate__code__ApprovalOnce": {
+  "module": "MC_Semgate",
+  "property": "ApprovalOnce",
+  "result": "violated",
+  "states": "788",
+  "trace": 5,
+  "variant": "code"
+ },
+ "MC_Semgate__code__ApprovalSessionScoped": {
+  "module": "MC_Semgate",
+  "property": "ApprovalSessionScoped",
+  "result": "violated",
+  "states": "387",
+  "trace": 4,
+  "variant": "code"
+ },
+ "MC_Semgate__code__CountExactAtEnd": {
+  "module": "MC_Semgate",
+  "property": "CountExactAtEnd",
+  "result": "violated",
+  "states": "187838",
+  "trace": 21,
+  "variant": "code"
+ },
+ "MC_Semgate__code__CountNoOver": {
+  "module": "MC_Semgate",
+  "property": "CountNoOver",
+  "result": "holds",
+  "states": "1421319",
+  "trace": null,
+  "variant": "code"
+ },
+ "MC_Semgate__code__HistoryRecoversFinal": {
+  "module": "MC_Semgate",
+  "property": "HistoryRecoversFinal",
+  "result": "violated",
+  "states": "201432",
+  "trace": 21,
+  "variant": "code"
+ },
+ "MC_Semgate__code__K1_NoApprovalUsed": {
+  "module": "MC_Semgate",
+  "property": "K1_NoApprovalUsed",
+  "result": "violated",
+  "states": "369",
+  "trace": 3,
+  "variant": "code"
+ },
+ "MC_Semgate__code__K2_NoLearnedAllow": {
+  "module": "MC_Semgate",
+  "property": "K2_NoLearnedAllow",
+  "result": "violated",
+  "states": "165002",
+  "trace": 18,
+  "variant": "code"
+ },
+ "MC_Semgate__code__K3_NoReturn": {
+  "module": "MC_Semgate",
+  "property": "K3_NoReturn",
+  "result": "violated",
+  "states": "254",
+  "trace": 6,
+  "variant": "code"
+ },
+ "MC_Semgate__code__K4_NoTornLine": {
+  "module": "MC_Semgate",
+  "property": "K4_NoTornLine",
+  "result": "violated",
+  "states": "19132",
+  "trace": 12,
+  "variant": "code"
+ },
+ "MC_Semgate__code__K5_NoLostRecord": {
+  "module": "MC_Semgate",
+  "property": "K5_NoLostRecord",
+  "result": "violated",
+  "states": "34140",
+  "trace": 14,
+  "variant": "code"
+ },
+ "MC_Semgate__code__LearnedSound": {
+  "module": "MC_Semgate",
+  "property": "LearnedSound",
+  "result": "holds",
+  "states": "1421319",
+  "trace": null,
+  "variant": "code"
+ },
+ "MC_Semgate__code__LedgerOneLine": {
+  "module": "MC_Semgate",
+  "property": "LedgerOneLine",
+  "result": "violated",
+  "states": "875",
+  "trace": 11,
+  "variant": "code"
+ },
+ "MC_Semgate__code__NoMisread": {
+  "module": "MC_Semgate",
+  "property": "NoMisread",
+  "result": "holds",
+  "states": "1421319",
+  "trace": null,
+  "variant": "code"
+ },
+ "MC_Semgate__code_crash_2p__Termination": {
+  "module": "MC_Semgate",
+  "property": "Termination",
+  "result": "holds",
+  "states": "15666",
+  "trace": null,
+  "variant": "code_crash_2p"
+ },
+ "MC_Semgate__code_crash__LedgerOneLine": {
+  "module": "MC_Semgate",
+  "property": "LedgerOneLine",
+  "result": "violated",
+  "states": "5140",
+  "trace": 11,
+  "variant": "code_crash"
+ },
+ "MC_Semgate__fixed_2p__HistoryRecovers": {
+  "module": "MC_Semgate",
+  "property": "HistoryRecovers",
+  "result": "holds",
+  "states": "2106",
+  "trace": null,
+  "variant": "fixed_2p"
+ },
+ "MC_Semgate__fixed_2p__Termination": {
+  "module": "MC_Semgate",
+  "property": "Termination",
+  "result": "holds",
+  "states": "2106",
+  "trace": null,
+  "variant": "fixed_2p"
+ },
+ "MC_Semgate__fixed__ApprovalExact": {
+  "module": "MC_Semgate",
+  "property": "ApprovalExact",
+  "result": "holds",
+  "states": "707700",
+  "trace": null,
+  "variant": "fixed"
+ },
+ "MC_Semgate__fixed__ApprovalOnce": {
+  "module": "MC_Semgate",
+  "property": "ApprovalOnce",
+  "result": "holds",
+  "states": "707700",
+  "trace": null,
+  "variant": "fixed"
+ },
+ "MC_Semgate__fixed__ApprovalSessionScoped": {
+  "module": "MC_Semgate",
+  "property": "ApprovalSessionScoped",
+  "result": "holds",
+  "states": "707700",
+  "trace": null,
+  "variant": "fixed"
+ },
+ "MC_Semgate__fixed__CountExactAtEnd": {
+  "module": "MC_Semgate",
+  "property": "CountExactAtEnd",
+  "result": "holds",
+  "states": "109113",
+  "trace": null,
+  "variant": "fixed"
+ },
+ "MC_Semgate__fixed__CountNoOver": {
+  "module": "MC_Semgate",
+  "property": "CountNoOver",
+  "result": "holds",
+  "states": "109113",
+  "trace": null,
+  "variant": "fixed"
+ },
+ "MC_Semgate__fixed__HistoryRecoversFinal": {
+  "module": "MC_Semgate",
+  "property": "HistoryRecoversFinal",
+  "result": "holds",
+  "states": "109113",
+  "trace": null,
+  "variant": "fixed"
+ },
+ "MC_Semgate__fixed__LearnedSound": {
+  "module": "MC_Semgate",
+  "property": "LearnedSound",
+  "result": "holds",
+  "states": "109113",
+  "trace": null,
+  "variant": "fixed"
+ },
+ "MC_Semgate__fixed__LedgerOneLine": {
+  "module": "MC_Semgate",
+  "property": "LedgerOneLine",
+  "result": "holds",
+  "states": "109113",
+  "trace": null,
+  "variant": "fixed"
+ },
+ "MC_Semgate__fixed__NoMisread": {
+  "module": "MC_Semgate",
+  "property": "NoMisread",
+  "result": "holds",
+  "states": "109113",
+  "trace": null,
+  "variant": "fixed"
+ },
+ "MC_Semgate__fixed_crash_2p__Termination": {
+  "module": "MC_Semgate",
+  "property": "Termination",
+  "result": "holds",
+  "states": "11396",
+  "trace": null,
+  "variant": "fixed_crash_2p"
+ },
+ "MC_Semgate__fixed_crash__LedgerOneLine": {
+  "module": "MC_Semgate",
+  "property": "LedgerOneLine",
+  "result": "holds",
+  "states": "1843387",
+  "trace": null,
+  "variant": "fixed_crash"
+ },
+ "SemgateServe__M_fifo__AnswerForRightId": {
+  "module": "SemgateServe",
+  "property": "AnswerForRightId",
+  "result": "violated",
+  "states": "898",
+  "trace": 9,
+  "variant": "M_fifo"
+ },
+ "SemgateServe__M_fifo__EveryRequestResolved": {
+  "module": "SemgateServe",
+  "property": "EveryRequestResolved",
+  "result": "holds",
+  "states": "1499",
+  "trace": null,
+  "variant": "M_fifo"
+ },
+ "SemgateServe__M_fifo__NoLateAllow": {
+  "module": "SemgateServe",
+  "property": "NoLateAllow",
+  "result": "holds",
+  "states": "1499",
+  "trace": null,
+  "variant": "M_fifo"
+ },
+ "SemgateServe__M_fifo__NoTimeoutWithinBudget": {
+  "module": "SemgateServe",
+  "property": "NoTimeoutWithinBudget",
+  "result": "violated",
+  "states": "280",
+  "trace": 11,
+  "variant": "M_fifo"
+ },
+ "SemgateServe__M_fifo__ServeReturnsIdle": {
+  "module": "SemgateServe",
+  "property": "ServeReturnsIdle",
+  "result": "violated(liveness)",
+  "states": "1499",
+  "trace": 25,
+  "variant": "M_fifo"
+ },
+ "SemgateServe__M_keepwaiter__AnswerForRightId": {
+  "module": "SemgateServe",
+  "property": "AnswerForRightId",
+  "result": "holds",
+  "states": "1399",
+  "trace": null,
+  "variant": "M_keepwaiter"
+ },
+ "SemgateServe__M_keepwaiter__EveryRequestResolved": {
+  "module": "SemgateServe",
+  "property": "EveryRequestResolved",
+  "result": "holds",
+  "states": "1399",
+  "trace": null,
+  "variant": "M_keepwaiter"
+ },
+ "SemgateServe__M_keepwaiter__NoLateAllow": {
+  "module": "SemgateServe",
+  "property": "NoLateAllow",
+  "result": "violated",
+  "states": "153",
+  "trace": 14,
+  "variant": "M_keepwaiter"
+ },
+ "SemgateServe__M_keepwaiter__NoTimeoutWithinBudget": {
+  "module": "SemgateServe",
+  "property": "NoTimeoutWithinBudget",
+  "result": "violated",
+  "states": "120",
+  "trace": 12,
+  "variant": "M_keepwaiter"
+ },
+ "SemgateServe__M_keepwaiter__ServeReturnsIdle": {
+  "module": "SemgateServe",
+  "property": "ServeReturnsIdle",
+  "result": "violated(liveness)",
+  "states": "1399",
+  "trace": 41,
+  "variant": "M_keepwaiter"
+ },
+ "SemgateServe__M_nocancel_hang__AnswerForRightId": {
+  "module": "SemgateServe",
+  "property": "AnswerForRightId",
+  "result": "holds",
+  "states": "755",
+  "trace": null,
+  "variant": "M_nocancel_hang"
+ },
+ "SemgateServe__M_nocancel_hang__EveryRequestResolved": {
+  "module": "SemgateServe",
+  "property": "EveryRequestResolved",
+  "result": "holds",
+  "states": "755",
+  "trace": null,
+  "variant": "M_nocancel_hang"
+ },
+ "SemgateServe__M_nocancel_hang__NoLateAllow": {
+  "module": "SemgateServe",
+  "property": "NoLateAllow",
+  "result": "holds",
+  "states": "755",
+  "trace": null,
+  "variant": "M_nocancel_hang"
+ },
+ "SemgateServe__M_nocancel_hang__NoTimeoutWithinBudget": {
+  "module": "SemgateServe",
+  "property": "NoTimeoutWithinBudget",
+  "result": "violated",
+  "states": "213",
+  "trace": 11,
+  "variant": "M_nocancel_hang"
+ },
+ "SemgateServe__M_nocancel_hang__ServeReturnsIdle": {
+  "module": "SemgateServe",
+  "property": "ServeReturnsIdle",
+  "result": "violated(liveness)",
+  "states": "755",
+  "trace": 25,
+  "variant": "M_nocancel_hang"
+ },
+ "SemgateServe__M_notimeout_hang__AnswerForRightId": {
+  "module": "SemgateServe",
+  "property": "AnswerForRightId",
+  "result": "holds",
+  "states": "126",
+  "trace": null,
+  "variant": "M_notimeout_hang"
+ },
+ "SemgateServe__M_notimeout_hang__EveryRequestResolved": {
+  "module": "SemgateServe",
+  "property": "EveryRequestResolved",
+  "result": "violated(liveness)",
+  "states": "126",
+  "trace": 6,
+  "variant": "M_notimeout_hang"
+ },
+ "SemgateServe__M_notimeout_hang__NoLateAllow": {
+  "module": "SemgateServe",
+  "property": "NoLateAllow",
+  "result": "holds",
+  "states": "126",
+  "trace": null,
+  "variant": "M_notimeout_hang"
+ },
+ "SemgateServe__M_notimeout_hang__NoTimeoutWithinBudget": {
+  "module": "SemgateServe",
+  "property": "NoTimeoutWithinBudget",
+  "result": "holds",
+  "states": "126",
+  "trace": null,
+  "variant": "M_notimeout_hang"
+ },
+ "SemgateServe__M_notimeout_hang__ServeReturnsIdle": {
+  "module": "SemgateServe",
+  "property": "ServeReturnsIdle",
+  "result": "violated(liveness)",
+  "states": "126",
+  "trace": 6,
+  "variant": "M_notimeout_hang"
+ },
+ "SemgateServe__M_one_worker__AnswerForRightId": {
+  "module": "SemgateServe",
+  "property": "AnswerForRightId",
+  "result": "holds",
+  "states": "195",
+  "trace": null,
+  "variant": "M_one_worker"
+ },
+ "SemgateServe__M_one_worker__EveryRequestResolved": {
+  "module": "SemgateServe",
+  "property": "EveryRequestResolved",
+  "result": "holds",
+  "states": "195",
+  "trace": null,
+  "variant": "M_one_worker"
+ },
+ "SemgateServe__M_one_worker__NoLateAllow": {
+  "module": "SemgateServe",
+  "property": "NoLateAllow",
+  "result": "holds",
+  "states": "195",
+  "trace": null,
+  "variant": "M_one_worker"
+ },
+ "SemgateServe__M_one_worker__NoTimeoutWithinBudget": {
+  "module": "SemgateServe",
+  "property": "NoTimeoutWithinBudget",
+  "result": "violated",
+  "states": "117",
+  "trace": 12,
+  "variant": "M_one_worker"
+ },
+ "SemgateServe__M_one_worker__ServeReturnsIdle": {
+  "module": "SemgateServe",
+  "property": "ServeReturnsIdle",
+  "result": "holds",
+  "states": "195",
+  "trace": null,
+  "variant": "M_one_worker"
+ },
+ "SemgateServe__code__AnswerForRightId": {
+  "module": "SemgateServe",
+  "property": "AnswerForRightId",
+  "result": "holds",
+  "states": "1399",
+  "trace": null,
+  "variant": "code"
+ },
+ "SemgateServe__code__EveryRequestResolved": {
+  "module": "SemgateServe",
+  "property": "EveryRequestResolved",
+  "result": "holds",
+  "states": "1399",
+  "trace": null,
+  "variant": "code"
+ },
+ "SemgateServe__code__K8_NoAnswer": {
+  "module": "SemgateServe",
+  "property": "K8_NoAnswer",
+  "result": "violated",
+  "states": "22",
+  "trace": 8,
+  "variant": "code"
+ },
+ "SemgateServe__code__NoLateAllow": {
+  "module": "SemgateServe",
+  "property": "NoLateAllow",
+  "result": "holds",
+  "states": "1399",
+  "trace": null,
+  "variant": "code"
+ },
+ "SemgateServe__code__NoTimeoutWithinBudget": {
+  "module": "SemgateServe",
+  "property": "NoTimeoutWithinBudget",
+  "result": "violated",
+  "states": "120",
+  "trace": 12,
+  "variant": "code"
+ },
+ "SemgateServe__code__ServeReturnsIdle": {
+  "module": "SemgateServe",
+  "property": "ServeReturnsIdle",
+  "result": "violated(liveness)",
+  "states": "1399",
+  "trace": 40,
+  "variant": "code"
+ },
+ "SemgateServe__code_hang__AnswerForRightId": {
+  "module": "SemgateServe",
+  "property": "AnswerForRightId",
+  "result": "holds",
+  "states": "2036",
+  "trace": null,
+  "variant": "code_hang"
+ },
+ "SemgateServe__code_hang__EveryRequestResolved": {
+  "module": "SemgateServe",
+  "property": "EveryRequestResolved",
+  "result": "holds",
+  "states": "2036",
+  "trace": null,
+  "variant": "code_hang"
+ },
+ "SemgateServe__code_hang__NoLateAllow": {
+  "module": "SemgateServe",
+  "property": "NoLateAllow",
+  "result": "holds",
+  "states": "2036",
+  "trace": null,
+  "variant": "code_hang"
+ },
+ "SemgateServe__code_hang__NoTimeoutWithinBudget": {
+  "module": "SemgateServe",
+  "property": "NoTimeoutWithinBudget",
+  "result": "violated",
+  "states": "152",
+  "trace": 9,
+  "variant": "code_hang"
+ },
+ "SemgateServe__code_hang__ServeReturnsIdle": {
+  "module": "SemgateServe",
+  "property": "ServeReturnsIdle",
+  "result": "violated(liveness)",
+  "states": "2036",
+  "trace": 22,
+  "variant": "code_hang"
+ },
+ "SemgateServe__fixed__AnswerForRightId": {
+  "module": "SemgateServe",
+  "property": "AnswerForRightId",
+  "result": "holds",
+  "states": "87",
+  "trace": null,
+  "variant": "fixed"
+ },
+ "SemgateServe__fixed__EveryRequestResolved": {
+  "module": "SemgateServe",
+  "property": "EveryRequestResolved",
+  "result": "holds",
+  "states": "87",
+  "trace": null,
+  "variant": "fixed"
+ },
+ "SemgateServe__fixed__NoLateAllow": {
+  "module": "SemgateServe",
+  "property": "NoLateAllow",
+  "result": "holds",
+  "states": "87",
+  "trace": null,
+  "variant": "fixed"
+ },
+ "SemgateServe__fixed__NoTimeoutWithinBudget": {
+  "module": "SemgateServe",
+  "property": "NoTimeoutWithinBudget",
+  "result": "holds",
+  "states": "87",
+  "trace": null,
+  "variant": "fixed"
+ },
+ "SemgateServe__fixed__ServeReturnsIdle": {
+  "module": "SemgateServe",
+  "property": "ServeReturnsIdle",
+  "result": "holds",
+  "states": "87",
+  "trace": null,
+  "variant": "fixed"
+ },
+ "SemgateServe__fixed_hang__AnswerForRightId": {
+  "module": "SemgateServe",
+  "property": "AnswerForRightId",
+  "result": "holds",
+  "states": "1035",
+  "trace": null,
+  "variant": "fixed_hang"
+ },
+ "SemgateServe__fixed_hang__EveryRequestResolved": {
+  "module": "SemgateServe",
+  "property": "EveryRequestResolved",
+  "result": "holds",
+  "states": "1035",
+  "trace": null,
+  "variant": "fixed_hang"
+ },
+ "SemgateServe__fixed_hang__K9_NoTimeout": {
+  "module": "SemgateServe",
+  "property": "K9_NoTimeout",
+  "result": "violated",
+  "states": "210",
+  "trace": 11,
+  "variant": "fixed_hang"
+ },
+ "SemgateServe__fixed_hang__NoLateAllow": {
+  "module": "SemgateServe",
+  "property": "NoLateAllow",
+  "result": "holds",
+  "states": "1035",
+  "trace": null,
+  "variant": "fixed_hang"
+ },
+ "SemgateServe__fixed_hang__NoTimeoutWithinBudget": {
+  "module": "SemgateServe",
+  "property": "NoTimeoutWithinBudget",
+  "result": "violated",
+  "states": "212",
+  "trace": 11,
+  "variant": "fixed_hang"
+ },
+ "SemgateServe__fixed_hang__ServeReturnsIdle": {
+  "module": "SemgateServe",
+  "property": "ServeReturnsIdle",
+  "result": "holds",
+  "states": "1035",
+  "trace": null,
+  "variant": "fixed_hang"
+ }
+}

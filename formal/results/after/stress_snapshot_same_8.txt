@@ -1,0 +1,37 @@
+round 0: files=8 record_post reported created=8 created records on disk=8 eligible=8 unsafe=0 torn=0 leftover .tmp=0
+round 1: files=8 record_post reported created=8 created records on disk=8 eligible=8 unsafe=0 torn=0 leftover .tmp=0
+round 2: files=8 record_post reported created=8 created records on disk=8 eligible=8 unsafe=0 torn=0 leftover .tmp=0
+round 3: files=8 record_post reported created=8 created records on disk=8 eligible=8 unsafe=0 torn=0 leftover .tmp=0
+round 4: files=8 record_post reported created=8 created records on disk=8 eligible=8 unsafe=0 torn=0 leftover .tmp=0
+round 5: files=8 record_post reported created=8 created records on disk=8 eligible=8 unsafe=0 torn=0 leftover .tmp=0
+round 6: files=8 record_post reported created=8 created records on disk=8 eligible=8 unsafe=0 torn=0 leftover .tmp=0
+round 7: files=8 record_post reported created=8 created records on disk=8 eligible=8 unsafe=0 torn=0 leftover .tmp=0
+round 8: files=8 record_post reported created=8 created records on disk=8 eligible=8 unsafe=0 torn=0 leftover .tmp=0
+round 9: files=8 record_post reported created=8 created records on disk=8 eligible=8 unsafe=0 torn=0 leftover .tmp=0
+round 10: files=8 record_post reported created=8 created records on disk=8 eligible=8 unsafe=0 torn=0 leftover .tmp=0
+round 11: files=8 record_post reported created=8 created records on disk=8 eligible=8 unsafe=0 torn=0 leftover .tmp=0
+round 12: files=8 record_post reported created=8 created records on disk=8 eligible=8 unsafe=0 torn=0 leftover .tmp=0
+round 13: files=8 record_post reported created=8 created records on disk=8 eligible=8 unsafe=0 torn=0 leftover .tmp=0
+round 14: files=8 record_post reported created=8 created records on disk=8 eligible=8 unsafe=0 torn=0 leftover .tmp=0
+round 15: files=8 record_post reported created=8 created records on disk=8 eligible=8 unsafe=0 torn=0 leftover .tmp=0
+round 16: files=8 record_post reported created=8 created records on disk=8 eligible=8 unsafe=0 torn=0 leftover .tmp=0
+round 17: files=8 record_post reported created=8 created records on disk=8 eligible=8 unsafe=0 torn=0 leftover .tmp=0
+round 18: files=8 record_post reported created=8 created records on disk=8 eligible=8 unsafe=0 torn=0 leftover .tmp=0
+round 19: files=8 record_post reported created=8 created records on disk=8 eligible=8 unsafe=0 torn=0 leftover .tmp=0
+round 20: files=8 record_post reported created=8 created records on disk=8 eligible=8 unsafe=0 torn=0 leftover .tmp=0
+round 21: files=8 record_post reported created=8 created records on disk=8 eligible=8 unsafe=0 torn=0 leftover .tmp=0
+round 22: files=8 record_post reported created=8 created records on disk=8 eligible=8 unsafe=0 torn=0 leftover .tmp=0
+round 23: files=8 record_post reported created=8 created records on disk=8 eligible=8 unsafe=0 torn=0 leftover .tmp=0
+round 24: files=8 record_post reported created=8 created records on disk=8 eligible=8 unsafe=0 torn=0 leftover .tmp=0
+round 25: files=8 record_post reported created=8 created records on disk=8 eligible=8 unsafe=0 torn=0 leftover .tmp=0
+round 26: files=8 record_post reported created=8 created records on disk=8 eligible=8 unsafe=0 torn=0 leftover .tmp=0
+round 27: files=8 record_post reported created=8 created records on disk=8 eligible=8 unsafe=0 torn=0 leftover .tmp=0
+round 28: files=8 record_post reported created=8 created records on disk=8 eligible=8 unsafe=0 torn=0 leftover .tmp=0
+round 29: files=8 record_post reported created=8 created records on disk=8 eligible=8 unsafe=0 torn=0 leftover .tmp=0
+SUMMARY mode=same procs=8 rounds=30 size=200000 elapsed=14.5s
+  record_post skipped the file (no created record written): 0/240 (0.0%)
+  created record written but lost from the JSONL: 0/240 (0.0%)
+  unchanged agent-created files NOT eligible (extra human ask): 0/240 (0.0%)
+  eligible with snapshot != file (unsafe): 0; torn lines: 0; leftover .tmp files: 0
+  not_recorded records (file content differs from the expected hash): 0
+  temp dir: C:\WINDOWS\TEMP\semgate-formal-snap-gn3lxg3s

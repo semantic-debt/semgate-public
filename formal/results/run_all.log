@@ -1,0 +1,176 @@
+== stress_hook_8x40: formal/repro/stress_hook.py --procs 8 --rounds 40
+round 39: calls=8 host_response missing=2 dup=0 mismatch=0 ledger_torn=0 judgments=8/8 pending_missing=1 history_torn=0 denies=4 streak_total=1 streak=lost_update
+SUMMARY procs=8 rounds=40 calls=320 elapsed=13.5s
+  returned decisions with no host_response line: 35/320 (10.9%)
+  host_response duplicates: 0; decision mismatches: 0; ledger torn lines: 14
+  judgment lines found: 296/320
+  pending history records missing: 22/320 (6.9%); history torn lines: 0
+  deny_streak: deny answers=160 counted=79 (lost 81/160 (50.6%)); rounds ok=2 lost_update=38 corrupt=0 missing=0
+  temp dir: C:\WINDOWS\TEMP\semgate-formal-hook-9wyyfvkm
+== stress_hook_3x40: formal/repro/stress_hook.py --procs 3 --rounds 40
+round 39: calls=3 host_response missing=0 dup=0 mismatch=0 ledger_torn=0 judgments=2/3 pending_missing=1 history_torn=0 denies=2 streak_total=0 streak=lost_update
+SUMMARY procs=3 rounds=40 calls=120 elapsed=9.4s
+  returned decisions with no host_response line: 9/120 (7.5%)
+  host_response duplicates: 0; decision mismatches: 0; ledger torn lines: 4
+  judgment lines found: 104/120
+  pending history records missing: 15/120 (12.5%); history torn lines: 0
+  deny_streak: deny answers=80 counted=37 (lost 43/80 (53.8%)); rounds ok=9 lost_update=31 corrupt=0 missing=0
+  temp dir: C:\WINDOWS\TEMP\semgate-formal-hook-maw3dcz9
+== stress_append_ledger_3: formal/repro/stress_append.py --store ledger --procs 3 --records 200 --rounds 20
+round 17: records=600 lost=80 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 18: records=600 lost=79 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 19: records=600 lost=70 torn_lines=0 dup=0 phantom=0 real_reader=ok
+SUMMARY store=ledger procs=3 records/proc=200 pad=200 rounds=20 elapsed=6.2s
+  rounds with any defect: 20/20 (100.0%)
+  records lost: 1496/12000 (12.5%); torn lines: 0; duplicates: 0; phantom records: 0
+  rounds where the real reader raised: 0/20 (0.0%)
+  temp dir: C:\WINDOWS\TEMP\semgate-formal-xsodzphh
+== stress_append_ledger_8: formal/repro/stress_append.py --store ledger --procs 8 --records 200 --rounds 20
+round 17: records=1600 lost=198 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 18: records=1600 lost=244 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 19: records=1600 lost=293 torn_lines=0 dup=0 phantom=0 real_reader=ok
+SUMMARY store=ledger procs=8 records/proc=200 pad=200 rounds=20 elapsed=11.8s
+  rounds with any defect: 20/20 (100.0%)
+  records lost: 5291/32000 (16.5%); torn lines: 0; duplicates: 0; phantom records: 0
+  rounds where the real reader raised: 0/20 (0.0%)
+  temp dir: C:\WINDOWS\TEMP\semgate-formal-52o7bjmr
+== stress_append_history_3: formal/repro/stress_append.py --store history --procs 3 --records 200 --rounds 20
+round 17: records=600 lost=90 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 18: records=600 lost=67 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 19: records=600 lost=51 torn_lines=0 dup=0 phantom=0 real_reader=ok
+SUMMARY store=history procs=3 records/proc=200 pad=200 rounds=20 elapsed=6.1s
+  rounds with any defect: 20/20 (100.0%)
+  records lost: 1522/12000 (12.7%); torn lines: 0; duplicates: 0; phantom records: 0
+  rounds where the real reader raised: 0/20 (0.0%)
+  temp dir: C:\WINDOWS\TEMP\semgate-formal-vkxvk4zc
+== stress_append_history_8: formal/repro/stress_append.py --store history --procs 8 --records 200 --rounds 20
+round 17: records=1600 lost=276 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 18: records=1600 lost=278 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 19: records=1600 lost=304 torn_lines=0 dup=0 phantom=0 real_reader=ok
+SUMMARY store=history procs=8 records/proc=200 pad=200 rounds=20 elapsed=12.0s
+  rounds with any defect: 20/20 (100.0%)
+  records lost: 5834/32000 (18.2%); torn lines: 1; duplicates: 0; phantom records: 0
+  rounds where the real reader raised: 1/20 (5.0%)
+  temp dir: C:\WINDOWS\TEMP\semgate-formal-s78uttid
+== stress_append_feedback_3: formal/repro/stress_append.py --store feedback --procs 3 --records 200 --rounds 20
+round 17: records=600 lost=84 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 18: records=600 lost=84 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 19: records=600 lost=63 torn_lines=0 dup=0 phantom=0 real_reader=ok
+SUMMARY store=feedback procs=3 records/proc=200 pad=200 rounds=20 elapsed=6.3s
+  rounds with any defect: 20/20 (100.0%)
+  records lost: 1648/12000 (13.7%); torn lines: 0; duplicates: 0; phantom records: 0
+  rounds where the real reader raised: 0/20 (0.0%)
+  temp dir: C:\WINDOWS\TEMP\semgate-formal-jed0xbh8
+== stress_append_feedback_8: formal/repro/stress_append.py --store feedback --procs 8 --records 200 --rounds 20
+round 17: records=1600 lost=277 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 18: records=1600 lost=253 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 19: records=1600 lost=244 torn_lines=1 dup=0 phantom=0 real_reader=ok first_torn='{"action_key": "ca112db6833373baa06f72e286fb5b1f6cddd3eb5e21c0d4aa42e8911c19b389'
+SUMMARY store=feedback procs=8 records/proc=200 pad=200 rounds=20 elapsed=12.8s
+  rounds with any defect: 20/20 (100.0%)
+  records lost: 5663/32000 (17.7%); torn lines: 3; duplicates: 0; phantom records: 0
+  rounds where the real reader raised: 0/20 (0.0%)
+  temp dir: C:\WINDOWS\TEMP\semgate-formal-qnxgt4is
+== stress_append_agentfiles_3: formal/repro/stress_append.py --store agentfiles --procs 3 --records 200 --rounds 20
+round 17: records=600 lost=28 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 18: records=600 lost=30 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 19: records=600 lost=45 torn_lines=0 dup=0 phantom=0 real_reader=ok
+SUMMARY store=agentfiles procs=3 records/proc=200 pad=200 rounds=20 elapsed=8.1s
+  rounds with any defect: 20/20 (100.0%)
+  records lost: 659/12000 (5.5%); torn lines: 0; duplicates: 0; phantom records: 0
+  rounds where the real reader raised: 0/20 (0.0%)
+  temp dir: C:\WINDOWS\TEMP\semgate-formal-dsjsyw5k
+== stress_append_agentfiles_8: formal/repro/stress_append.py --store agentfiles --procs 8 --records 200 --rounds 20
+round 17: records=1600 lost=195 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 18: records=1600 lost=187 torn_lines=0 dup=0 phantom=0 real_reader=ok
+round 19: records=1600 lost=173 torn_lines=0 dup=0 phantom=0 real_reader=ok
+SUMMARY store=agentfiles procs=8 records/proc=200 pad=200 rounds=20 elapsed=16.4s
+  rounds with any defect: 20/20 (100.0%)
+  records lost: 3832/32000 (12.0%); torn lines: 2; duplicates: 0; phantom records: 0
+  rounds where the real reader raised: 0/20 (0.0%)
+  temp dir: C:\WINDOWS\TEMP\semgate-formal-lwjg_jdq
+== stress_deny_streak_8: formal/repro/stress_deny_streak.py --procs 8 --updates 100 --rounds 20
+round 17: expected total=800 stored=0 lost=800 zero_answers=748 state=corrupt(JSONDecodeError): '{"sess-long-name-xx": {"consecutive": 2, "total": 2}, "s": {"consecutive": 9, "total": 9},'
+round 18: expected total=800 stored=0 lost=800 zero_answers=792 state=corrupt(JSONDecodeError): '{"sess-long-name-x": {"consecutive": 2, "total": 2}, "s": {"consecutive": 2, "total": 2}} '
+round 19: expected total=800 stored=0 lost=800 zero_answers=800 state=corrupt(JSONDecodeError): '{"sess-long-name-": {"consecutive": 1, "total": 1}}}}'
+SUMMARY procs=8 updates/proc=100 rounds=20 elapsed=11.6s
+  blocks lost from the session total: 16000/16000 (100.0%)
+  calls that got zeros (read failed mid-write): 15682/16000 (98.0%)
+  rounds ending with an unparseable state file: 20/20 (100.0%); of those, never repaired by a later call: 20
+  temp dir: C:\WINDOWS\TEMP\semgate-formal-streak-t885if34
+== stress_deny_streak_3: formal/repro/stress_deny_streak.py --procs 3 --updates 20 --rounds 20
+round 17: expected total=60 stored=0 lost=60 zero_answers=60 state=corrupt(JSONDecodeError): '{"sess-long-name-": {"consecutive": 1, "total": 1}}}}'
+round 18: expected total=60 stored=0 lost=60 zero_answers=51 state=corrupt(JSONDecodeError): '{"sess-long-name-": {"consecutive": 3, "total": 3}, "s": {"consecutive": 3, "total": 3}, "'
+round 19: expected total=60 stored=0 lost=60 zero_answers=57 state=corrupt(JSONDecodeError): '{"sess-long-name-x": {"consecutive": 1, "total": 1}, "s": {"consecutive": 1, "total": 1}, '
+SUMMARY procs=3 updates/proc=20 rounds=20 elapsed=5.5s
+  blocks lost from the session total: 1200/1200 (100.0%)
+  calls that got zeros (read failed mid-write): 1150/1200 (95.8%)
+  rounds ending with an unparseable state file: 20/20 (100.0%); of those, never repaired by a later call: 20
+  temp dir: C:\WINDOWS\TEMP\semgate-formal-streak-ng8mtmzd
+== stress_snapshot_same_8: formal/repro/stress_snapshot.py --procs 8 --rounds 30 --mode same
+round 28: files=8 record_post reported created=6 created records on disk=4 eligible=4 unsafe=0 torn=0 leftover .tmp=1
+round 29: files=8 record_post reported created=5 created records on disk=3 eligible=3 unsafe=0 torn=0 leftover .tmp=0
+SUMMARY mode=same procs=8 rounds=30 size=200000 elapsed=16.7s
+  record_post skipped the file (no created record written): 32/240 (13.3%)
+  created record written but lost from the JSONL: 80/240 (33.3%)
+  unchanged agent-created files NOT eligible (extra human ask): 112/240 (46.7%)
+  eligible with snapshot != file (unsafe): 0; torn lines: 0; leftover .tmp files: 7
+  temp dir: C:\WINDOWS\TEMP\semgate-formal-snap-q66ynjal
+== stress_snapshot_distinct_8: formal/repro/stress_snapshot.py --procs 8 --rounds 30 --mode distinct
+round 28: files=8 record_post reported created=8 created records on disk=7 eligible=7 unsafe=0 torn=0 leftover .tmp=0
+round 29: files=8 record_post reported created=8 created records on disk=8 eligible=8 unsafe=0 torn=0 leftover .tmp=0
+SUMMARY mode=distinct procs=8 rounds=30 size=200000 elapsed=16.6s
+  record_post skipped the file (no created record written): 0/240 (0.0%)
+  created record written but lost from the JSONL: 11/240 (4.6%)
+  unchanged agent-created files NOT eligible (extra human ask): 11/240 (4.6%)
+  eligible with snapshot != file (unsafe): 0; torn lines: 0; leftover .tmp files: 0
+  temp dir: C:\WINDOWS\TEMP\semgate-formal-snap-g9e18l16
+== stress_snapshot_same_3: formal/repro/stress_snapshot.py --procs 3 --rounds 30 --mode same
+round 28: files=3 record_post reported created=2 created records on disk=2 eligible=2 unsafe=0 torn=0 leftover .tmp=0
+round 29: files=3 record_post reported created=2 created records on disk=2 eligible=2 unsafe=0 torn=0 leftover .tmp=0
+SUMMARY mode=same procs=3 rounds=30 size=200000 elapsed=10.2s
+  record_post skipped the file (no created record written): 24/90 (26.7%)
+  created record written but lost from the JSONL: 9/90 (10.0%)
+  unchanged agent-created files NOT eligible (extra human ask): 33/90 (36.7%)
+  eligible with snapshot != file (unsafe): 0; torn lines: 0; leftover .tmp files: 0
+  temp dir: C:\WINDOWS\TEMP\semgate-formal-snap-irbjbkhn
+== stress_learned_8: formal/repro/stress_learned.py --procs 8 --steps 60 --rounds 10
+round 8: approved asks=384 counted=0 deny_counted=0 post raised=472 executed_unmatched=3 torn=18 final reader=JSONDecodeError
+round 9: approved asks=384 counted=8 deny_counted=0 post raised=455 executed_unmatched=9 torn=23 final reader=JSONDecodeError
+SUMMARY procs=8 steps/proc=60 rounds=10 elapsed=20.3s
+  approvals not counted (undercount, safe): 3795/3840 (98.8%); overcount (unsafe): 0; denied command counted (unsafe): 0
+  post-hook joins that raised (executed record silently not written): 4661/4800 (97.1%)
+  executed_unmatched records (pending record lost): 39; torn lines: 206
+  rounds where the final file makes every reader raise (learning off until the file is repaired): 10/10 (100.0%)
+  temp dir: C:\WINDOWS\TEMP\semgate-formal-learned-mqww3isk
+== stress_learned_3: formal/repro/stress_learned.py --procs 3 --steps 60 --rounds 10
+round 8: approved asks=144 counted=4 deny_counted=0 post raised=168 executed_unmatched=0 torn=13 final reader=JSONDecodeError
+round 9: approved asks=144 counted=0 deny_counted=0 post raised=177 executed_unmatched=1 torn=9 final reader=JSONDecodeError
+SUMMARY procs=3 steps/proc=60 rounds=10 elapsed=8.6s
+  approvals not counted (undercount, safe): 1410/1440 (97.9%); overcount (unsafe): 0; denied command counted (unsafe): 0
+  post-hook joins that raised (executed record silently not written): 1710/1800 (95.0%)
+  executed_unmatched records (pending record lost): 11; torn lines: 40
+  rounds where the final file makes every reader raise (learning off until the file is repaired): 10/10 (100.0%)
+  temp dir: C:\WINDOWS\TEMP\semgate-formal-learned-9e3mim4l
+== control_append_8: formal/repro/control_append.py --procs 8 --records 200 --rounds 10
+python_a     procs=8 records=16000: lost 2231/16000 (13.9%), torn lines 0, duplicates 0, elapsed 5.3s
+locked       procs=8 records=16000: lost 0/16000 (0.0%), torn lines 0, duplicates 0, elapsed 6.1s
+append_data  procs=8 records=16000: lost 0/16000 (0.0%), torn lines 0, duplicates 0, elapsed 3.2s
+temp dir: C:\WINDOWS\TEMP\semgate-formal-control-89bw917c
+== feedback_reuse: formal/repro/feedback_reuse.py
+1 sess-A projA  rm -rf dist   -> deny   block_when_unsure: not a confident allow, so blocked; semgate enforce: human_gate/ask [human_gate:destructive_
+2 operator: semgate feedback allow "rm -rf dist"  (one record appended)
+3 sess-A projA  rm -rf dist   -> allow  semgate enforce: human_approved/allow [human_approved]; operator feedback: a human approved this action; human
+4 sess-A projA  rm -rf dist   -> allow  semgate enforce: human_approved/allow [human_approved]; operator feedback: a human approved this action; human
+5 sess-B projB  rm -rf dist   -> allow  semgate enforce: human_approved/allow [human_approved]; operator feedback: a human approved this action; human
+6 sess-A projA  rm -rf dist/  -> deny   block_when_unsure: not a confident allow, so blocked; semgate enforce: human_gate/ask [human_gate:destructive_
+feedback file lines: 1 (nothing marks the approval as used)
+temp dir: C:\WINDOWS\TEMP\semgate-formal-feedback-52eofpft
+== serve_queue_6s: formal/repro/serve_queue.py --delay 6 --burst 5
+request 1: serve answered 'allow' after   6.0 s -> the plugin uses: allow
+request 2: serve answered 'allow' after  12.0 s -> the plugin uses: allow
+request 3: serve answered 'allow' after  18.0 s -> the plugin uses: allow
+request 4: serve answered 'allow' after  24.0 s -> the plugin uses: ask (plugin timeout; late answer dropped)
+request 5: serve answered 'allow' after  30.0 s -> the plugin uses: ask (plugin timeout; late answer dropped)
+SUMMARY delay/model call=6.0s burst=5: 2/5 requests past the 20 s plugin timeout
+temp dir: C:\WINDOWS\TEMP\semgate-formal-serve-dpu4nbve
+ALLDONE
