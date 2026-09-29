@@ -24,6 +24,11 @@ with `git show`, so the file itself does not need to be in the snapshot):
 A vendor marker fails the scan while its status is not "reported" or
 "accepted": set the status (and a link in "note") after the vendor report is
 filed, or remove the text from the repo.
+
+Provider token formats that GitHub push protection rejects (PUSH_PROTECTION)
+fail the scan even when the value is a reviewed fake: there is no allow list.
+Split the literal after the prefix ("xoxb-" + "..."); the runtime value stays
+the same.
 """
 from __future__ import annotations
 
@@ -65,6 +70,26 @@ EXTRA_SECRETS = [
         r"[\"']?\s*[:=]\s*[\"']?([A-Za-z0-9_\-+/=.]{20,})")),
     ("TypeSafe-like ts_ key", re.compile(r"\bts[_-](?:live|test|sk|key)?[_-]?[A-Za-z0-9]{24,}")),
     ("Stripe-like key", re.compile(r"\b[sr]k_(?:live|test)_[A-Za-z0-9]{16,}")),
+]
+# Formats GitHub push protection blocks in any pushed file, fake or real: they
+# carry no checksum, so GitHub cannot tell a fake from a key. 2026-09-29 the
+# first public push was rejected (GH013) for a reviewed fake Slack token.
+# GitHub classic tokens (gh[pousr]_) are not listed: their CRC32 checksum lets
+# fakes pass.
+PUSH_PROTECTION = [
+    ("Slack token", re.compile(r"xox[abposre]-[0-9A-Za-z-]{10,}")),
+    ("Slack webhook", re.compile(r"hooks\.slack\.com/services/T[0-9A-Z]+/B[0-9A-Z]+/[0-9A-Za-z]+")),
+    ("Stripe live key", re.compile(r"[rs]k_live_[0-9A-Za-z]{10,}")),
+    ("Google API key", re.compile(r"AIza[0-9A-Za-z_-]{35}")),
+    ("SendGrid key", re.compile(r"SG\.[\w-]{22}\.[\w-]{43}")),
+    ("Anthropic key", re.compile(r"sk-ant-(?:api|admin)\d\d-[\w-]{20,}")),
+    ("OpenAI key", re.compile(r"sk-(?:proj-|svcacct-)?[\w-]{20,}T3BlbkFJ[\w-]{20,}")),
+    ("Hugging Face token", re.compile(r"hf_[A-Za-z]{34}")),
+    ("PyPI token", re.compile(r"pypi-AgEIcHlwaS5vcmc[\w-]{50,}")),
+    ("Shopify token", re.compile(r"shp(?:at|ca|pa|ss)_[0-9a-fA-F]{32}")),
+    ("Databricks token", re.compile(r"dapi[0-9a-f]{32}")),
+    ("private key block", re.compile(r"-----BEGIN [A-Z ]*PRIVATE KEY-----\s+[A-Za-z0-9+/=\s]{100,}")),
+    ("Azure storage key", re.compile(r"AccountKey=[A-Za-z0-9+/]{86}==")),
 ]
 FORBIDDEN = re.compile(r"(^|/)(\.env|\.env\..+|id_rsa|id_ed25519|.+\.pem|.+\.key|.+\.p12|.+\.pfx|CLAUDE\.md|AGENTS\.md|"
                        r"\.claude|\.gemini|\.agents|\.antigravity|\.codex|evals/private|private-eval|artifacts|"
@@ -116,6 +141,13 @@ def git_show(repo, commit, path):
 
 def read_excludes(text):
     return [ln.strip() for ln in (text or "").splitlines() if ln.strip() and not ln.strip().startswith("#")]
+
+
+def push_protection_hits(text):
+    """(line, kind, length) of each PUSH_PROTECTION match; never the value."""
+    hits = [(text.count("\n", 0, m.start()) + 1, kind, len(m.group(0)))
+            for kind, rx in PUSH_PROTECTION for m in rx.finditer(text)]
+    return sorted(hits)
 
 
 def entropy(s):
@@ -299,6 +331,14 @@ class Scan:
         self.row("secret-like values (all reviewed as fakes)", not new,
                  f"{len(seen)} distinct, {len(seen) - len(new)} reviewed, {len(new)} not reviewed", d)
         self.secret_inventory = seen
+
+    def check_push_protection(self):
+        """Token formats GitHub push protection rejects. No allow list: reviewed_secrets
+        does not apply, because GitHub blocks a fake in these formats as well."""
+        d = [f"{rel}:{line} {kind} len={n}" for rel, text in self.text.items()
+             for line, kind, n in push_protection_hits(text)]
+        self.row("provider token formats (GitHub push protection)", not d,
+                 f"{len(d)} hit(s); split each literal after the prefix" if d else "0 hits", d[:40])
 
     def check_owner_paths(self):
         """The owner's user name in any user path fails, in every file. Other real-looking
@@ -523,6 +563,7 @@ class Scan:
         self.check_forbidden()
         self.check_real_keys()
         self.check_secrets()
+        self.check_push_protection()
         self.check_owner_paths()
         self.check_personal()
         self.check_ai_attribution()

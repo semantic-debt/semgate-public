@@ -73,6 +73,81 @@ def test_heldout_check_skips_nested_folders(tmp_path):
     assert row["summary"].startswith("1 private case lines: 0 found")
 
 
+def _fake_tokens():
+    """One fake per PUSH_PROTECTION format, built from parts so this file holds no match."""
+    return {
+        "Slack token": "xoxb-" + "0" * 12 + "-" + "0" * 12 + "-" + "EXAMPLE" * 3,
+        "Slack webhook": "hooks.slack.com/services/" + "T00000000/B00000000/" + "X" * 24,
+        "Stripe live key": "sk_" + "live_" + "0" * 24,
+        "Google API key": "AIza" + "0" * 35,
+        "SendGrid key": "SG." + "a" * 22 + "." + "b" * 43,
+        "Anthropic key": "sk-ant-" + "api03-" + "a" * 40,
+        "OpenAI key": "sk-" + "proj-" + "a" * 20 + "T3Blbk" + "FJ" + "b" * 20,
+        "Hugging Face token": "hf_" + "a" * 34,
+        "PyPI token": "pypi-" + "AgEIcHlwaS5vcmc" + "a" * 50,
+        "Shopify token": "shpat_" + "0" * 32,
+        "Databricks token": "dapi" + "0" * 32,
+        "private key block": "-----BEGIN RSA " + "PRIVATE KEY-----\n" + ("A" * 64 + "\n") * 3,
+        "Azure storage key": "AccountKey=" + "A" * 86 + "==",
+    }
+
+
+def _scan(tmp_path, files, cfg):
+    snap = tmp_path / "snap"
+    for name, text in files.items():
+        (snap / name).parent.mkdir(parents=True, exist_ok=True)
+        (snap / name).write_text(text, encoding="utf-8")
+    a = argparse.Namespace(snapshot=str(snap), source_repo=str(tmp_path), source_commit="0" * 40, exclude=None,
+                           secretfinder_root=str(ROOT))
+    scan = ps.Scan(a)
+    scan.cfg = cfg
+    return scan
+
+
+def test_push_protection_patterns_find_each_format_but_not_github_classic_tokens():
+    for kind, fake in _fake_tokens().items():
+        assert [k for _, k, _ in ps.push_protection_hits(f'x = "{fake}"\n')] == [kind], kind
+    assert ps.push_protection_hits("ghp_" + "A" * 36 + " gho_" + "0" * 36) == []   # CRC32 checksum: GitHub lets fakes pass
+    assert ps.push_protection_hits('SLACK = "xoxb-" + "' + "0" * 12 + '-EXAMPLE"') == []   # split after the prefix
+
+
+def test_push_protection_check_fails_on_a_reviewed_fake_and_never_prints_it(tmp_path):
+    """2026-09-29: the reviewed fake Slack token passed the secret check, and GitHub rejected the push."""
+    fake = _fake_tokens()["Slack token"]
+    scan = _scan(tmp_path, {"evals/gen.py": f'A = 1\n\nSLACK = "{fake}"\n',
+                            "evals/split.py": f'SLACK = "xoxb-" + "{fake[5:]}"\n'},
+                 {"reviewed_secrets": [{"sha16": ps.sha16(fake), "why": "a fake"}]})
+    scan.check_secrets()
+    scan.check_push_protection()
+    secrets, push = scan.rows
+    assert secrets["status"] == "PASS"                     # reviewed as a fake: the old check lets it through
+    assert push["status"] == "FAIL"
+    assert push["details"] == [f"evals/gen.py:3 Slack token len={len(fake)}"]
+    assert fake[5:] not in json.dumps(scan.rows)            # file:line and length only, never the value
+
+
+def test_push_protection_check_passes_a_clean_snapshot(tmp_path):
+    scan = _scan(tmp_path, {"ok.py": 'KEY = "ghp_" + "A" * 36\n'}, {})
+    scan.check_push_protection()
+    assert scan.rows[-1]["status"] == "PASS"
+
+
+def test_tracked_files_hold_no_push_protection_match():
+    """The same formats in this repo's tracked files (minus .publish/exclude.txt), so a
+    commit made straight in the public clone is checked before GitHub checks the push."""
+    r = subprocess.run(["git", "-C", str(ROOT), "ls-files", "-z"], capture_output=True)
+    if r.returncode != 0 or not r.stdout:
+        pytest.skip("no git checkout here (the WSL copy of scripts/test-local.sh has only the files)")
+    exclude = ROOT / ".publish" / "exclude.txt"
+    excludes = ps.read_excludes(exclude.read_text(encoding="utf-8")) if exclude.is_file() else []
+    hits = []
+    for rel in r.stdout.decode("utf-8").split("\0"):
+        if rel and (ROOT / rel).is_file() and not ps.matches(rel, excludes):
+            text = (ROOT / rel).read_bytes().decode("utf-8", "replace")
+            hits += [f"{rel}:{line} {kind} len={n}" for line, kind, n in ps.push_protection_hits(text)]
+    assert hits == []
+
+
 def _bash():
     if os.name != "nt":
         return shutil.which("bash")
